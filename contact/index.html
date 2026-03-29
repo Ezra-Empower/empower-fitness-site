@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us — Empower Fitness PT</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #C8922A;
+            --gold-light: #e0a93a;
+            --black: #000000;
+            --dark: #0d0d0d;
+            --dark2: #141414;
+            --dark3: #1c1c1c;
+            --dark4: #242424;
+            --white: #ffffff;
+            --gray: #aaaaaa;
+            --green: #27ae60;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--white);
+            background-color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--black);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid var(--dark2);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-right: 2rem;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .nav-brand {
+            font-weight: 900;
+            font-size: 1.1rem;
+            margin-right: auto;
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            background-color: var(--gold);
+            color: var(--black) !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            margin-right: 0;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--gold-light);
+        }
+
+        /* Main content */
+        main {
+            margin-top: 70px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--dark2) 0%, var(--dark3) 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--dark4);
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 1rem;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .hero .pretag {
+            font-size: 0.85rem;
+            color: var(--gold);
+            white-space: nowrap;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* TWO COLUMN SECTION */
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--dark);
+        }
+
+        /* LEFT COLUMN — FORM */
+        .contact-form {
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            border: none;
+        }
+
+        .contact-form h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+            font-weight: 800;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gray);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background-color: #141414;
+            border: 1px solid #333;
+            border-radius: 0;
+            color: var(--white);
+            font-family: inherit;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: none;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px 16px;
+            background-color: var(--gold);
+            color: var(--black);
+            border: none;
+            border-radius: 0;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--gold-light);
+        }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* RIGHT COLUMN — DIRECT CONTACT */
+        .direct-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .contact-box {
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            border: none;
+            border-top: 1px solid #222;
+            padding-top: 2rem;
+        }
+
+        .contact-box:first-child {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        .contact-box h3 {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .contact-box p {
+            color: var(--gray);
+            margin-bottom: 0.8rem;
+        }
+
+        .phone-link {
+            display: inline-block;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .phone-link:hover {
+            color: var(--gold);
+        }
+
+        .schedule-btn {
+            display: inline-block;
+            padding: 14px 24px;
+            background-color: var(--gold);
+            color: var(--black);
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        .schedule-btn:hover {
+            background-color: var(--gold-light);
+        }
+
+        .hours, .email, .social, .service-area {
+            font-size: 15px;
+            margin-bottom: 1.2rem;
+            color: var(--white);
+        }
+
+        .hours strong, .email strong, .social strong, .service-area strong {
+            color: var(--white);
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+        }
+
+        .service-area {
+            list-style: none;
+        }
+
+        .service-area li {
+            white-space: nowrap;
+            margin-bottom: 0.4rem;
+        }
+
+        /* FAQ SECTION */
+        .faq-section {
+            background-color: var(--dark);
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--dark3);
+            border-bottom: 1px solid var(--dark3);
+        }
+
+        .faq-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .faq-item {
+            border-top: 1px solid #222;
+            padding-top: 2rem;
+        }
+
+        .faq-item h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* BOTTOM CTA BAR */
+        .cta-bar {
+            background-color: var(--gold);
+            color: var(--black);
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .cta-bar p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+
+        .cta-dark-btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background-color: var(--dark);
+            color: var(--gold);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .cta-dark-btn:hover {
+            background-color: var(--dark2);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--black);
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--dark3);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-col a {
+            display: block;
+            color: var(--gray);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid var(--dark3);
+            padding-top: 2rem;
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        /* FLOATING LEGEND */
+        .floating-legend {
+            position: fixed;
+            bottom: 120px;
+            left: 20px;
+            background-color: #cc0000;
+            color: var(--white);
+            padding: 0.8rem 1rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            z-index: 999;
+            max-width: 150px;
+            line-height: 1.4;
+        }
+
+        /* CHAT WIDGET */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            font-size: 1.5rem;
+            color: var(--black);
+            transition: background-color 0.3s;
+        }
+
+        .chat-widget:hover {
+            background-color: var(--gold-light);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .contact-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .faq-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin-right: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+    
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: #000000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 68px;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .nav-logo { font-size: 22px; font-weight: 900; letter-spacing: 3px; color: #C8922A; }
+    .nav-logo span { color: #ffffff; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: #ffffff; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; text-decoration: none; }
+    .nav-links a:hover { color: #C8922A; }
+    .nav-cta {
+      background: #C8922A; color: #000000 !important;
+      font-weight: 800; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 10px 22px; border-radius: 2px; transition: background 0.2s;
+      text-decoration: none; white-space: nowrap;
+    }
+    .nav-cta:hover { background: #e0a93a; }
+
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; }
+    @media(max-width:900px){ .footer-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:480px){ .footer-grid { grid-template-columns:1fr; } }
+    .footer-brand p { font-size:14px; color:var(--gray); line-height:1.7; margin-top:14px; max-width:280px; }
+    .footer-col h4 { font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:18px; }
+    .footer-col ul { list-style:none; padding:0; margin:0; }
+    .footer-col li { font-size:14px; color:var(--gray); margin-bottom:10px; }
+    .footer-col li a { color:var(--gray); transition:color 0.2s; text-decoration:none; }
+    .footer-col li a:hover { color:var(--gold); }
+    .footer-bottom { border-top:1px solid #1a1a1a; padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+    .footer-bottom p { font-size:12px; color:#555; }
+
+  </style>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Contact Us | Empower Fitness PT Boca Raton"/>
+<meta property="og:description" content="Book a free consultation or ask a question. Reach Dr. Ezra Miller, PT, DPT at 954-901-7211. In-home PT serving Boca Raton, Delray Beach & Pompano Beach."/>
+<meta property="og:url" content="https://www.empowerfitnesspt.com/contact/"/>
+<meta property="og:site_name" content="Empower Fitness PT"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Contact Us | Empower Fitness PT Boca Raton"/>
+<meta name="twitter:description" content="Book a free consultation or ask a question. Reach Dr. Ezra Miller, PT, DPT at 954-901-7211. In-home PT serving Boca Raton, Delray Beach & Pompano Beach."/>
+</head>
+<body>
+<!-- NAVIGATION -->
+<nav>
+<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
+<ul class="nav-links">
+<li><a href="/">Home</a></li>
+<li><a href="/services">Services</a></li>
+<li><a href="/injury-finder">Injury Finder</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/about">About Us</a></li>
+</ul>
+<a class="nav-cta" href="/contact">CONTACT US</a>
+</nav>
+<main>
+<!-- CHANGE NOTE BANNER -->
+
+<!-- SECTION 1: HERO -->
+<section class="hero">
+<h1>Let's Get You Started</h1>
+<p>Whether you're ready to book or just have questions — we're here. Reach out and we'll get back to you within 24 hours.</p>
+<div class="pretag">Boca Raton · Delray Beach · Pompano Beach · South Florida</div>
+</section>
+<!-- SECTION 2: TWO COLUMN LAYOUT -->
+
+<section class="contact-section">
+<!-- LEFT COLUMN: FORM -->
+<div class="contact-form">
+<h2>Send Us a Message</h2>
+<form>
+<div class="form-group">
+<label for="firstName">First Name</label>
+<input id="firstName" name="firstName" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="lastName">Last Name</label>
+<input id="lastName" name="lastName" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input id="email" name="email" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="phone">Phone</label>
+<input id="phone" name="phone" type="tel"/>
+</div>
+<div class="form-group">
+<label for="interest">What are you interested in?</label>
+<select id="interest" name="interest" required="">
+<option value="">Select an option</option>
+<option value="in-home-pt">In-Home PT</option>
+<option value="return-to-sport">Return-to-Sport</option>
+<option value="fitness-training">Fitness Training</option>
+<option value="longevity-training">Longevity Training</option>
+<option value="nutrition-guidance">Nutrition Guidance</option>
+<option value="not-sure">Not sure yet</option>
+</select>
+</div>
+<div class="form-group">
+<label for="goals">Tell us a bit about your goals or situation (optional)</label>
+<textarea id="goals" name="goals"></textarea>
+</div>
+<button class="submit-btn" type="submit">Send Message →</button>
+<p class="form-note">We respond to all messages within 24 hours. Your info is never shared.</p>
+</form>
+</div>
+<!-- RIGHT COLUMN: DIRECT CONTACT -->
+<div class="direct-contact">
+<!-- Prefer to Talk -->
+<div class="contact-box">
+<h3>Prefer to talk?</h3>
+<a class="phone-link" href="tel:954-901-7211">954-901-7211</a>
+</div>
+<!-- Ready to Book -->
+<div class="contact-box">
+<h3>Ready to book?</h3>
+<a class="schedule-btn" href="/schedule">Schedule Your Free Consultation →</a>
+</div>
+<!-- Hours -->
+<div class="contact-box">
+<div class="hours">
+<strong>Available:</strong>
+                        Mon–Sat, 7 AM – 7 PM
+                    </div>
+<div class="email">
+<strong>Email:</strong>
+<a href="mailto:admin@empowerfitnesspt.com" style="color: var(--gold); text-decoration: none;">admin@empowerfitnesspt.com</a>
+</div>
+<div class="social">
+<strong>Instagram:</strong>
+                        @EmpowerFitnessPro
+                    </div>
+<div class="service-area">
+<strong>Serving:</strong>
+<li>Boca Raton</li>
+<li>Delray Beach</li>
+<li>Pompano Beach</li>
+<li>Surrounding South Florida</li>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: FAQ -->
+
+<section class="faq-section">
+<div class="faq-container">
+<div class="faq-item">
+<h4>Do I need a referral?</h4>
+<p>No, Florida is a direct access state. You can reach out to us directly without a physician referral.</p>
+</div>
+<div class="faq-item">
+<h4>Do you accept insurance?</h4>
+<p>We're a private-pay practice. We provide superbills for out-of-network reimbursement.</p>
+</div>
+<div class="faq-item">
+<h4>How quickly can I get started?</h4>
+<p>Most clients begin within 3–5 days of reaching out.</p>
+</div>
+</div>
+</section>
+<!-- SECTION 4: BOTTOM CTA BAR -->
+
+<section class="cta-bar">
+<p>Still not sure which service is right for you? Book a free 15-minute call — no commitment, no pressure.</p>
+<a class="cta-dark-btn" href="/schedule">Book Free Consultation →</a>
+</section>
+</main>
+<!-- FOOTER -->
+<footer>
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
+<p>Concierge physical therapy and functional fitness delivered to your door. Serving Boca Raton, Delray Beach, Pompano Beach, and surrounding South Florida.</p>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<ul>
+<li><a href="/in-home-physical-therapy-boca-raton">In-Home Physical Therapy</a></li>
+<li><a href="/return-to-sport-physical-therapy-boca-raton">Return-to-Sport</a></li>
+<li><a href="/fitness-training-boca-raton">Fitness Training</a></li>
+<li><a href="/longevity-training-boca-raton">Longevity Program</a></li>
+<li><a href="/nutrition-coaching-boca-raton">Nutrition Guidance</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<ul>
+<li><a href="/about">About Dr. Ezra</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/injury-finder">Injury Finder</a></li>
+<li><a href="/faq">FAQ</a></li>
+<li><a href="/contact">Free Consultation</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li>Boca Raton, FL</li>
+<li>Delray Beach, FL</li>
+<li>Pompano Beach, FL</li>
+<li><a href="tel:954-901-7211">954-901-7211</a></li>
+<li><a href="mailto:admin@empowerfitnesspt.com">admin@empowerfitnesspt.com</a></li>
+<li style="margin-top:8px;"><a href="https://g.page/r/empowerfitnesspt/review" style="color:var(--gold);" target="_blank">&#9733; Leave a Google Review</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Empower Fitness. All rights reserved.</p>
+<p>Dr. Ezra Miller, PT, DPT &middot; Licensed in Florida &middot; NASM Certified</p>
+</div>
+</footer>
+<!-- FLOATING LEGEND -->
+<div class="floating-legend">
+        Red banners mark major sections. Gold accents highlight CTAs.
+    </div>
+<!-- CHAT WIDGET -->
+<div class="chat-widget" title="AI Chat Support">💬</div>
+</body>
+</html>

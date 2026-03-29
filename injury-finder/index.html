@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Injury Finder | Empower Fitness PT — Find Your Treatment in Boca Raton</title>
+  <meta name="description" content="Not sure where to start? Use our Injury Finder — click on the body area where you have pain and Dr. Ezra Miller's team will match you with the right treatment." />
+  <style>
+    :root {
+      --gold: #C8922A;
+      --gold-light: #e0a93a;
+      --black: #000000;
+      --dark: #0d0d0d;
+      --dark2: #141414;
+      --dark3: #1c1c1c;
+      --dark4: #242424;
+      --white: #ffffff;
+      --gray: #aaaaaa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: var(--dark); color: var(--white); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--black);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 68px;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .nav-logo { font-size: 22px; font-weight: 900; letter-spacing: 3px; color: var(--gold); }
+    .nav-logo span { color: var(--white); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--white); font-size: 14px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold); color: var(--black) !important;
+      font-weight: 800; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 10px 22px; border-radius: 2px; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+
+    /* ===== HERO ===== */
+    .page-hero {
+      padding: 130px 80px 60px;
+      background: linear-gradient(135deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.7) 100%),
+                  url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1400&q=80') center/cover no-repeat;
+      text-align: center;
+    }
+    .page-hero .label {
+      font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
+    }
+    .page-hero h1 {
+      font-size: clamp(32px, 4.5vw, 54px); font-weight: 900; line-height: 1.1;
+      margin-bottom: 16px; letter-spacing: -1px;
+    }
+    .page-hero h1 em { font-style: normal; color: var(--gold); }
+    .page-hero p {
+      font-size: 18px; color: rgba(255,255,255,0.8); max-width: 560px; margin: 0 auto;
+    }
+
+    /* ===== BODY MAP SECTION ===== */
+    .finder-section {
+      padding: 80px 40px;
+      background: var(--dark);
+    }
+    .finder-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* Body Buttons Side */
+    .body-map-side {
+      position: sticky;
+      top: 90px;
+    }
+    .body-map-side h2 {
+      font-size: 28px; font-weight: 900; margin-bottom: 8px;
+    }
+    .body-map-side p {
+      font-size: 15px; color: rgba(255,255,255,0.65); margin-bottom: 32px;
+    }
+
+    /* SVG Body Map */
+    .body-figure {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* Body part grid buttons */
+    .body-zones {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      width: 100%;
+      margin-top: 32px;
+    }
+    .zone-btn {
+      background: var(--dark3);
+      border: 2px solid var(--dark4);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 18px;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .zone-btn:hover, .zone-btn.active {
+      background: var(--dark4);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    .zone-btn .zone-icon { font-size: 20px; }
+    .zone-btn.full-width { grid-column: 1 / -1; }
+
+    /* Results Panel */
+    .results-panel {
+      background: var(--dark2);
+      border: 1px solid var(--dark4);
+      border-radius: 6px;
+      min-height: 400px;
+    }
+    .results-header {
+      background: var(--dark3);
+      padding: 24px 28px;
+      border-bottom: 1px solid var(--dark4);
+      border-radius: 6px 6px 0 0;
+    }
+    .results-header h3 {
+      font-size: 20px; font-weight: 800; color: var(--gold);
+    }
+    .results-header p {
+      font-size: 14px; color: rgba(255,255,255,0.6); margin-top: 4px;
+    }
+    .results-body {
+      padding: 28px;
+    }
+    .result-prompt {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .result-prompt .big-icon { font-size: 48px; margin-bottom: 16px; display: block; }
+    .result-prompt h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .result-prompt p { font-size: 15px; color: rgba(255,255,255,0.55); }
+
+    .condition-list { list-style: none; }
+    .condition-item {
+      border-bottom: 1px solid var(--dark4);
+      padding: 16px 0;
+    }
+    .condition-item:last-child { border-bottom: none; }
+    .condition-item a {
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 15px; font-weight: 600; color: var(--white);
+      transition: color 0.2s;
+    }
+    .condition-item a:hover { color: var(--gold); }
+    .condition-item .arrow { color: var(--gold); font-size: 18px; }
+    .condition-item .sub {
+      font-size: 12px; color: var(--gray); font-weight: 400; margin-top: 3px;
+      display: block;
+    }
+
+    .cta-box {
+      background: rgba(200,146,42,0.1);
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin-top: 24px;
+      text-align: center;
+    }
+    .cta-box p { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 12px; }
+    .btn-gold {
+      background: var(--gold); color: var(--black);
+      font-weight: 800; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 12px 24px; border-radius: 2px; display: inline-block;
+      transition: background 0.2s;
+    }
+    .btn-gold:hover { background: var(--gold-light); }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: var(--gold);
+      padding: 70px 80px;
+      text-align: center;
+    }
+    .cta-section h2 { font-size: clamp(24px, 3.5vw, 38px); font-weight: 900; color: var(--black); margin-bottom: 12px; }
+    .cta-section p { font-size: 17px; color: rgba(0,0,0,0.75); margin-bottom: 28px; }
+    .btn-dark {
+      background: var(--black); color: var(--white);
+      font-weight: 800; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 16px 36px; border-radius: 2px; display: inline-block;
+      transition: background 0.2s;
+    }
+    .btn-dark:hover { background: #222; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--black);
+      padding: 60px 80px 32px;
+      border-top: 1px solid var(--dark3);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .logo { font-size: 20px; font-weight: 900; color: var(--gold); letter-spacing: 2px; margin-bottom: 12px; }
+    .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+    .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a { font-size: 14px; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid var(--dark3); padding-top: 24px; text-align: center; }
+    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.35); }
+
+    @media (max-width: 768px) {
+      .finder-container { grid-template-columns: 1fr; }
+      .body-map-side { position: static; }
+      .page-hero, .finder-section, .cta-section, footer { padding-left: 24px; padding-right: 24px; }
+    }
+  </style>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Injury Finder | Find Your Treatment | Empower Fitness PT Boca Raton"/>
+<meta property="og:description" content="Find the right physical therapy for your injury. Use our Injury Finder to match your condition with expert in-home PT from Dr. Ezra Miller, DPT."/>
+<meta property="og:url" content="https://www.empowerfitnesspt.com/injury-finder/"/>
+<meta property="og:site_name" content="Empower Fitness PT"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Injury Finder | Find Your Treatment | Empower Fitness PT Boca Raton"/>
+<meta name="twitter:description" content="Find the right physical therapy for your injury. Use our Injury Finder to match your condition with expert in-home PT from Dr. Ezra Miller, DPT."/>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/injury-finder">Injury Finder</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/about">About Us</a></li>
+  </ul>
+  <a href="/contact" class="nav-cta">CONTACT US</a>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <p class="label">Spot the Injury · Start the Treatment</p>
+  <h1>Where Does <em>It Hurt?</em></h1>
+  <p>Select your area of pain below. We'll match you with the right treatment approach and resources from Dr. Ezra Miller's team.</p>
+</section>
+
+<!-- INJURY FINDER -->
+<section class="finder-section">
+  <div class="finder-container">
+
+    <!-- Left: Body Zone Buttons -->
+    <div class="body-map-side">
+      <h2>Select Your Pain Area</h2>
+      <p>Click on the body part where you're experiencing pain or discomfort.</p>
+      <div class="body-zones">
+        <button class="zone-btn" onclick="showZone('head')"><span class="zone-icon">🧠</span> Head</button>
+        <button class="zone-btn" onclick="showZone('neck')"><span class="zone-icon">🔵</span> Neck</button>
+        <button class="zone-btn" onclick="showZone('shoulder')"><span class="zone-icon">💪</span> Shoulder</button>
+        <button class="zone-btn" onclick="showZone('arm')"><span class="zone-icon">🦾</span> Arm / Elbow</button>
+        <button class="zone-btn" onclick="showZone('hand')"><span class="zone-icon">🤚</span> Hand / Wrist</button>
+        <button class="zone-btn" onclick="showZone('back')"><span class="zone-icon">🦴</span> Back</button>
+        <button class="zone-btn" onclick="showZone('hip')"><span class="zone-icon">🔶</span> Hip</button>
+        <button class="zone-btn" onclick="showZone('leg')"><span class="zone-icon">🦵</span> Leg / Thigh</button>
+        <button class="zone-btn" onclick="showZone('knee')"><span class="zone-icon">🔷</span> Knee</button>
+        <button class="zone-btn" onclick="showZone('ankle')"><span class="zone-icon">🦶</span> Ankle / Foot</button>
+        <button class="zone-btn full-width" onclick="showZone('general')"><span class="zone-icon">⚕️</span> General / Not Sure</button>
+      </div>
+    </div>
+
+    <!-- Right: Results Panel -->
+    <div class="results-panel" id="resultsPanel">
+      <div class="results-header">
+        <h3 id="resultsTitle">Injury Finder</h3>
+        <p id="resultsSubtitle">Select a body area on the left to see relevant conditions and treatments.</p>
+      </div>
+      <div class="results-body" id="resultsBody">
+        <div class="result-prompt">
+          <span class="big-icon">👈</span>
+          <h3>Select a Body Area</h3>
+          <p>Click any body zone on the left to see common conditions, treatment approaches, and relevant resources.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to Get Back to 100%?</h2>
+  <p>Book a free consultation with Dr. Ezra Miller and get a personalized treatment plan delivered to your door.</p>
+  <a href="/contact" class="btn-dark">Book My Free Consultation</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
+<p>Concierge physical therapy and functional fitness delivered to your door. Serving Boca Raton, Delray Beach, Pompano Beach, and surrounding South Florida.</p>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<ul>
+<li><a href="/in-home-physical-therapy-boca-raton">In-Home Physical Therapy</a></li>
+<li><a href="/return-to-sport-physical-therapy-boca-raton">Return-to-Sport</a></li>
+<li><a href="/fitness-training-boca-raton">Fitness Training</a></li>
+<li><a href="/longevity-training-boca-raton">Longevity Program</a></li>
+<li><a href="/nutrition-coaching-boca-raton">Nutrition Guidance</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<ul>
+<li><a href="/about">About Dr. Ezra</a></li>
+<li><a href="/about">Our Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/injury-finder">Injury Finder</a></li>
+<li><a href="/faq">FAQ</a></li>
+<li><a href="/contact">Free Consultation</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li>Boca Raton, FL</li>
+<li>Delray Beach, FL</li>
+<li>Pompano Beach, FL</li>
+<li><a href="tel:954-901-7211">954-901-7211</a></li>
+<li><a href="mailto:admin@empowerfitnesspt.com">admin@empowerfitnesspt.com</a></li>
+<li style="margin-top:8px;"><a href="https://g.page/r/empowerfitnesspt/review" style="color:var(--gold);" target="_blank">&#9733; Leave a Google Review</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Empower Fitness. All rights reserved.</p>
+<p>Dr. Ezra Miller, PT, DPT &middot; Licensed in Florida &middot; NASM Certified</p>
+</div>
+</footer>
+
+<script>
+const zoneData = {
+  head: {
+    title: "Head & Neurological",
+    subtitle: "Common conditions affecting the head, brain, and neurological system",
+    items: [
+      { name: "Concussion / TBI Recovery", sub: "Post-concussion PT, cognitive rehab", url: "/blog/post-stroke-rehabilitation-physical-therapy-boca-raton" },
+      { name: "Headache & Migraine (cervicogenic)", sub: "Cervical spine-related headaches", url: "/blog/neck-pain-physical-therapy-boca-raton" },
+      { name: "Post-Stroke Rehabilitation", sub: "Mobility, strength, and neurological recovery", url: "/blog/post-stroke-rehabilitation-physical-therapy-boca-raton" },
+      { name: "Parkinson's Disease PT", sub: "Balance, gait, and functional movement", url: "/blog/parkinsons-disease-physical-therapy-boca-raton" },
+    ]
+  },
+  neck: {
+    title: "Neck Pain",
+    subtitle: "Common cervical spine and neck conditions we treat",
+    items: [
+      { name: "Neck Pain & Stiffness", sub: "Cervical strain, posture-related pain", url: "/blog/neck-pain-physical-therapy-boca-raton" },
+      { name: "Cervical Radiculopathy", sub: "Pinched nerve, radiating arm pain", url: "/blog/neck-pain-physical-therapy-boca-raton" },
+      { name: "Whiplash Recovery", sub: "Post-accident cervical spine rehab", url: "/blog/neck-pain-physical-therapy-boca-raton" },
+      { name: "Sciatica & Referred Pain", sub: "Nerve pain from the spine", url: "/blog/sciatica-physical-therapy-boca-raton" },
+    ]
+  },
+  shoulder: {
+    title: "Shoulder Pain",
+    subtitle: "Rotator cuff, impingement, and shoulder rehabilitation",
+    items: [
+      { name: "Rotator Cuff Tear", sub: "Partial and full-thickness tears, conservative rehab", url: "/blog/rotator-cuff-tear-physical-therapy-boca-raton" },
+      { name: "Rotator Cuff Recovery Protocol", sub: "In-home DPT-supervised progressive rehab", url: "/blog/rotator-cuff-recovery-home-dpt-protocol" },
+      { name: "Shoulder Impingement", sub: "Subacromial pain syndrome", url: "/blog/shoulder-pain-physical-therapy-boca-raton" },
+      { name: "General Shoulder Pain", sub: "AC joint, bicep tendinopathy, instability", url: "/blog/shoulder-pain-physical-therapy-boca-raton" },
+    ]
+  },
+  arm: {
+    title: "Arm & Elbow Pain",
+    subtitle: "Elbow, forearm, and upper extremity conditions",
+    items: [
+      { name: "Tennis Elbow (Lateral Epicondylitis)", sub: "Outer elbow tendon pain", url: "/blog/tennis-elbow-physical-therapy-boca-raton" },
+      { name: "Golfer's Elbow (Medial Epicondylitis)", sub: "Inner elbow tendon pain", url: "/blog/tennis-elbow-physical-therapy-boca-raton" },
+      { name: "Sport-Related Arm Injuries", sub: "Baseball, tennis, swimming, CrossFit", url: "/blog/baseball-softball-injury-physical-therapy-boca-raton" },
+      { name: "Weightlifting Injuries", sub: "Overhead press, curls, compound movements", url: "/blog/weightlifting-injury-physical-therapy-boca-raton" },
+    ]
+  },
+  hand: {
+    title: "Hand & Wrist Pain",
+    subtitle: "Wrist, hand, and finger conditions",
+    items: [
+      { name: "Wrist & Hand Pain", sub: "De Quervain's, carpal tunnel, sprains", url: "/blog/wrist-hand-pain-physical-therapy-boca-raton" },
+      { name: "Paddleboarding / Kayaking Injuries", sub: "Upper extremity overuse injuries", url: "/blog/paddleboarding-kayaking-injury-physical-therapy-boca-raton" },
+      { name: "Sport Hand Injuries", sub: "Grip strength, finger rehab", url: "/blog/wrist-hand-pain-physical-therapy-boca-raton" },
+    ]
+  },
+  back: {
+    title: "Back Pain",
+    subtitle: "Lumbar, thoracic, and spinal conditions we treat",
+    items: [
+      { name: "Low Back Pain", sub: "Disc herniation, muscle strain, chronic pain", url: "/blog/back-pain-pt-boca-raton" },
+      { name: "Sciatica", sub: "Radiating leg pain from lumbar nerve", url: "/blog/sciatica-physical-therapy-boca-raton" },
+      { name: "Sacroiliac Joint Dysfunction", sub: "SI joint pain, pelvic instability", url: "/blog/sacroiliac-joint-dysfunction-pt-boca-raton" },
+      { name: "Piriformis Syndrome", sub: "Deep buttock pain, hip-back interface", url: "/blog/piriformis-syndrome-physical-therapy-boca-raton" },
+      { name: "Osteoporosis Management", sub: "Bone density, fall prevention, posture", url: "/blog/osteoporosis-physical-therapy-boca-raton" },
+    ]
+  },
+  hip: {
+    title: "Hip Pain",
+    subtitle: "Hip joint, pelvis, and surrounding muscle conditions",
+    items: [
+      { name: "Hip Pain", sub: "Bursitis, labral tear, impingement, strain", url: "/blog/hip-pain-physical-therapy-boca-raton" },
+      { name: "Total Hip Replacement Recovery", sub: "Post-surgical in-home PT protocol", url: "/blog/total-hip-replacement-recovery-physical-therapy-boca-raton" },
+      { name: "Piriformis Syndrome", sub: "Deep glute and hip pain", url: "/blog/piriformis-syndrome-physical-therapy-boca-raton" },
+      { name: "IT Band Syndrome", sub: "Lateral hip and thigh tightness", url: "/blog/it-band-syndrome-physical-therapy-boca-raton" },
+    ]
+  },
+  leg: {
+    title: "Leg & Thigh Pain",
+    subtitle: "Quadriceps, hamstrings, IT band, and lower extremity",
+    items: [
+      { name: "IT Band Syndrome", sub: "Outer knee and thigh pain in runners", url: "/blog/it-band-syndrome-physical-therapy-boca-raton" },
+      { name: "Running Injuries", sub: "Shin splints, stress fractures, overuse", url: "/blog/running-injury-physical-therapy-boca-raton" },
+      { name: "Cycling Injuries", sub: "Quad, hamstring, knee overuse", url: "/blog/cycling-injury-physical-therapy-boca-raton" },
+      { name: "Soccer Injuries", sub: "Hamstring strain, groin pull, quad tear", url: "/blog/soccer-injury-physical-therapy-boca-raton" },
+    ]
+  },
+  knee: {
+    title: "Knee Pain",
+    subtitle: "One of the most common areas we treat — comprehensive knee care",
+    items: [
+      { name: "Knee Pain", sub: "General assessment and treatment", url: "/blog/knee-pain-physical-therapy-boca-raton" },
+      { name: "ACL Recovery", sub: "Post-surgical or conservative rehab protocol", url: "/blog/acl-recovery-physical-therapy-boca-raton" },
+      { name: "Meniscus Injury", sub: "Tear, repair, or conservative management", url: "/blog/meniscus-injury-physical-therapy-boca-raton" },
+      { name: "Patellofemoral Pain (Runner's Knee)", sub: "Kneecap tracking, quad rehab", url: "/blog/patellofemoral-pain-syndrome-physical-therapy-boca-raton" },
+      { name: "Total Knee Replacement Recovery", sub: "In-home PT post-TKR protocol", url: "/blog/total-knee-replacement-recovery-physical-therapy-boca-raton" },
+    ]
+  },
+  ankle: {
+    title: "Ankle & Foot Pain",
+    subtitle: "Ankle sprains, plantar fasciitis, Achilles, and more",
+    items: [
+      { name: "Ankle Sprain", sub: "Lateral sprain, chronic instability, rehab", url: "/blog/ankle-sprain-physical-therapy-boca-raton" },
+      { name: "Plantar Fasciitis", sub: "Heel pain, morning stiffness, arch pain", url: "/blog/plantar-fasciitis-physical-therapy-boca-raton" },
+      { name: "Achilles Tendinopathy", sub: "Tendinitis, chronic achilles pain", url: "/blog/achilles-tendinopathy-physical-therapy-boca-raton" },
+      { name: "Running / Hiking Foot Injuries", sub: "Overuse, stress fractures, tendon pain", url: "/blog/hiking-trail-running-injury-physical-therapy-boca-raton" },
+    ]
+  },
+  general: {
+    title: "General & Not Sure",
+    subtitle: "Not sure where to start? Browse common conditions or book a free consultation",
+    items: [
+      { name: "Fibromyalgia", sub: "Chronic widespread pain management", url: "/blog/fibromyalgia-physical-therapy-boca-raton" },
+      { name: "Balance & Fall Prevention", sub: "For seniors and those at fall risk", url: "/blog/balance-fall-prevention-physical-therapy-boca-raton" },
+      { name: "Return-to-Sport (Any Sport)", sub: "Athlete recovery and performance bridge", url: "/blog/return-to-sport-physical-therapy-boca-raton" },
+      { name: "Post-Surgical Recovery", sub: "In-home PT after any surgery", url: "/blog/in-home-physical-therapy-boca-raton" },
+      { name: "Concierge PT — How It Works", sub: "Not sure if in-home PT is right for you?", url: "/blog/why-concierge-physical-therapy-is-worth-it" },
+    ]
+  }
+};
+
+function showZone(zone) {
+  // Update active button
+  document.querySelectorAll('.zone-btn').forEach(btn => btn.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+
+  const data = zoneData[zone];
+  if (!data) return;
+
+  document.getElementById('resultsTitle').textContent = data.title;
+  document.getElementById('resultsSubtitle').textContent = data.subtitle;
+
+  let html = '<ul class="condition-list">';
+  data.items.forEach(item => {
+    html += `
+      <li class="condition-item">
+        <a href="${item.url}">
+          <span>
+            ${item.name}
+            <span class="sub">${item.sub}</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </li>`;
+  });
+  html += '</ul>';
+  html += `
+    <div class="cta-box">
+      <p>Don't see your condition? Dr. Ezra Miller treats a wide range of conditions — book a free consultation for a personalized assessment.</p>
+      <a href="/contact" class="btn-gold">Book Free Consultation</a>
+    </div>`;
+
+  document.getElementById('resultsBody').innerHTML = html;
+}
+</script>
+
+</body>
+</html>

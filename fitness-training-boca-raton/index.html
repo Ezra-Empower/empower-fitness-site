@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Personal Training Boca Raton | Empower Fitness</title>
+<meta content="Custom fitness training at your preferred location with NASM-certified trainer Max &amp; Dr. Ezra Miller in Boca Raton, Delray Beach &amp; Pompano Beach. Strength, conditioning, results." name="description"/>
+<meta content="personal training Boca Raton concierge, fitness trainer, strength training" name="keywords"/>
+<style>
+        :root {
+            --gold: #C8922A;
+            --gold-light: #e0a93a;
+            --black: #000000;
+            --dark: #0d0d0d;
+            --dark2: #141414;
+            --dark3: #1c1c1c;
+            --dark4: #242424;
+            --white: #ffffff;
+            --gray: #aaaaaa;
+            --green: #27ae60;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--white);
+            background: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* FIXED NAVIGATION */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--black);
+            z-index: 1000;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .cta-button {
+            background: var(--gold);
+            color: var(--dark);
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--gold-light);
+        }
+
+        /* CHANGE NOTE BANNERS */
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 70px;
+            max-width: none;
+            background: linear-gradient(135deg, var(--dark3) 0%, var(--dark4) 100%);
+            padding: 120px 40px;
+            text-align: center;
+            background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(13, 13, 13, 0.75);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .location-tag {
+            display: inline-block;
+            color: var(--gold);
+            font-weight: 700;
+            white-space: nowrap;
+            margin: 0 4px;
+        }
+
+        /* SECTION SPACING */
+        section {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 44px;
+            font-weight: 900;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* WHO IT'S FOR CARDS */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--dark2);
+            padding: 40px;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(200, 146, 42, 0.1);
+        }
+
+        .card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+
+        .card p {
+            color: var(--gray);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* TRAINERS SECTION */
+        .trainer-profile {
+            background: var(--dark2);
+            padding: 40px;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+            margin-bottom: 30px;
+        }
+
+        .trainer-name {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .trainer-credentials {
+            font-size: 13px;
+            color: var(--gray);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .trainer-bio {
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* PROGRAM STRUCTURE */
+        .structure-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .structure-step {
+            text-align: center;
+        }
+
+        .step-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .structure-step h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--gold);
+        }
+
+        .structure-step p {
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* RESULTS GRID */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .result-card {
+            background: #1c1c1c;
+            padding: 28px 24px;
+            border-radius: 2px;
+            border: 1px solid rgba(200, 146, 42, 0.2);
+            border-top: 2px solid #C8922A;
+            text-align: center;
+        }
+
+        .result-metric {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #C8922A;
+            margin-bottom: 4px;
+        }
+
+        .result-label {
+            font-weight: 600;
+            color: var(--white);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .result-description {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* FAQ SECTION */
+        .faq {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--dark2);
+            padding-bottom: 25px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark3) 0%, var(--dark4) 100%);
+            padding: 60px 40px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .phone-cta {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--gold);
+            margin-top: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--black);
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid var(--dark2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-locations {
+            color: var(--gray);
+            font-size: 13px;
+            margin-bottom: 20px;
+            white-space: nowrap;
+        }
+
+        .footer-location {
+            display: inline-block;
+            white-space: nowrap;
+            margin: 0 8px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .footer-links a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-copyright {
+            color: var(--gray);
+            font-size: 12px;
+        }
+
+        /* FLOATING LEGEND PANEL */
+        .change-legend {
+            position: fixed;
+            bottom: 140px;
+            right: 20px;
+            background: var(--dark2);
+            border: 2px solid #ff0000;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 280px;
+            font-size: 12px;
+            z-index: 999;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .legend-title {
+            font-weight: 900;
+            color: #ff6666;
+            margin-bottom: 12px;
+            font-size: 13px;
+        }
+
+        .legend-item {
+            color: var(--gray);
+            margin-bottom: 8px;
+            line-height: 1.4;
+            padding-left: 12px;
+        }
+
+        .legend-item::before {
+            content: '▪ ';
+            color: #ff0000;
+            margin-left: -8px;
+            margin-right: 4px;
+        }
+
+        /* CHAT WIDGET */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 998;
+        }
+
+        .chat-launcher {
+            background: var(--gold);
+            color: var(--dark);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(200, 146, 42, 0.3);
+            transition: all 0.3s;
+            font-weight: 900;
+        }
+
+        .chat-launcher:hover {
+            transform: scale(1.1);
+            background: var(--gold-light);
+            box-shadow: 0 6px 20px rgba(200, 146, 42, 0.4);
+        }
+
+        .chat-bubble {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            background: var(--dark2);
+            color: var(--white);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 300px;
+            font-size: 13px;
+            display: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .chat-bubble.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                height: auto;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 60px 20px;
+                margin-top: 120px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .change-legend {
+                max-width: calc(100vw - 40px);
+                bottom: 100px;
+                left: 20px;
+                right: 20px;
+            }
+        }
+    
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: #000000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 68px;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .nav-logo { font-size: 22px; font-weight: 900; letter-spacing: 3px; color: #C8922A; }
+    .nav-logo span { color: #ffffff; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: #ffffff; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; text-decoration: none; }
+    .nav-links a:hover { color: #C8922A; }
+    .nav-cta {
+      background: #C8922A; color: #000000 !important;
+      font-weight: 800; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 10px 22px; border-radius: 2px; transition: background 0.2s;
+      text-decoration: none; white-space: nowrap;
+    }
+    .nav-cta:hover { background: #e0a93a; }
+
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; }
+    @media(max-width:900px){ .footer-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:480px){ .footer-grid { grid-template-columns:1fr; } }
+    .footer-brand p { font-size:14px; color:var(--gray); line-height:1.7; margin-top:14px; max-width:280px; }
+    .footer-col h4 { font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:18px; }
+    .footer-col ul { list-style:none; padding:0; margin:0; }
+    .footer-col li { font-size:14px; color:var(--gray); margin-bottom:10px; }
+    .footer-col li a { color:var(--gray); transition:color 0.2s; text-decoration:none; }
+    .footer-col li a:hover { color:var(--gold); }
+    .footer-bottom { border-top:1px solid #1a1a1a; padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+    .footer-bottom p { font-size:12px; color:#555; }
+
+  </style>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Fitness Training Boca Raton | Custom In-Home Programs | Empower Fitness"/>
+<meta property="og:description" content="Custom in-home fitness training in Boca Raton with NASM-certified trainers. Strength, conditioning, and results — at your home or preferred location."/>
+<meta property="og:url" content="https://www.empowerfitnesspt.com/fitness-training-boca-raton/"/>
+<meta property="og:site_name" content="Empower Fitness PT"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Fitness Training Boca Raton | Custom In-Home Programs | Empower Fitness"/>
+<meta name="twitter:description" content="Custom in-home fitness training in Boca Raton with NASM-certified trainers. Strength, conditioning, and results — at your home or preferred location."/>
+</head>
+<body>
+<!-- FIXED NAVIGATION -->
+<nav>
+<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
+<ul class="nav-links">
+<li><a href="/">Home</a></li>
+<li><a href="/services">Services</a></li>
+<li><a href="/injury-finder">Injury Finder</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/about">About Us</a></li>
+</ul>
+<a class="nav-cta" href="/contact">CONTACT US</a>
+</nav>
+<!-- HERO SECTION -->
+<section class="hero">
+<div class="hero-content">
+<h1>Train Smarter. Perform Better. Wherever You Are.</h1>
+<p>Custom fitness training with certified trainers in <span class="location-tag">Boca Raton</span> · <span class="location-tag">Delray Beach</span> · <span class="location-tag">Pompano Beach</span>. We come to you—at your preferred location, your gym, or wherever works best. Strength, conditioning, and lasting results—on your schedule.</p>
+</div>
+</section>
+<!-- CHANGE NOTE: Service highlights intro -->
+
+<!-- WHO IT'S FOR SECTION -->
+<section id="whoforitfor">
+<h2 class="section-title">Who Fitness Training Is For</h2>
+<div class="cards-grid">
+<div class="card">
+<h3>Fitness Beginners</h3>
+<p>New to exercise and unsure where to start? We meet you where you are. A certified trainer will teach proper form, build confidence, and create a sustainable foundation for lifelong strength.</p>
+</div>
+<div class="card">
+<h3>Intermediate Athletes</h3>
+<p>You've trained before and want to level up. Custom programming breaks plateaus, increases strength and conditioning, and prevents the boredom of generic gym routines.</p>
+</div>
+<div class="card">
+<h3>Performance-Focused Clients</h3>
+<p>Whether training for an event, sport, or personal challenge, we design periodized programs that peak your performance at the right time. Progressive, measurable gains guaranteed.</p>
+</div>
+</div>
+</section>
+<!-- CHANGE NOTE: Meet the trainers -->
+
+<!-- MEET THE TRAINERS SECTION -->
+<section id="trainers">
+<h2 class="section-title">Meet Your Trainers</h2>
+<div class="trainer-profile">
+<div class="trainer-name">Dr. Ezra Miller</div>
+<div class="trainer-credentials">PT, DPT | NASM CPT | 10+ Years Experience | Founder &amp; Director</div>
+<div class="trainer-bio">Dr. Ezra combines physical therapy expertise with strength training knowledge. His background bridges rehab and performance, making him ideal for clients returning from injury or training at higher intensity levels. Every program is designed and overseen by Dr. Ezra, ensuring movement science and injury prevention at the foundation.</div>
+</div>
+<div class="trainer-profile">
+<div class="trainer-name">Max</div>
+<div class="trainer-credentials">NASM CPT | Asthma-Certified | 7+ Years Experience</div>
+<div class="trainer-bio">Max specializes in conditioning and strength programming for clients of all levels. With asthma certification, he's experienced training individuals with respiratory considerations. His approachable style and progressive programming make him a favorite for building confidence and consistency.</div>
+</div>
+</section>
+<!-- PROGRAM STRUCTURE SECTION -->
+<section id="program">
+<h2 class="section-title">How Our Training Programs Work</h2>
+<div class="structure-steps">
+<div class="structure-step">
+<div class="step-icon">📋</div>
+<h3>Initial Assessment</h3>
+<p>Comprehensive fitness evaluation, movement screening, and goal-setting. We understand your history, current fitness level, and objectives before designing anything.</p>
+</div>
+<div class="structure-step">
+<div class="step-icon">📐</div>
+<h3>Custom Program Design</h3>
+<p>Your trainer builds a personalized training plan: progressive exercises, rep ranges, rest intervals, and periodization specific to your goals and constraints.</p>
+</div>
+<div class="structure-step">
+<div class="step-icon">💪</div>
+<h3>Progressive Training</h3>
+<p>Sessions progress based on your adaptation. Your trainer continuously adjusts intensity, volume, and exercises to prevent plateaus and maximize gains.</p>
+</div>
+</div>
+</section>
+<!-- CHANGE NOTE: Results section -->
+
+<!-- RESULTS SECTION -->
+<section id="results">
+<h2 class="section-title">Typical 8-12 Week Results</h2>
+<div class="results-grid" style="grid-template-columns: repeat(3, 1fr);">
+<div class="result-card">
+<div class="result-metric">15–20 lbs</div>
+<div class="result-label">Fat Lost</div>
+<div class="result-description">With structured programming + nutrition guidance</div>
+</div>
+<div class="result-card">
+<div class="result-metric">3%+</div>
+<div class="result-label">Body Fat Reduction</div>
+<div class="result-description">In 6–8 weeks of consistent training</div>
+</div>
+<div class="result-card">
+<div class="result-metric">2–4 lbs</div>
+<div class="result-label">Lean Muscle Gained</div>
+<div class="result-description">Visible strength and tone development</div>
+</div>
+<div class="result-card">
+<div class="result-metric">20–30%</div>
+<div class="result-label">Strength Increase</div>
+<div class="result-description">Major lifts: squat, deadlift, press</div>
+</div>
+<div class="result-card">
+<div class="result-metric">5–10 BPM</div>
+<div class="result-label">Resting Heart Rate Drop</div>
+<div class="result-description">Improved cardiovascular fitness in 8 weeks</div>
+</div>
+<div class="result-card">
+<div class="result-metric">2–3 weeks</div>
+<div class="result-label">Energy Boost Noticed</div>
+<div class="result-description">Noticeably improved energy levels</div>
+</div>
+</div>
+</section>
+<!-- DPT OVERSIGHT BANNER -->
+<div style="padding: 32px 20px; text-align: center; background: var(--dark);">
+<div style="background: #1c1c1c; border: 1px solid #C8922A; border-left: 4px solid #C8922A; padding: 32px 40px; border-radius: 2px; max-width: 960px; margin: 0 auto; text-align: center;">
+<h2 style="font-size: 26px; font-weight: 900; margin-bottom: 20px; color: #C8922A;">This Isn't Just Personal Training.</h2>
+<p style="font-size: 16px; line-height: 1.8; color: rgba(255, 255, 255, 0.8);">Every Empower Fitness training program is designed and overseen by Dr. Ezra Miller, PT, DPT — a licensed Doctor of Physical Therapy with 10+ years of clinical experience. Your trainer brings the expertise. Dr. Ezra brings the medical precision. The result is programming that's safer, smarter, and more effective than anything a standard gym can offer.</p>
+</div>
+</div>
+<!-- FAQ SECTION -->
+<section id="faq">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<div class="faq">
+<div class="faq-item">
+<div class="faq-question">Q: What equipment do I need at my training location?</div>
+<div class="faq-answer">We work with what you have. Your trainer will assess your space and use minimal equipment: dumbbells, resistance bands, a bench, and your bodyweight. We can also recommend affordable equipment purchases if you want to optimize your setup.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Q: How often should I train for best results?</div>
+<div class="faq-answer">Most clients benefit from 2-3 training sessions per week combined with proper nutrition and recovery. Your trainer will recommend a frequency based on your goals, current fitness level, and schedule.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Q: Can I train if I'm recovering from an injury?</div>
+<div class="faq-answer">Yes. Dr. Ezra specializes in programming for post-injury clients. We modify exercises to work around your limitations and progressively rebuild strength safely. However, if you need active rehab, our physical therapy services may be the better starting point.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Q: Do you offer nutrition guidance alongside training?</div>
+<div class="faq-answer">Yes! We offer nutrition and supplement guidance as an add-on service. Optimal results require training + proper nutrition. Your trainer will coordinate with our nutrition guidance to maximize outcomes.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Q: What if I travel or have a busy schedule?</div>
+<div class="faq-answer">Training adapts to your schedule—we come to you wherever that is. If you travel, we can build home/hotel workout routines you can do independently and resume supervised sessions when you return.</div>
+</div>
+</div>
+</section>
+<!-- CHANGE NOTE: CTA -->
+
+<!-- CTA SECTION -->
+<section class="cta-section" id="contact">
+<h2>Start Your Fitness Transformation Today</h2>
+<p>Schedule your free consultation with one of our certified trainers. We'll assess your fitness level and design a custom program built for your goals.</p>
+<button class="cta-button" onclick="location.href='/contact'">Get Started →</button>
+<div class="phone-cta">📞 <span style="white-space: nowrap;">954-901-7211</span></div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
+<p>Concierge physical therapy and functional fitness delivered to your door. Serving Boca Raton, Delray Beach, Pompano Beach, and surrounding South Florida.</p>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<ul>
+<li><a href="/in-home-physical-therapy-boca-raton">In-Home Physical Therapy</a></li>
+<li><a href="/return-to-sport-physical-therapy-boca-raton">Return-to-Sport</a></li>
+<li><a href="/fitness-training-boca-raton">Fitness Training</a></li>
+<li><a href="/longevity-training-boca-raton">Longevity Program</a></li>
+<li><a href="/nutrition-coaching-boca-raton">Nutrition Guidance</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<ul>
+<li><a href="/about">About Dr. Ezra</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/injury-finder">Injury Finder</a></li>
+<li><a href="/faq">FAQ</a></li>
+<li><a href="/contact">Free Consultation</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li>Boca Raton, FL</li>
+<li>Delray Beach, FL</li>
+<li>Pompano Beach, FL</li>
+<li><a href="tel:954-901-7211">954-901-7211</a></li>
+<li><a href="mailto:admin@empowerfitnesspt.com">admin@empowerfitnesspt.com</a></li>
+<li style="margin-top:8px;"><a href="https://g.page/r/empowerfitnesspt/review" style="color:var(--gold);" target="_blank">&#9733; Leave a Google Review</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Empower Fitness. All rights reserved.</p>
+<p>Dr. Ezra Miller, PT, DPT &middot; Licensed in Florida &middot; NASM Certified</p>
+</div>
+</footer>
+<!-- FLOATING CHANGE LEGEND -->
+<div class="change-legend">
+<div class="legend-title">🔴 CHANGES APPLIED</div>
+<div class="legend-item">Nav button: "Get Started →" to /contact</div>
+<div class="legend-item">Outcomes: reorganized to 2 even rows (6 boxes)</div>
+<div class="legend-item">New gold banner: "This Isn't Just PT"</div>
+<div class="legend-item">DPT oversight messaging prominent</div>
+<div class="legend-item">Updated CTA button &amp; copy</div>
+</div>
+<!-- CHAT WIDGET -->
+<div class="chat-widget">
+<button class="chat-launcher" onclick="toggleChat()">💬</button>
+<div class="chat-bubble" id="chatBubble">
+<button class="chat-close" onclick="toggleChat()">✕</button>
+<p><strong>Ready to train?</strong></p>
+<p>Questions about our fitness training program? Let's get you started. Call <span style="white-space: nowrap;">954-901-7211</span> for a free consult.</p>
+</div>
+</div>
+<script>
+    function toggleChat() {
+        const bubble = document.getElementById('chatBubble');
+        bubble.classList.toggle('active');
+    }
+
+    function scrollToContact() {
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Empower Fitness PT</title>
+<style>
+        :root {
+            --gold: #C8922A;
+            --gold-light: #e0a93a;
+            --black: #000000;
+            --dark: #0d0d0d;
+            --dark2: #141414;
+            --dark3: #1c1c1c;
+            --dark4: #242424;
+            --white: #ffffff;
+            --gray: #aaaaaa;
+            --green: #27ae60;
+            --change-red: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--black);
+            padding: 1.2rem 2rem;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--dark3);
+        }
+
+        nav .logo {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--gold);
+            letter-spacing: -1px;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        nav .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .cta-button {
+            background-color: var(--gold);
+            color: var(--black);
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: var(--gold-light);
+        }
+
+        /* Main content offset for fixed nav */
+        main {
+            margin-top: 70px;
+        }
+
+        /* Change note banner */
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark3) 0%, var(--dark4) 100%);
+            background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.82);
+        }
+
+        .hero .pretag {
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero .subhead {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .city-list {
+            white-space: nowrap;
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Two-column layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+            padding: 0 2rem;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--dark3), var(--dark4));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+            overflow: hidden;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Dr. Ezra section */
+        .dr-ezra-section,
+        .philosophy-section,
+        .concierge-section,
+        .mission-section {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dr-ezra-section h2,
+        .philosophy-section h2,
+        .concierge-section h2,
+        .mission-section h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+        }
+
+        .credential-badges {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 0;
+        }
+
+        .badge {
+            background-color: var(--dark3);
+            border: 1px solid rgba(197,160,80,0.4);
+            border-left: 3px solid var(--gold);
+            padding: 0.85rem 1rem;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .badge-title {
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .badge-content {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.85);
+            font-weight: 500;
+        }
+
+        .bio-text {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .checklist {
+            background-color: var(--dark3);
+            padding: 1.25rem 1.5rem;
+            border-radius: 6px;
+            margin: 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .checklist-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .checkmark {
+            color: var(--gold);
+            font-weight: 900;
+            margin-right: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .quote {
+            background-color: var(--dark3);
+            border-left: 4px solid var(--gold);
+            padding: 2rem;
+            border-radius: 6px;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--gold-light);
+            line-height: 1.8;
+        }
+
+        /* Max section */
+        .max-section {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .max-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .max-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--dark3), var(--dark4));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 0.85rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .max-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .max-content {
+            padding: 0;
+        }
+
+        .max-content h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+        }
+
+        .max-title {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .max-credentials {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .max-credential-badge {
+            background-color: var(--dark3);
+            border: 2px solid var(--gold);
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .max-credential-badge-title {
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .max-credential-badge-content {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .max-bio {
+            font-size: 0.95rem;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .max-quote {
+            background-color: var(--dark3);
+            border-left: 4px solid var(--gold);
+            padding: 2rem;
+            border-radius: 6px;
+            font-style: italic;
+            color: var(--gold-light);
+            line-height: 1.8;
+        }
+
+        /* Growing team callout */
+        .growing-team {
+            background-color: var(--dark3);
+            border: 2px solid var(--gold);
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .growing-team h3 {
+            font-size: 1.3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .growing-team p {
+            font-size: 1rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Philosophy cards */
+        .philosophy-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .philosophy-card {
+            background-color: var(--dark3);
+            border: 2px solid var(--dark4);
+            padding: 2rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .philosophy-card:hover {
+            border-color: var(--gold);
+        }
+
+        .philosophy-card h3 {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .philosophy-card p {
+            font-size: 0.95rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Concierge comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background-color: var(--dark3);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background-color: var(--dark4);
+        }
+
+        .comparison-table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+            color: var(--white);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--dark4);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .table-feature {
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .checkmark-table {
+            color: var(--green);
+            font-weight: 900;
+        }
+
+        .x-mark {
+            color: #ef4444;
+            font-weight: 900;
+        }
+
+        /* Brighten the Empower Fitness column (3rd td) */
+        .comparison-table tbody tr td:nth-child(3) {
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+        }
+
+        /* Read More Link */
+        .read-more-link {
+            color: var(--gold);
+            border-bottom: 1px solid #C8922A;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 16px;
+            transition: color 0.3s;
+        }
+
+        .read-more-link:hover {
+            color: var(--gold-light);
+        }
+
+        /* Mission section */
+        .mission-content {
+            background-color: var(--dark3);
+            border-left: 4px solid var(--gold);
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .mission-content h3 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .mission-content p {
+            font-size: 1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .phone-display {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--dark3);
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 0.9rem;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--dark3);
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* Floating legend panel */
+        .legend-panel {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--dark3);
+            border: 2px solid var(--change-red);
+            border-radius: 8px;
+            padding: 1.5rem;
+            max-width: 350px;
+            max-height: 500px;
+            overflow-y: auto;
+            z-index: 999;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .legend-panel h4 {
+            color: var(--change-red);
+            font-size: 0.95rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .legend-item {
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        .legend-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .legend-label {
+            color: var(--gold);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Chat widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 390px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 998;
+        }
+
+        .chat-widget:hover {
+            background-color: var(--gold-light);
+            transform: scale(1.1);
+        }
+
+        .chat-icon {
+            color: var(--black);
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subhead {
+                font-size: 1.05rem;
+            }
+
+            nav .nav-links {
+                gap: 1.5rem;
+            }
+
+            .legend-panel {
+                bottom: 100px;
+                right: 20px;
+                max-width: 280px;
+            }
+
+            .chat-widget {
+                right: 30px;
+            }
+
+            .philosophy-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .credential-badges {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: #000000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 68px;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .nav-logo { font-size: 22px; font-weight: 900; letter-spacing: 3px; color: #C8922A; }
+    .nav-logo span { color: #ffffff; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: #ffffff; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; text-decoration: none; }
+    .nav-links a:hover { color: #C8922A; }
+    .nav-cta {
+      background: #C8922A; color: #000000 !important;
+      font-weight: 800; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 10px 22px; border-radius: 2px; transition: background 0.2s;
+      text-decoration: none; white-space: nowrap;
+    }
+    .nav-cta:hover { background: #e0a93a; }
+
+    /* ── Footer (shared with all pages) ── */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand p { font-size:14px; color:var(--gray); line-height:1.7; margin-top:14px; max-width:280px; }
+    .footer-col h4 { font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:18px; }
+    .footer-col ul { list-style:none; }
+    .footer-col li { font-size:14px; color:var(--gray); margin-bottom:10px; }
+    .footer-col li a { color:var(--gray); transition:color 0.2s; }
+    .footer-col li a:hover { color:var(--gold); }
+    .footer-bottom { border-top:1px solid #1a1a1a; padding-top:24px; display:flex; justify-content:space-between; align-items:center; }
+    .footer-bottom p { font-size:12px; color:#555; }
+    @media(max-width:768px){ .footer-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:480px){ .footer-grid { grid-template-columns:1fr; } }
+</style>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="About Us | Dr. Ezra Miller, PT, DPT | Empower Fitness"/>
+<meta property="og:description" content="Meet Dr. Ezra Miller, PT, DPT — founder of Empower Fitness. 10+ years clinical experience, DPT, NASM certified. Concierge in-home physical therapy in Boca Raton."/>
+<meta property="og:url" content="https://www.empowerfitnesspt.com/about/"/>
+<meta property="og:site_name" content="Empower Fitness PT"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="About Us | Dr. Ezra Miller, PT, DPT | Empower Fitness"/>
+<meta name="twitter:description" content="Meet Dr. Ezra Miller, PT, DPT — founder of Empower Fitness. 10+ years clinical experience, DPT, NASM certified. Concierge in-home physical therapy in Boca Raton."/>
+</head>
+<body>
+<!-- Navigation -->
+<nav>
+<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
+<ul class="nav-links">
+<li><a href="/">Home</a></li>
+<li><a href="/services">Services</a></li>
+<li><a href="/injury-finder">Injury Finder</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/about">About Us</a></li>
+</ul>
+<a class="nav-cta" href="/contact">CONTACT US</a>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="hero">
+
+<div style="position: relative; z-index: 2; max-width: 900px; margin: 0 auto;">
+<div class="pretag">Boca Raton · Delray Beach · Pompano Beach</div>
+<h1>The Team Behind Your Recovery — and Your Performance</h1>
+<p class="subhead">We're not a clinic. We're your personal health team — built to take you from injury to peak function, in the comfort of your home.</p>
+<div class="city-list">Serving South Florida with Personalized Care</div>
+</div>
+</section>
+<!-- Dr. Ezra Section -->
+<section class="dr-ezra-section">
+
+<h2>Dr. Ezra Miller, PT, DPT</h2>
+<div class="two-column">
+<!-- Left: Photo + Quote stacked -->
+<div style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+<div class="image-placeholder">
+<img alt="Dr. Ezra Miller, PT, DPT — Empower Fitness" src="/img/headshot.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;border-radius:inherit;"/>
+</div>
+<div class="quote">
+  "True recovery isn't just about healing injuries — it's about unlocking your potential. My mission is to help you move better, so you can live better."
+</div>
+</div>
+<!-- Right: Credential Badges + Bio stacked (no gap) -->
+<div style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+<div class="credential-badges" style="margin-bottom:0;">
+<div class="badge">
+<div class="badge-title">Doctorate</div>
+<div class="badge-content">Doctor of Physical Therapy (DPT)</div>
+</div>
+<div class="badge">
+<div class="badge-title">Certification</div>
+<div class="badge-content">NASM Certified Personal Trainer</div>
+</div>
+<div class="badge">
+<div class="badge-title">Experience</div>
+<div class="badge-content">10+ Years Clinical</div>
+</div>
+<div class="badge">
+<div class="badge-title">License</div>
+<div class="badge-content">Licensed in Florida</div>
+</div>
+</div>
+<div style="flex:1;">
+<div style="height:1px;background:linear-gradient(to right,rgba(197,160,80,0.4),transparent);margin-bottom:1.25rem;"></div>
+<p class="bio-text">Dr. Ezra founded Empower Fitness after years of witnessing the gap in traditional physical therapy — patients discharged at "pain-free" and left to figure out the rest on their own. He built a different model: one that takes you from injury all the way through to full function, performance, and long-term resilience.</p>
+<p class="bio-text">Today, Dr. Ezra serves as Founder and Clinical Director, designing and overseeing every program Empower Fitness delivers. While our growing team of licensed physical therapists and certified trainers works with clients directly, Dr. Ezra's methodology, standards, and clinical precision are behind every session. When you work with Empower Fitness, you're getting a DPT-caliber program — not just a workout.</p>
+<div class="checklist">
+<div class="checklist-item">
+<span class="checkmark">✓</span>
+<span>Doctor of Physical Therapy (DPT)</span>
+</div>
+<div class="checklist-item">
+<span class="checkmark">✓</span>
+<span>NASM Certified Personal Trainer</span>
+</div>
+<div class="checklist-item">
+<span class="checkmark">✓</span>
+<span>10+ Years of Clinical Experience</span>
+</div>
+<div class="checklist-item">
+<span class="checkmark">✓</span>
+<span>Founder &amp; Clinical Director — all programs designed and overseen by Dr. Ezra</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Meet Max Section -->
+<section class="max-section">
+
+<h2 style="margin-bottom: 0.5rem;">Our Specialists</h2>
+<p style="color: var(--gray, #aaa); font-size: 15px; margin-bottom: 2rem;">Every specialist works under Dr. Ezra's clinical direction and methodology.</p>
+<div class="max-card">
+<div class="max-image">
+<img src="/img/max-headshot.jpg" alt="Max — NASM Certified Personal Trainer at Empower Fitness"
+     style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;border-radius:inherit;"
+     onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+<div style="display:none;width:100%;height:100%;flex-direction:column;align-items:center;justify-content:center;gap:16px;">
+  <div style="width:100px;height:100px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Arial',sans-serif;font-size:36px;font-weight:900;color:#000;">M</div>
+</div>
+</div>
+<div class="max-content">
+<h3>Max</h3>
+<div class="max-title">Certified Personal Trainer</div>
+<div class="max-credentials">
+<div class="max-credential-badge">
+<div class="max-credential-badge-title">Certification</div>
+<div class="max-credential-badge-content">NASM Certified CPT</div>
+</div>
+<div class="max-credential-badge">
+<div class="max-credential-badge-title">Experience</div>
+<div class="max-credential-badge-content">7+ Years</div>
+</div>
+</div>
+<p class="max-bio">Max is an NASM Certified Personal Trainer with 7+ years of experience helping clients build strength, improve performance, and move pain-free. He combines evidence-based training methods with a client-first approach, ensuring every program is tailored to your specific goals — whether you're recovering from injury, building athletic performance, or improving your overall fitness.</p>
+<div class="max-quote">
+                        "My goal is to help every client feel physically capable — regardless of their starting point or health challenges."
+                    </div>
+</div>
+</div>
+</section>
+<!-- Growing Team Callout -->
+<section style="padding: 3rem 2rem;">
+<div class="growing-team">
+<h3>Our Team is Growing</h3>
+<p>We're bringing on additional Doctors of Physical Therapy to serve more of South Florida. Our growing team of specialists is committed to extending personalized, concierge-level care to more families and athletes in Boca Raton, Delray Beach, Pompano Beach, and surrounding areas.</p>
+<p style="margin-top: 1rem; color: rgba(255,255,255,0.8);">If you are interested in joining the Empower Fitness team, we'd love to hear from you.</p>
+<a href="/careers" class="apply-btn" style="display:inline-block; margin-top:1.5rem; padding:14px 32px; background:var(--gold); color:#000; font-weight:700; font-size:14px; letter-spacing:1px; text-transform:uppercase; border-radius:4px; text-decoration:none; transition: opacity 0.2s;">Apply Here →</a>
+</div>
+</section>
+<!-- Philosophy Section -->
+<section class="philosophy-section">
+
+<h2>Our Philosophy</h2>
+<div class="philosophy-cards">
+<div class="philosophy-card">
+<h3>One-on-One Always</h3>
+<p>No group classes. No one-size-fits-all programs. Every session is with you and your therapist, building a relationship that evolves with your needs.</p>
+</div>
+<div class="philosophy-card">
+<h3>Beyond Pain Relief</h3>
+<p>Pain-free is just the beginning. We focus on restoring function, building strength, and helping you reclaim the activities that matter most.</p>
+</div>
+<div class="philosophy-card">
+<h3>Your Home, Your Recovery</h3>
+<p>Concierge-level care delivered where you're most comfortable. No commute. No waiting room. Just focused, personalized therapy in the space that feels like yours.</p>
+</div>
+</div>
+</section>
+<!-- Why Concierge Section -->
+<section class="concierge-section">
+
+<h2>Why Concierge Therapy Works Better</h2>
+<table class="comparison-table">
+<thead>
+<tr>
+<th style="width: 35%;">Feature</th>
+<th style="width: 32.5%;">Traditional PT Clinic</th>
+<th style="width: 32.5%;">Empower Fitness PT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="table-feature">Dedicated Therapist</td>
+<td><span class="x-mark">✗</span> Rotating staff</td>
+<td><span class="checkmark-table">✓</span> One-on-one always</td>
+</tr>
+<tr>
+<td class="table-feature">Session Length</td>
+<td><span class="x-mark">✗</span> 15–30 min session</td>
+<td><span class="checkmark-table">✓</span> Full 60-minute session, every time</td>
+</tr>
+<tr>
+<td class="table-feature">Wait Time</td>
+<td><span class="x-mark">✗</span> Longer wait times</td>
+<td><span class="checkmark-table">✓</span> None — we come to you, on your schedule</td>
+</tr>
+<tr>
+<td class="table-feature">Treatment Flexibility</td>
+<td><span class="x-mark">✗</span> Pre-set protocols</td>
+<td><span class="checkmark-table">✓</span> Custom for your goals</td>
+</tr>
+<tr>
+<td class="table-feature">Location</td>
+<td><span class="x-mark">✗</span> Travel to clinic</td>
+<td><span class="checkmark-table">✓</span> In-home convenience</td>
+</tr>
+<tr>
+<td class="table-feature">Scheduling</td>
+<td><span class="x-mark">✗</span> Limited appointment slots</td>
+<td><span class="checkmark-table">✓</span> Your availability first</td>
+</tr>
+<tr>
+<td class="table-feature">Support Between Sessions</td>
+<td><span class="x-mark">✗</span> No outside support</td>
+<td><span class="checkmark-table">✓</span> 24/7 access — reach us anytime</td>
+</tr>
+<tr>
+<td class="table-feature">Scope of Care</td>
+<td><span class="x-mark">✗</span> Rehab only</td>
+<td><span class="checkmark-table">✓</span> PT + fitness + nutrition + longevity</td>
+</tr>
+<tr>
+<td class="table-feature">Beyond Pain Relief</td>
+<td><span class="x-mark">✗</span> Pain-free discharge</td>
+<td><span class="checkmark-table">✓</span> Peak performance pathway</td>
+</tr>
+</tbody>
+</table>
+<a class="read-more-link" href="/blog/concierge-pt-vs-insurance-pt">See the full breakdown: Concierge PT vs. Insurance-Based Physical Therapy →</a>
+</section>
+<!-- Mission Section -->
+<section class="mission-section">
+
+<div class="mission-content">
+<h3>We believe pain-free is just the beginning.</h3>
+<p>Our mission is to help you move better, perform better, and live better — for the rest of your life. From the first appointment to your peak performance, we're here to bridge the gap.</p>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="final-cta">
+<h2>Ready to Work With a Team That Goes Further?</h2>
+<div class="cta-buttons">
+<a href="/contact" class="cta-button" style="text-decoration:none;display:inline-block;">Schedule Free Consultation</a>
+<a href="/services" class="cta-button" style="background-color:transparent;border:2px solid var(--gold);color:var(--gold);text-decoration:none;display:inline-block;">Learn About Services</a>
+</div>
+<p class="phone-display">Call us: <strong>954-901-7211</strong></p>
+<p style="color: var(--gray); font-size: 0.9rem; margin-top: 1rem;">Or email: <strong style="color: var(--white);">admin@empowerfitnesspt.com</strong></p>
+</section>
+</main>
+<!-- Footer -->
+<footer>
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
+<p>Concierge physical therapy and functional fitness delivered to your door. Serving Boca Raton, Delray Beach, Pompano Beach, and surrounding South Florida.</p>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<ul>
+<li><a href="/in-home-physical-therapy-boca-raton">In-Home Physical Therapy</a></li>
+<li><a href="/return-to-sport-physical-therapy-boca-raton">Return-to-Sport</a></li>
+<li><a href="/fitness-training-boca-raton">Fitness Training</a></li>
+<li><a href="/longevity-training-boca-raton">Longevity Program</a></li>
+<li><a href="/nutrition-coaching-boca-raton">Nutrition Guidance</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<ul>
+<li><a href="/about">About Dr. Ezra</a></li>
+<li><a href="/about">Our Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/injury-finder">Injury Finder</a></li>
+<li><a href="/contact">Free Consultation</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li>Boca Raton, FL</li>
+<li>Delray Beach, FL</li>
+<li>Pompano Beach, FL</li>
+<li><a href="tel:954-901-7211">954-901-7211</a></li>
+<li><a href="mailto:admin@empowerfitnesspt.com">admin@empowerfitnesspt.com</a></li>
+<li style="margin-top:8px;"><a href="https://g.page/r/empowerfitnesspt/review" style="color:var(--gold);" target="_blank">★ Leave a Google Review</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Empower Fitness. All rights reserved.</p>
+<p>Dr. Ezra Miller, PT, DPT · Licensed in Florida · NASM Certified</p>
+</div>
+</footer>
+<script>
+        // Chat widget click handler
+        document.querySelector('.chat-widget').addEventListener('click', function() {
+            alert('Chat widget clicked! This would open a live chat interface.');
+        });
+
+        // CTA buttons are now anchor links — no JS needed
+
+        // Mobile nav toggle (optional enhancement)
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Empower Fitness About Page Loaded');
+        });
+    </script>
+</body>
+</html>

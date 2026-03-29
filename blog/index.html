@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Empower Fitness PT — Physical Therapy Tips & Injury Guides</title>
+  <meta name="description" content="Expert physical therapy tips, injury guides, and recovery strategies from Dr. Ezra Miller, DPT. Covering back pain, knee injuries, sports recovery, and more in Boca Raton, FL." />
+  <style>
+    :root {
+      --gold: #C8922A;
+      --gold-light: #e0a93a;
+      --black: #000000;
+      --dark: #0d0d0d;
+      --dark2: #141414;
+      --dark3: #1c1c1c;
+      --dark4: #242424;
+      --white: #ffffff;
+      --gray: #aaaaaa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: var(--dark); color: var(--white); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--black);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 68px;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .nav-logo { font-size: 22px; font-weight: 900; letter-spacing: 3px; color: var(--gold); }
+    .nav-logo span { color: var(--white); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--white); font-size: 14px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold); color: var(--black) !important;
+      font-weight: 800; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 10px 22px; border-radius: 2px; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+
+    /* ===== HERO ===== */
+    .page-hero {
+      padding: 130px 80px 60px;
+      background: linear-gradient(to right, rgba(0,0,0,0.95) 50%, rgba(0,0,0,0.6) 100%),
+                  url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1400&q=80') center/cover no-repeat;
+    }
+    .page-hero .label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .page-hero h1 { font-size: clamp(32px, 4vw, 52px); font-weight: 900; line-height: 1.1; margin-bottom: 16px; letter-spacing: -1px; max-width: 640px; }
+    .page-hero h1 em { font-style: normal; color: var(--gold); }
+    .page-hero p { font-size: 17px; color: rgba(255,255,255,0.75); max-width: 520px; }
+
+    /* ===== FILTER BAR ===== */
+    .filter-bar {
+      background: var(--dark3);
+      padding: 20px 80px;
+      border-bottom: 1px solid var(--dark4);
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .filter-bar span { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); margin-right: 4px; }
+    .filter-btn {
+      background: var(--dark4); border: 1px solid #333; color: var(--white);
+      font-size: 13px; font-weight: 500; padding: 7px 16px; border-radius: 20px;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--gold); color: var(--black); border-color: var(--gold); font-weight: 700;
+    }
+
+    /* ===== BLOG GRID ===== */
+    .blog-section { padding: 60px 80px; }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .blog-card {
+      background: var(--dark2);
+      border: 1px solid var(--dark4);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .blog-card:hover { transform: translateY(-3px); border-color: var(--gold); }
+    .blog-card-img img { position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover; }
+    .blog-card-img {
+      position: relative; overflow: hidden;
+    height: 160px;
+    display: block;
+    border-radius: 4px 4px 0 0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .blog-card-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4));
+  }
+  /* Category color gradients */
+  .blog-card-img.cat-injury    { background-image: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%); }
+  .blog-card-img.cat-sports    { background-image: linear-gradient(135deg, #1a0a00 0%, #3d1a00 40%, #6b2d00 100%); }
+  .blog-card-img.cat-longevity { background-image: linear-gradient(135deg, #001a1a 0%, #003333 40%, #005555 100%); }
+  .blog-card-img.cat-about     { background-image: linear-gradient(135deg, #1a0a1a 0%, #2d0a2d 40%, #500050 100%); }
+  .blog-card-img.cat-default   { background-image: linear-gradient(135deg, #0d0d0d 0%, #1a1200 40%, #2d1f00 100%); }
+    .blog-card-body { padding: 20px; }
+    .blog-card .tag {
+      display: inline-block;
+      font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); background: rgba(200,146,42,0.1);
+      padding: 3px 8px; border-radius: 2px; margin-bottom: 10px;
+    }
+    .blog-card h3 { font-size: 16px; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
+    .blog-card h3 a { color: var(--white); transition: color 0.2s; }
+    .blog-card h3 a:hover { color: var(--gold); }
+    .blog-card p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 16px; }
+    .blog-card .read-more { font-size: 13px; font-weight: 600; color: var(--gold); }
+    .blog-card .read-more:hover { text-decoration: underline; }
+
+    .hidden { display: none; }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      background: var(--gold); padding: 70px 80px; text-align: center;
+    }
+    .cta-section h2 { font-size: clamp(24px, 3vw, 36px); font-weight: 900; color: var(--black); margin-bottom: 12px; }
+    .cta-section p { font-size: 17px; color: rgba(0,0,0,0.75); margin-bottom: 28px; }
+    .btn-dark {
+      background: var(--black); color: var(--white);
+      font-weight: 800; font-size: 14px; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 16px 36px; border-radius: 2px; display: inline-block; transition: background 0.2s;
+    }
+    .btn-dark:hover { background: #222; }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--black); padding: 60px 80px 32px; border-top: 1px solid var(--dark3); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 48px; }
+    .footer-brand .logo { font-size: 20px; font-weight: 900; color: var(--gold); letter-spacing: 2px; margin-bottom: 12px; }
+    .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+    .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a { font-size: 14px; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid var(--dark3); padding-top: 24px; text-align: center; }
+    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.35); }
+
+    @media (max-width: 768px) {
+      .page-hero, .blog-section, .filter-bar, .cta-section, footer { padding-left: 24px; padding-right: 24px; }
+    }
+  </style>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Blog | Physical Therapy Tips & Injury Guides | Empower Fitness PT"/>
+<meta property="og:description" content="Expert physical therapy tips, injury guides, and recovery strategies from Dr. Ezra Miller, DPT. Covering back pain, knee injuries, sports recovery, and more."/>
+<meta property="og:url" content="https://www.empowerfitnesspt.com/blog/"/>
+<meta property="og:site_name" content="Empower Fitness PT"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Blog | Physical Therapy Tips & Injury Guides | Empower Fitness PT"/>
+<meta name="twitter:description" content="Expert physical therapy tips, injury guides, and recovery strategies from Dr. Ezra Miller, DPT. Covering back pain, knee injuries, sports recovery, and more."/>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/injury-finder">Injury Finder</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/about">About Us</a></li>
+  </ul>
+  <a href="/contact" class="nav-cta">CONTACT US</a>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <p class="label">Expert Insights from Dr. Ezra Miller, DPT</p>
+  <h1>Physical Therapy Tips, <em>Injury Guides</em> & Recovery Strategies</h1>
+  <p>Practical, evidence-based advice from a Doctor of Physical Therapy — covering injuries, recovery, longevity, and performance.</p>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <span>Filter:</span>
+  <button class="filter-btn active" onclick="filterPosts('all', this)">All Posts</button>
+  <button class="filter-btn" onclick="filterPosts('injury', this)">Injury &amp; Recovery</button>
+  <button class="filter-btn" onclick="filterPosts('sport', this)">Sports</button>
+  <button class="filter-btn" onclick="filterPosts('longevity', this)">Longevity &amp; Wellness</button>
+  <button class="filter-btn" onclick="filterPosts('pt', this)">About PT</button>
+</div>
+
+<!-- BLOG GRID -->
+<section class="blog-section">
+  <div class="blog-grid">
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1650044252595-cacd425982ff?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Back Pain</span>
+        <h3><a href="/blog/back-pain-pt-boca-raton">Back Pain Physical Therapy in Boca Raton</a></h3>
+        <p>Evidence-based PT for low back pain, disc herniation, and chronic lumbar conditions.</p>
+        <a href="/blog/back-pain-pt-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1767972463825-96eaa9e0766b?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Neck Pain</span>
+        <h3><a href="/blog/neck-pain-physical-therapy-boca-raton">Neck Pain Physical Therapy in Boca Raton</a></h3>
+        <p>Cervical spine rehab, cervicogenic headaches, and nerve compression treatment.</p>
+        <a href="/blog/neck-pain-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1649751361457-01d3a696c7e6?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Knee Pain</span>
+        <h3><a href="/blog/knee-pain-physical-therapy-boca-raton">Knee Pain Physical Therapy in Boca Raton</a></h3>
+        <p>Comprehensive knee rehab — from patellofemoral pain to post-surgical recovery.</p>
+        <a href="/blog/knee-pain-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1768839723370-e4b0751bda1e?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Shoulder</span>
+        <h3><a href="/blog/shoulder-pain-physical-therapy-boca-raton">Shoulder Pain Physical Therapy in Boca Raton</a></h3>
+        <p>Rotator cuff injuries, impingement, instability, and shoulder rehabilitation.</p>
+        <a href="/blog/shoulder-pain-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1769029266264-7c4685baebc9?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Hip Pain</span>
+        <h3><a href="/blog/hip-pain-physical-therapy-boca-raton">Hip Pain Physical Therapy in Boca Raton</a></h3>
+        <p>Bursitis, labral tears, impingement, and total hip replacement recovery.</p>
+        <a href="/blog/hip-pain-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1769876579499-7479e1b4e415?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Sciatica</span>
+        <h3><a href="/blog/sciatica-physical-therapy-boca-raton">Sciatica Physical Therapy in Boca Raton</a></h3>
+        <p>Nerve pain relief strategies, lumbar decompression, and long-term sciatica management.</p>
+        <a href="/blog/sciatica-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1755682212897-65024adec786?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Ankle &amp; Foot</span>
+        <h3><a href="/blog/ankle-sprain-physical-therapy-boca-raton">Ankle Sprain Physical Therapy in Boca Raton</a></h3>
+        <p>Acute sprain management, chronic instability, and return-to-activity protocols.</p>
+        <a href="/blog/ankle-sprain-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1769963048385-99fba80eccc2?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Foot Pain</span>
+        <h3><a href="/blog/plantar-fasciitis-physical-therapy-boca-raton">Plantar Fasciitis Physical Therapy in Boca Raton</a></h3>
+        <p>Heel pain, morning stiffness, and arch rehabilitation strategies.</p>
+        <a href="/blog/plantar-fasciitis-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1758506971690-e122a82bd726?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Achilles</span>
+        <h3><a href="/blog/achilles-tendinopathy-physical-therapy-boca-raton">Achilles Tendinopathy Physical Therapy in Boca Raton</a></h3>
+        <p>Tendinitis vs. tendinopathy, eccentric loading protocols, and recovery strategies.</p>
+        <a href="/blog/achilles-tendinopathy-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1684848322660-d240128caee4?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Rotator Cuff</span>
+        <h3><a href="/blog/rotator-cuff-tear-physical-therapy-boca-raton">Rotator Cuff Tear Physical Therapy in Boca Raton</a></h3>
+        <p>Conservative vs. post-surgical management for rotator cuff tears.</p>
+        <a href="/blog/rotator-cuff-tear-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1654613412237-54082a661f89?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Rotator Cuff</span>
+        <h3><a href="/blog/rotator-cuff-recovery-home-dpt-protocol">Rotator Cuff Recovery: In-Home DPT Protocol</a></h3>
+        <p>A structured at-home rehab protocol supervised by a Doctor of Physical Therapy.</p>
+        <a href="/blog/rotator-cuff-recovery-home-dpt-protocol" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1552572633-716616a6ad07?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">ACL</span>
+        <h3><a href="/blog/acl-recovery-physical-therapy-boca-raton">ACL Recovery Physical Therapy in Boca Raton</a></h3>
+        <p>Post-surgical and conservative ACL rehab — safely return to sport and full activity.</p>
+        <a href="/blog/acl-recovery-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1768349027548-fe514b3f611e?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Knee</span>
+        <h3><a href="/blog/meniscus-injury-physical-therapy-boca-raton">Meniscus Injury Physical Therapy in Boca Raton</a></h3>
+        <p>Meniscal tear management, conservative rehab, and post-surgical recovery.</p>
+        <a href="/blog/meniscus-injury-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1526676537331-7747bf8278fc?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Knee</span>
+        <h3><a href="/blog/patellofemoral-pain-syndrome-physical-therapy-boca-raton">Patellofemoral Pain Syndrome (Runner's Knee) PT</a></h3>
+        <p>Kneecap tracking issues, quad rehab, and activity modification strategies.</p>
+        <a href="/blog/patellofemoral-pain-syndrome-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1475274110913-480c45d0e873?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">IT Band</span>
+        <h3><a href="/blog/it-band-syndrome-physical-therapy-boca-raton">IT Band Syndrome Physical Therapy in Boca Raton</a></h3>
+        <p>Lateral knee and hip pain in runners, cyclists, and hikers — diagnosis and rehab.</p>
+        <a href="/blog/it-band-syndrome-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1769029271190-36b22f5e6771?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Back / Hip</span>
+        <h3><a href="/blog/sacroiliac-joint-dysfunction-pt-boca-raton">Sacroiliac Joint Dysfunction Physical Therapy</a></h3>
+        <p>SI joint pain, pelvic instability, and lower back-hip interface rehabilitation.</p>
+        <a href="/blog/sacroiliac-joint-dysfunction-pt-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1649073586751-695a1f9f76de?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Hip / Back</span>
+        <h3><a href="/blog/piriformis-syndrome-physical-therapy-boca-raton">Piriformis Syndrome Physical Therapy in Boca Raton</a></h3>
+        <p>Deep gluteal pain, hip-sciatic interface, and piriformis rehab protocol.</p>
+        <a href="/blog/piriformis-syndrome-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1559733962-6300a5f36e05?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Knee Surgery</span>
+        <h3><a href="/blog/total-knee-replacement-recovery-physical-therapy-boca-raton">Total Knee Replacement Recovery PT in Boca Raton</a></h3>
+        <p>In-home post-TKR rehabilitation — get mobile faster with expert DPT-supervised care.</p>
+        <a href="/blog/total-knee-replacement-recovery-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="injury">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1772790969968-ae5d2976601f?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Hip Surgery</span>
+        <h3><a href="/blog/total-hip-replacement-recovery-physical-therapy-boca-raton">Total Hip Replacement Recovery PT in Boca Raton</a></h3>
+        <p>Post-surgical hip rehab delivered to your home — progressive, evidence-based protocol.</p>
+        <a href="/blog/total-hip-replacement-recovery-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="sport">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1600609293076-fe896757596d?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Golf</span>
+        <h3><a href="/blog/golf-injury-physical-therapy-boca-raton">Golf Injury Physical Therapy in Boca Raton</a></h3>
+        <p>Back, hip, shoulder, and wrist injuries common in golfers — prevention and rehab.</p>
+        <a href="/blog/golf-injury-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="sport">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1752606304345-ea31a4ed89fd?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Pickleball</span>
+        <h3><a href="/blog/pickleball-injury-physical-therapy-boca-raton">Pickleball Injury Physical Therapy in Boca Raton</a></h3>
+        <p>The most common pickleball injuries and how to treat and prevent them.</p>
+        <a href="/blog/pickleball-injury-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="sport">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1753709900752-25e9f8d32d88?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Tennis</span>
+        <h3><a href="/blog/tennis-injury-physical-therapy-boca-raton">Tennis Injury Physical Therapy in Boca Raton</a></h3>
+        <p>Shoulder, elbow, knee, and wrist injuries in tennis players — rehab and prevention.</p>
+        <a href="/blog/tennis-injury-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="sport">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1758887249264-f425487b56cb?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Tennis Elbow</span>
+        <h3><a href="/blog/tennis-elbow-physical-therapy-boca-raton">Tennis Elbow Physical Therapy in Boca Raton</a></h3>
+        <p>Lateral epicondylitis treatment, eccentric rehab, and long-term management.</p>
+        <a href="/blog/tennis-elbow-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="sport">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1769707948199-0ac6f2868e55?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Running</span>
+        <h3><a href="/blog/running-injury-physical-therapy-boca-raton">Running Injury Physical Therapy in Boca Raton</a></h3>
+        <p>Shin splints, stress fractures, ITBS, and runner's knee — comprehensive guide.</p>
+        <a href="/blog/running-injury-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="sport">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1770237711823-413f469f2d7a?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Soccer</span>
+        <h3><a href="/blog/soccer-injury-physical-therapy-boca-raton">Soccer Injury Physical Therapy in Boca Raton</a></h3>
+        <p>ACL, hamstring, ankle, and groin injuries in soccer — prevention and return to play.</p>
+        <a href="/blog/soccer-injury-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="sport">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1606657830879-00d70555b1b6?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Weightlifting</span>
+        <h3><a href="/blog/weightlifting-injury-physical-therapy-boca-raton">Weightlifting Injury Physical Therapy in Boca Raton</a></h3>
+        <p>Shoulder, lower back, knee, and wrist injuries from lifting — rehab and safe return.</p>
+        <a href="/blog/weightlifting-injury-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="sport">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1731143214912-0e460eb88179?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Baseball</span>
+        <h3><a href="/blog/baseball-softball-injury-physical-therapy-boca-raton">Baseball &amp; Softball Injury PT in Boca Raton</a></h3>
+        <p>Throwing shoulder, UCL, and elbow injuries — rehab for pitchers and position players.</p>
+        <a href="/blog/baseball-softball-injury-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="sport">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1753516187338-1de34bcca197?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Cycling</span>
+        <h3><a href="/blog/cycling-injury-physical-therapy-boca-raton">Cycling Injury Physical Therapy in Boca Raton</a></h3>
+        <p>Knee, hip, lower back, and neck injuries in cyclists — bike fit and rehab.</p>
+        <a href="/blog/cycling-injury-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="sport">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1764077158549-d63e798ca5a4?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Surfing</span>
+        <h3><a href="/blog/surfing-injury-physical-therapy-boca-raton">Surfing Injury Physical Therapy in Boca Raton</a></h3>
+        <p>Back, shoulder, and knee injuries in surfers — rehab tailored to your sport.</p>
+        <a href="/blog/surfing-injury-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="sport">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1768576544627-c0a7149d0c5b?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Swimming</span>
+        <h3><a href="/blog/swimming-injury-physical-therapy-boca-raton">Swimming Injury Physical Therapy in Boca Raton</a></h3>
+        <p>Swimmer's shoulder, knee breaststroke injuries, and overuse rehab.</p>
+        <a href="/blog/swimming-injury-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="sport">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1763740360969-908ca8c00629?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Basketball</span>
+        <h3><a href="/blog/basketball-injury-physical-therapy-boca-raton">Basketball Injury Physical Therapy in Boca Raton</a></h3>
+        <p>Ankle sprains, knee injuries, and jump-related conditions in basketball players.</p>
+        <a href="/blog/basketball-injury-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="sport">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1765108922700-6d6f37f582c2?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Volleyball</span>
+        <h3><a href="/blog/volleyball-injury-physical-therapy-boca-raton">Volleyball Injury Physical Therapy in Boca Raton</a></h3>
+        <p>Shoulder, knee, and ankle injuries in volleyball — indoor and beach.</p>
+        <a href="/blog/volleyball-injury-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="sport">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1774201426994-a6a38d5d9aab?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Return to Sport</span>
+        <h3><a href="/blog/return-to-sport-physical-therapy-boca-raton">Return-to-Sport Physical Therapy in Boca Raton</a></h3>
+        <p>The bridge from rehab to full performance — sport-specific progressive loading.</p>
+        <a href="/blog/return-to-sport-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="longevity">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1773227055597-dcee26f392f0?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Longevity</span>
+        <h3><a href="/blog/move-like-40-at-60-longevity-guide-boca-raton">Move Like You're 40 at 60 — Longevity Guide for Boca Raton</a></h3>
+        <p>Practical strategies for staying active, strong, and pain-free as you age.</p>
+        <a href="/blog/move-like-40-at-60-longevity-guide-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="longevity">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1747302653826-42c6cd7295f2?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Balance</span>
+        <h3><a href="/blog/balance-fall-prevention-physical-therapy-boca-raton">Balance &amp; Fall Prevention Physical Therapy</a></h3>
+        <p>Evidence-based fall prevention for seniors — strength, proprioception, and confidence.</p>
+        <a href="/blog/balance-fall-prevention-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="longevity">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1658314755561-389d5660ee54?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Osteoporosis</span>
+        <h3><a href="/blog/osteoporosis-physical-therapy-boca-raton">Osteoporosis Physical Therapy in Boca Raton</a></h3>
+        <p>Bone density, safe exercise, posture, and fracture prevention strategies.</p>
+        <a href="/blog/osteoporosis-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="longevity">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1522844123782-9547a63eb28b?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Fibromyalgia</span>
+        <h3><a href="/blog/fibromyalgia-physical-therapy-boca-raton">Fibromyalgia Physical Therapy in Boca Raton</a></h3>
+        <p>Gentle progressive exercise, pain management, and quality-of-life improvement.</p>
+        <a href="/blog/fibromyalgia-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="longevity">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1710952615354-3e5e9f234fc7?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Neuro</span>
+        <h3><a href="/blog/parkinsons-disease-physical-therapy-boca-raton">Parkinson's Disease Physical Therapy in Boca Raton</a></h3>
+        <p>Gait training, balance, and functional movement for Parkinson's patients.</p>
+        <a href="/blog/parkinsons-disease-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="longevity">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1647913097114-5975d965a1ff?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Neuro</span>
+        <h3><a href="/blog/post-stroke-rehabilitation-physical-therapy-boca-raton">Post-Stroke Rehabilitation Physical Therapy</a></h3>
+        <p>In-home neuro PT for stroke recovery — mobility, strength, and independence.</p>
+        <a href="/blog/post-stroke-rehabilitation-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="pt">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1702648159730-00699257be79?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Concierge PT</span>
+        <h3><a href="/blog/in-home-physical-therapy-boca-raton">In-Home Physical Therapy in Boca Raton</a></h3>
+        <p>What to expect from concierge in-home PT — how it works, who it's for.</p>
+        <a href="/blog/in-home-physical-therapy-boca-raton" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="pt">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1758798458635-f01402b40919?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Comparison</span>
+        <h3><a href="/blog/in-home-pt-vs-outpatient-clinic-honest-comparison">In-Home PT vs. Outpatient Clinic: Honest Comparison</a></h3>
+        <p>The real differences — pros, cons, outcomes, cost, and who wins for your situation.</p>
+        <a href="/blog/in-home-pt-vs-outpatient-clinic-honest-comparison" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="pt">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1762025930827-9f1dda45aff8?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Cost</span>
+        <h3><a href="/blog/concierge-pt-vs-insurance-pt">Concierge PT vs. Insurance PT — What's the Difference?</a></h3>
+        <p>A frank breakdown of cost, access, quality, and outcomes between the two models.</p>
+        <a href="/blog/concierge-pt-vs-insurance-pt" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="pt">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1763917343408-4cfcc6bdd381?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Why Concierge</span>
+        <h3><a href="/blog/why-concierge-physical-therapy-is-worth-it">Why Concierge Physical Therapy Is Worth It</a></h3>
+        <p>The case for private-pay, in-home PT over insurance-based clinic models.</p>
+        <a href="/blog/why-concierge-physical-therapy-is-worth-it" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-category="pt">
+      <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1758518727820-28491c194bee?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
+      <div class="blog-card-body">
+        <span class="tag">Busy Professionals</span>
+        <h3><a href="/blog/executive-recovery-plan-fitting-pt-into-busy-schedule">Executive Recovery: Fitting PT Into a Busy Schedule</a></h3>
+        <p>How high-performers make PT work with demanding careers and travel schedules.</p>
+        <a href="/blog/executive-recovery-plan-fitting-pt-into-busy-schedule" class="read-more">Read More →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Have a Question? Talk to Dr. Ezra.</h2>
+  <p>Book a free 15-minute consultation — no obligation, just expert answers about your specific situation.</p>
+  <a href="/contact" class="btn-dark">Book Free Consultation</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
+<p>Concierge physical therapy and functional fitness delivered to your door. Serving Boca Raton, Delray Beach, Pompano Beach, and surrounding South Florida.</p>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<ul>
+<li><a href="/in-home-physical-therapy-boca-raton">In-Home Physical Therapy</a></li>
+<li><a href="/return-to-sport-physical-therapy-boca-raton">Return-to-Sport</a></li>
+<li><a href="/fitness-training-boca-raton">Fitness Training</a></li>
+<li><a href="/longevity-training-boca-raton">Longevity Program</a></li>
+<li><a href="/nutrition-coaching-boca-raton">Nutrition Guidance</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<ul>
+<li><a href="/about">About Dr. Ezra</a></li>
+<li><a href="/about">Our Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/injury-finder">Injury Finder</a></li>
+<li><a href="/faq">FAQ</a></li>
+<li><a href="/contact">Free Consultation</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li>Boca Raton, FL</li>
+<li>Delray Beach, FL</li>
+<li>Pompano Beach, FL</li>
+<li><a href="tel:954-901-7211">954-901-7211</a></li>
+<li><a href="mailto:admin@empowerfitnesspt.com">admin@empowerfitnesspt.com</a></li>
+<li style="margin-top:8px;"><a href="https://g.page/r/empowerfitnesspt/review" style="color:var(--gold);" target="_blank">&#9733; Leave a Google Review</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Empower Fitness. All rights reserved.</p>
+<p>Dr. Ezra Miller, PT, DPT &middot; Licensed in Florida &middot; NASM Certified</p>
+</div>
+</footer>
+
+<script>
+function filterPosts(category, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.blog-card').forEach(card => {
+    if (category === 'all' || card.dataset.category === category) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+</script>
+
+
+<script>
+// Make entire blog card clickable
+document.querySelectorAll('.blog-card').forEach(function(card) {
+  var link = card.querySelector('a[href]');
+  if (link) {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function(e) {
+      if (!e.target.closest('a')) {
+        window.location.href = link.href;
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>

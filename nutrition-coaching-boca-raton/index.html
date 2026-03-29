@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nutrition &amp; Supplement Guidance | Empower Fitness Boca Raton</title>
+<meta content="Science-backed nutrition and supplement guidance in Boca Raton. Aligned with your PT or fitness goals. Food tracking app included. Book your free consult." name="description"/>
+<meta content="nutrition coaching Boca Raton physical therapy, nutrition guidance, supplement advice" name="keywords"/>
+<style>
+        :root {
+            --gold: #C8922A;
+            --gold-light: #e0a93a;
+            --black: #000000;
+            --dark: #0d0d0d;
+            --dark2: #141414;
+            --dark3: #1c1c1c;
+            --dark4: #242424;
+            --white: #ffffff;
+            --gray: #aaaaaa;
+            --green: #27ae60;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--white);
+            background: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* FIXED NAVIGATION */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--black);
+            z-index: 1000;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .cta-button {
+            background: var(--gold);
+            color: var(--dark);
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--gold-light);
+        }
+
+        /* CHANGE NOTE BANNERS */
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 70px;
+            max-width: none;
+            background: linear-gradient(135deg, var(--dark3) 0%, var(--dark4) 100%);
+            padding: 120px 40px;
+            text-align: center;
+            background-image: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(13, 13, 13, 0.75);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .location-tag {
+            display: inline-block;
+            color: var(--gold);
+            font-weight: 700;
+            white-space: nowrap;
+            margin: 0 4px;
+        }
+
+        /* SECTION SPACING */
+        section {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 44px;
+            font-weight: 900;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* WHY NUTRITION MATTERS SECTION */
+        .why-section {
+            background: var(--dark2);
+            padding: 50px;
+            border-radius: 8px;
+            margin: 40px 0;
+            border-left: 4px solid var(--gold);
+        }
+
+        .why-content {
+            color: var(--gray);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .sync-box {
+            background: var(--dark3);
+            padding: 30px;
+            border-radius: 6px;
+            border-left: 3px solid var(--green);
+            margin-top: 25px;
+        }
+
+        .sync-box h3 {
+            color: var(--green);
+            font-weight: 800;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .sync-box p {
+            color: var(--gray);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* WHAT'S INCLUDED CARDS */
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .included-card {
+            background: var(--dark2);
+            padding: 40px;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .included-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(200, 146, 42, 0.1);
+        }
+
+        .included-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+
+        .included-card p {
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+
+        .feature-list li {
+            color: var(--gray);
+            font-size: 13px;
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 800;
+        }
+
+        /* COMMON GOALS GRID */
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .goal-card {
+            background: var(--dark2);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 3px solid var(--gold);
+            text-align: center;
+        }
+
+        .goal-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .goal-card h3 {
+            font-weight: 800;
+            color: var(--gold);
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .goal-card p {
+            font-size: 12px;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        /* FAQ SECTION */
+        .faq {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--dark2);
+            padding-bottom: 25px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark3) 0%, var(--dark4) 100%);
+            padding: 60px 40px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .phone-cta {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--gold);
+            margin-top: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--black);
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid var(--dark2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-locations {
+            color: var(--gray);
+            font-size: 13px;
+            margin-bottom: 20px;
+            white-space: nowrap;
+        }
+
+        .footer-location {
+            display: inline-block;
+            white-space: nowrap;
+            margin: 0 8px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .footer-links a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-copyright {
+            color: var(--gray);
+            font-size: 12px;
+        }
+
+        /* FLOATING LEGEND PANEL */
+        .change-legend {
+            position: fixed;
+            bottom: 140px;
+            right: 20px;
+            background: var(--dark2);
+            border: 2px solid #ff0000;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 280px;
+            font-size: 12px;
+            z-index: 999;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .legend-title {
+            font-weight: 900;
+            color: #ff6666;
+            margin-bottom: 12px;
+            font-size: 13px;
+        }
+
+        .legend-item {
+            color: var(--gray);
+            margin-bottom: 8px;
+            line-height: 1.4;
+            padding-left: 12px;
+        }
+
+        .legend-item::before {
+            content: '▪ ';
+            color: #ff0000;
+            margin-left: -8px;
+            margin-right: 4px;
+        }
+
+        /* CHAT WIDGET */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 998;
+        }
+
+        .chat-launcher {
+            background: var(--gold);
+            color: var(--dark);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(200, 146, 42, 0.3);
+            transition: all 0.3s;
+            font-weight: 900;
+        }
+
+        .chat-launcher:hover {
+            transform: scale(1.1);
+            background: var(--gold-light);
+            box-shadow: 0 6px 20px rgba(200, 146, 42, 0.4);
+        }
+
+        .chat-bubble {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            background: var(--dark2);
+            color: var(--white);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 300px;
+            font-size: 13px;
+            display: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .chat-bubble.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                height: auto;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 60px 20px;
+                margin-top: 120px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .change-legend {
+                max-width: calc(100vw - 40px);
+                bottom: 100px;
+                left: 20px;
+                right: 20px;
+            }
+        }
+    
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: #000000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 68px;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .nav-logo { font-size: 22px; font-weight: 900; letter-spacing: 3px; color: #C8922A; }
+    .nav-logo span { color: #ffffff; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: #ffffff; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; text-decoration: none; }
+    .nav-links a:hover { color: #C8922A; }
+    .nav-cta {
+      background: #C8922A; color: #000000 !important;
+      font-weight: 800; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 10px 22px; border-radius: 2px; transition: background 0.2s;
+      text-decoration: none; white-space: nowrap;
+    }
+    .nav-cta:hover { background: #e0a93a; }
+
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; }
+    @media(max-width:900px){ .footer-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:480px){ .footer-grid { grid-template-columns:1fr; } }
+    .footer-brand p { font-size:14px; color:var(--gray); line-height:1.7; margin-top:14px; max-width:280px; }
+    .footer-col h4 { font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:18px; }
+    .footer-col ul { list-style:none; padding:0; margin:0; }
+    .footer-col li { font-size:14px; color:var(--gray); margin-bottom:10px; }
+    .footer-col li a { color:var(--gray); transition:color 0.2s; text-decoration:none; }
+    .footer-col li a:hover { color:var(--gold); }
+    .footer-bottom { border-top:1px solid #1a1a1a; padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
+    .footer-bottom p { font-size:12px; color:#555; }
+
+  </style>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Nutrition & Supplement Guidance Boca Raton | Empower Fitness"/>
+<meta property="og:description" content="Personalized nutrition and supplement coaching in Boca Raton with Dr. Ezra Miller. Fuel recovery, build strength, and sustain long-term health."/>
+<meta property="og:url" content="https://www.empowerfitnesspt.com/nutrition-coaching-boca-raton/"/>
+<meta property="og:site_name" content="Empower Fitness PT"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Nutrition & Supplement Guidance Boca Raton | Empower Fitness"/>
+<meta name="twitter:description" content="Personalized nutrition and supplement coaching in Boca Raton with Dr. Ezra Miller. Fuel recovery, build strength, and sustain long-term health."/>
+</head>
+<body>
+<!-- FIXED NAVIGATION -->
+<nav>
+<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
+<ul class="nav-links">
+<li><a href="/">Home</a></li>
+<li><a href="/services">Services</a></li>
+<li><a href="/injury-finder">Injury Finder</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/about">About Us</a></li>
+</ul>
+<a class="nav-cta" href="/contact">CONTACT US</a>
+</nav>
+<!-- HERO SECTION -->
+<section class="hero">
+<div class="hero-content">
+<h1>Fuel Your Recovery. Optimize Your Performance.</h1>
+<p>Science-backed nutrition guidance aligned with your physical therapy and fitness goals in <span class="location-tag">Boca Raton</span> · <span class="location-tag">Delray Beach</span> · <span class="location-tag">Pompano Beach</span>. Food tracking app included.</p>
+</div>
+</section>
+<!-- CHANGE NOTE: Service highlights intro -->
+
+<!-- DPT OVERSIGHT BADGE -->
+<section style="padding: 24px 40px;">
+<div style="background: var(--dark2); padding: 24px 32px; border-radius: 8px; border-left: 4px solid var(--gold); text-align: center;">
+<h3 style="font-size: 20px; font-weight: 800; color: var(--gold); margin-bottom: 12px;">DPT Oversight</h3>
+<p style="color: var(--gray); font-size: 15px; line-height: 1.8; margin: 0;">Every program at Empower Fitness is designed and directly overseen by Dr. Ezra Miller, PT, DPT — ensuring clinical precision that goes beyond standard care.</p>
+</div>
+</section>
+<!-- WHY NUTRITION MATTERS SECTION -->
+<section id="whymatters">
+<h2 class="section-title">Why Nutrition Is Half the Battle</h2>
+<div class="why-section">
+<p class="why-content">Physical therapy and fitness training build the foundation. Nutrition builds the results. Your body requires specific nutrients to heal injuries, adapt to training, lose fat, build muscle, and maintain energy. Without aligned nutrition, you're leaving gains on the table.</p>
+<p class="why-content"><strong>The synergy works both ways:</strong> Recovery from PT requires protein and micronutrients for tissue healing. Training adaptation requires proper carbs and protein timing. Weight loss requires caloric awareness. Performance requires fueling.</p>
+<div class="sync-box">
+<h3>✓ PT + Nutrition = Faster Healing</h3>
+<p>Proper nutrient timing and macronutrient balance accelerate tissue repair, reduce inflammation, and restore function faster than PT alone. Your nutrition supports your therapy.</p>
+</div>
+<div class="sync-box">
+<h3>✓ Training + Nutrition = Visible Results</h3>
+<p>Strength training without proper nutrition leaves you plateaued. Add aligned nutrition and you see measurable strength gains, fat loss, and muscle development within weeks.</p>
+</div>
+</div>
+</section>
+<!-- CHANGE NOTE: What's included section -->
+
+<!-- WHAT'S INCLUDED SECTION -->
+<section id="included">
+<h2 class="section-title">What's Included in Your Nutrition Guidance</h2>
+<div class="included-grid">
+<div class="included-card">
+<h3>Personalized Nutrition Plan</h3>
+<p>Based on your goals (recovery, weight loss, performance, energy), we design a custom plan: macronutrient targets, meal timing, hydration strategy, and supplements. Not a generic diet—built for YOU.</p>
+<ul class="feature-list">
+<li>Goal-specific macros (protein, carbs, fat)</li>
+<li>Meal timing for your schedule</li>
+<li>Food preferences respected</li>
+<li>Flexible, sustainable approach</li>
+</ul>
+</div>
+<div class="included-card">
+<h3>Food Tracking App Integration</h3>
+<p>Log your meals and see real-time feedback on nutrition vs. targets. The app connects to our system so we can track your adherence and adjust recommendations as needed. Accountability and awareness built in.</p>
+<ul class="feature-list">
+<li>Simple daily logging</li>
+<li>Macro tracking visibility</li>
+<li>Real-time feedback</li>
+<li>Progress monitoring</li>
+</ul>
+</div>
+<div class="included-card">
+<h3>Supplement Guidance</h3>
+<p>Science-backed supplement recommendations aligned with your goals. We clarify what works, what's overhyped, and what's right for you. Guidance includes brands, dosages, timing, and cost-effectiveness.</p>
+<ul class="feature-list">
+<li>Evidence-based recommendations</li>
+<li>Post-workout recovery stacks</li>
+<li>Joint health and anti-inflammatory</li>
+<li>Micronutrient gaps addressed</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- COMMON GOALS SECTION -->
+<section id="goals">
+<h2 class="section-title">Common Nutrition Goals We Support</h2>
+<div class="goals-grid">
+<div class="goal-card">
+<div class="goal-icon">⚕️</div>
+<h3>Faster Post-PT Recovery</h3>
+<p>Aligned nutrition after surgery or injury accelerates healing and reduces inflammation. Proper timing and nutrients support tissue repair.</p>
+</div>
+<div class="goal-card">
+<div class="goal-icon">💪</div>
+<h3>Muscle Gain &amp; Strength</h3>
+<p>Building lean muscle requires consistent training plus proper protein and calorie surplus. We dial in both for visible strength and size gains.</p>
+</div>
+<div class="goal-card">
+<div class="goal-icon">⚡</div>
+<h3>Sustainable Weight Loss</h3>
+<p>Lose fat while preserving muscle. We design nutrition for consistent, sustainable fat loss without the crash-diet mentality.</p>
+</div>
+<div class="goal-card">
+<div class="goal-icon">🔋</div>
+<h3>Energy &amp; Vitality</h3>
+<p>Chronic fatigue often stems from nutrition gaps. We address micronutrient deficiencies, meal timing, and hydration to restore real energy.</p>
+</div>
+<div class="goal-card">
+<div class="goal-icon">🏆</div>
+<h3>Athletic Performance</h3>
+<p>Fuel your training and competition. Sport-specific nutrition strategies optimize power output, endurance, and recovery between sessions.</p>
+</div>
+<div class="goal-card">
+<div class="goal-icon">🧠</div>
+<h3>Cognitive Clarity</h3>
+<p>Nutrition directly impacts mental clarity and focus. Proper macros and micronutrients support brain function and reduce brain fog.</p>
+</div>
+<div class="goal-card">
+<div class="goal-icon">🩺</div>
+<h3>Post-Surgical Healing</h3>
+<p>Surgery increases nutrient demands. We build a nutrition plan to accelerate tissue repair, reduce swelling, and restore strength after procedures.</p>
+</div>
+<div class="goal-card">
+<div class="goal-icon">🌙</div>
+<h3>Sleep & Recovery Quality</h3>
+<p>Poor nutrition disrupts sleep cycles and slows recovery. We target the nutrients and timing that improve sleep quality and overnight tissue repair.</p>
+</div>
+</div>
+</section>
+<!-- FAQ SECTION -->
+<section id="faq">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<div class="faq">
+<div class="faq-item">
+<div class="faq-question">Q: Do I have to follow a specific diet (keto, vegan, etc.)?</div>
+<div class="faq-answer">No. We work within your preferences and lifestyle. If you're vegan, we build a vegan plan with proper nutrition. If you prefer Mediterranean style, that works too. The framework is flexible—your preferences are respected.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Q: How often do I meet with the nutrition coach?</div>
+<div class="faq-answer">Initial nutrition consultation is included with most services. Follow-up check-ins are typically monthly, but can be adjusted based on your needs and goals. Between sessions, the food tracking app provides ongoing feedback.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Q: What if I have food allergies or restrictions?</div>
+<div class="faq-answer">We absolutely account for allergies, intolerances, and restrictions. Whether it's gluten-free, dairy-free, nut-free, or any other constraint, we design a plan that works within those limitations while meeting your nutritional goals.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Q: Can nutrition guidance help with my PT recovery?</div>
+<div class="faq-answer">Absolutely. Proper nutrition accelerates tissue healing after injury or surgery. We coordinate nutrition recommendations with your PT plan to maximize recovery speed and outcomes. Protein timing, micronutrient status, and anti-inflammatory foods all matter.</div>
+</div>
+<div class="faq-item">
+<div class="faq-question">Q: Do I need to buy expensive supplements?</div>
+<div class="faq-answer">No. We recommend cost-effective, evidence-based supplements. Many clients get 80% of the benefit from basic protein powder, multivitamin, and joint health supplements. We focus on value and necessity, not upselling.</div>
+</div>
+</div>
+</section>
+<!-- CHANGE NOTE: CTA -->
+
+<!-- CTA SECTION -->
+<section class="cta-section" id="contact">
+<h2>Align Your Nutrition with Your Goals</h2>
+<p>Schedule your free nutrition consultation. We'll assess your current habits, clarify your goals, and design a personalized nutrition plan built for results.</p>
+<button class="cta-button" onclick="location.href='/contact'">Get Started →</button>
+<div class="phone-cta">📞 <span style="white-space: nowrap;">954-901-7211</span></div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
+<p>Concierge physical therapy and functional fitness delivered to your door. Serving Boca Raton, Delray Beach, Pompano Beach, and surrounding South Florida.</p>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<ul>
+<li><a href="/in-home-physical-therapy-boca-raton">In-Home Physical Therapy</a></li>
+<li><a href="/return-to-sport-physical-therapy-boca-raton">Return-to-Sport</a></li>
+<li><a href="/fitness-training-boca-raton">Fitness Training</a></li>
+<li><a href="/longevity-training-boca-raton">Longevity Program</a></li>
+<li><a href="/nutrition-coaching-boca-raton">Nutrition Guidance</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<ul>
+<li><a href="/about">About Dr. Ezra</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/injury-finder">Injury Finder</a></li>
+<li><a href="/faq">FAQ</a></li>
+<li><a href="/contact">Free Consultation</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<ul>
+<li>Boca Raton, FL</li>
+<li>Delray Beach, FL</li>
+<li>Pompano Beach, FL</li>
+<li><a href="tel:954-901-7211">954-901-7211</a></li>
+<li><a href="mailto:admin@empowerfitnesspt.com">admin@empowerfitnesspt.com</a></li>
+<li style="margin-top:8px;"><a href="https://g.page/r/empowerfitnesspt/review" style="color:var(--gold);" target="_blank">&#9733; Leave a Google Review</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Empower Fitness. All rights reserved.</p>
+<p>Dr. Ezra Miller, PT, DPT &middot; Licensed in Florida &middot; NASM Certified</p>
+</div>
+</footer>
+<!-- FLOATING CHANGE LEGEND -->
+<div class="change-legend">
+<div class="legend-title">🔴 CHANGES APPLIED</div>
+<div class="legend-item">Nav button: "Get Started →" to /contact</div>
+<div class="legend-item">DPT Oversight badge added</div>
+<div class="legend-item">Emphasizes Dr. Ezra oversight</div>
+<div class="legend-item">Maintains PT coordination messaging</div>
+<div class="legend-item">Updated CTA button &amp; copy</div>
+</div>
+<!-- CHAT WIDGET -->
+<div class="chat-widget">
+<button class="chat-launcher" onclick="toggleChat()">💬</button>
+<div class="chat-bubble" id="chatBubble">
+<button class="chat-close" onclick="toggleChat()">✕</button>
+<p><strong>Fuel your goals!</strong></p>
+<p>Questions about nutrition and supplement guidance? Let's optimize your nutrition. Call <span style="white-space: nowrap;">954-901-7211</span> for a free consult.</p>
+</div>
+</div>
+<script>
+    function toggleChat() {
+        const bubble = document.getElementById('chatBubble');
+        bubble.classList.toggle('active');
+    }
+
+    function scrollToContact() {
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>

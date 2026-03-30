@@ -557,33 +557,6 @@
         
 
         /* Chat widget */
-        .chat-widget {
-            position: fixed;
-            bottom: 30px;
-            right: 390px;
-            width: 60px;
-            height: 60px;
-            background-color: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            z-index: 998;
-        }
-
-        .chat-widget:hover {
-            background-color: var(--gold-light);
-            transform: scale(1.1);
-        }
-
-        .chat-icon {
-            color: var(--black);
-            font-size: 1.5rem;
-            font-weight: 900;
-        }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -601,10 +574,6 @@
 
             nav .nav-links {
                 gap: 1.5rem;
-            }
-
-            .chat-widget {
-                right: 30px;
             }
 
             .philosophy-cards {
@@ -687,6 +656,11 @@
       justify-content: space-between;
       align-items: center;
     }
+    
+    .chat-launcher { position: fixed; bottom: 28px; right: 28px; z-index: 9000; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+    .chat-bubble { background: #fff; border-radius: 12px; padding: 14px 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); max-width: 240px; font-size: 14px; color: #111; line-height: 1.5; display: none; }
+    .chat-bubble.active { display: block; }
+    .chat-button { background: #C8973A; color: #fff; border: none; width: 52px; height: 52px; border-radius: 50%; font-size: 22px; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
     </style>
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
@@ -971,9 +945,7 @@
 </footer>
 <script>
         // Chat widget click handler
-        document.querySelector('.chat-widget').addEventListener('click', function() {
-            alert('Chat widget clicked! This would open a live chat interface.');
-        });
+        document.querySelector(');
 
         // CTA buttons are now anchor links — no JS needed
 

@@ -141,12 +141,7 @@
       align-items: center;
     }
     .footer-bottom p { font-size: 12px; color: #555; }
-    .chat-widget { position: fixed; bottom: 28px; right: 28px; z-index: 9000; }
-    .chat-launcher { background: var(--gold, #C8922A); color: #fff; border: none; width: 52px; height: 52px; border-radius: 50%; font-size: 22px; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.25); display: block; }
     .chat-launcher:hover { background: var(--gold-light, #D4A843); }
-    .chat-bubble { position: absolute; bottom: 64px; right: 0; background: var(--dark2, #111); color: var(--white, #fff); border: 2px solid var(--gold, #C8922A); border-radius: 8px; padding: 20px; width: 280px; font-size: 13px; display: none; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-    .chat-bubble.active { display: block; }
-    .chat-close { position: absolute; top: 8px; right: 10px; background: none; border: none; color: var(--gray, #888); cursor: pointer; font-size: 16px; }
     .chat-bubble p { margin: 6px 0; line-height: 1.5; }
     </style>
 </head>
@@ -273,11 +268,5 @@
 </div>
 </footer>
 
-  <script>
-  function toggleChat() {
-    var b = document.getElementById('chatBubble') || document.querySelector('.chat-bubble');
-    if (b) b.classList.toggle('active');
-  }
-  </script>
-</body>
+  </body>
 </html>

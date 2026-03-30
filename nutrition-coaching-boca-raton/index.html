@@ -350,55 +350,6 @@
         }
 
         /* FOOTER */
-        footer {
-            background: var(--black);
-            padding: 40px;
-            text-align: center;
-            border-top: 1px solid var(--dark2);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-locations {
-            color: var(--gray);
-            font-size: 13px;
-            margin-bottom: 20px;
-            white-space: nowrap;
-        }
-
-        .footer-location {
-            display: inline-block;
-            white-space: nowrap;
-            margin: 0 8px;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-            font-size: 13px;
-        }
-
-        .footer-links a {
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--gold-light);
-        }
-
-        .footer-copyright {
-            color: var(--gray);
-            font-size: 12px;
-        }
 
         .legend-item::before {
             content: '▪ ';
@@ -541,20 +492,54 @@
       text-decoration: none; white-space: nowrap;
     }
     .nav-cta:hover { background: #e0a93a; }
+    @media(max-width:900px){ }
+    @media(max-width:480px){ }
 
-    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; }
-    @media(max-width:900px){ .footer-grid { grid-template-columns:1fr 1fr; } }
-    @media(max-width:480px){ .footer-grid { grid-template-columns:1fr; } }
-    .footer-brand p { font-size:14px; color:var(--gray); line-height:1.7; margin-top:14px; max-width:280px; }
-    .footer-col h4 { font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:18px; }
-    .footer-col ul { list-style:none; padding:0; margin:0; }
-    .footer-col li { font-size:14px; color:var(--gray); margin-bottom:10px; }
-    .footer-col li a { color:var(--gray); transition:color 0.2s; text-decoration:none; }
-    .footer-col li a:hover { color:var(--gold); }
-    .footer-bottom { border-top:1px solid #1a1a1a; padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
-    .footer-bottom p { font-size:12px; color:#555; }
-
-  </style>
+  
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      padding: 48px 80px 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-top: 14px;
+      max-width: 280px;
+      text-align: center;
+    }
+    .footer-brand .nav-logo { justify-content: center; }
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li {
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 10px;
+    }
+    .footer-col li a { color: var(--gray); transition: color 0.2s; }
+    .footer-col li a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid #1a1a1a;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    </style>
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Nutrition & Supplement Guidance Boca Raton | Empower Fitness"/>

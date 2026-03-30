@@ -365,7 +365,6 @@
 
         /* FOOTER */
 
-
         /* CHAT WIDGET */
         .chat-widget {
             position: fixed;
@@ -436,6 +435,7 @@
       text-decoration: none; white-space: nowrap;
     }
     .nav-cta:hover { background: #e0a93a; }
+
     @media(max-width:900px){ }
     @media(max-width:480px){ }
 
@@ -469,11 +469,7 @@
       margin-bottom: 18px;
     }
     .footer-col ul { list-style: none; }
-    .footer-col li {
-      font-size: 14px;
-      color: var(--gray);
-      margin-bottom: 10px;
-    }
+    .footer-col li { font-size: 14px; color: var(--gray); margin-bottom: 10px; }
     .footer-col li a { color: var(--gray); transition: color 0.2s; }
     .footer-col li a:hover { color: var(--gold); }
     .footer-bottom {
@@ -665,16 +661,12 @@
 </div>
 </footer><!-- CHAT WIDGET -->
 <div class="chat-widget" title="AI Chat Support">💬</div>
+
   <script>
   function toggleChat() {
-    var bubble = document.getElementById('chatBubble') || document.querySelector('.chat-bubble');
-    if (!bubble) return;
-    bubble.classList.toggle('active');
+    var b = document.getElementById('chatBubble') || document.querySelector('.chat-bubble');
+    if (b) b.classList.toggle('active');
   }
-  document.addEventListener('DOMContentLoaded', function() {
-    var btn = document.querySelector('.chat-button, button[onclick*="toggleChat"]');
-    if (btn && !btn.getAttribute('onclick')) btn.setAttribute('onclick', 'toggleChat()');
-  });
   </script>
 </body>
 </html>

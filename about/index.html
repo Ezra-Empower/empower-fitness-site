@@ -556,7 +556,13 @@
             margin-top: 3rem;
         }
 
-        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
 
         .footer-section h4 {
             font-size: 0.9rem;
@@ -586,50 +592,20 @@
             color: var(--gold);
         }
 
-        
-
-        /* Floating legend panel */
-        .legend-panel {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: var(--dark3);
-            border: 2px solid var(--change-red);
-            border-radius: 8px;
-            padding: 1.5rem;
-            max-width: 350px;
-            max-height: 500px;
-            overflow-y: auto;
-            z-index: 999;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .legend-panel h4 {
-            color: var(--change-red);
-            font-size: 0.95rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .legend-item {
-            margin-bottom: 1rem;
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--dark3);
             font-size: 0.85rem;
             color: var(--gray);
-            line-height: 1.5;
         }
 
-        .legend-item:last-child {
-            margin-bottom: 0;
-        }
+        
 
-        .legend-label {
-            color: var(--gold);
-            font-weight: 700;
-            display: block;
-            margin-bottom: 0.3rem;
-        }
+        
+
+        
 
         /* Chat widget */
         .chat-widget {
@@ -676,12 +652,6 @@
 
             nav .nav-links {
                 gap: 1.5rem;
-            }
-
-            .legend-panel {
-                bottom: 100px;
-                right: 20px;
-                max-width: 280px;
             }
 
             .chat-widget {

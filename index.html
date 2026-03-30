@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Empower Fitness | Concierge Physical Therapy Boca Raton | Dr. Ezra Miller, DPT</title>
-<meta content="Boca Raton's top-rated concierge physical therapy & functional fitness. Led by Dr. Ezra Miller, PT, DPT. In-home PT, return-to-sport, longevity training. 5.0 stars · 32 reviews. Book your free consultation today." name="description"/>
+<meta content="Boca Raton's top-rated concierge physical therapy &amp; functional fitness. Led by Dr. Ezra Miller, PT, DPT. In-home PT, return-to-sport, longevity training. 5.0 stars · 32 reviews. Book your free consultation today." name="description"/>
 <style>
     /* =============================================
        BRAND TOKENS — match empowerfitnesspt.com
@@ -578,9 +578,121 @@
       margin-bottom: 12px;
     }
     .why-card p {
-      font-size: 15px;
+      font-size: 14px;
       color: var(--gray);
       line-height: 1.7;
+    }
+
+    /* =============================================
+       QUOTE SECTION
+    ============================================= */
+    .quote-section {
+      background: var(--black);
+      text-align: center;
+      padding: 80px 200px;
+    }
+    .quote-text {
+      font-size: clamp(20px, 2.5vw, 30px);
+      font-weight: 300;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.9);
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+    .quote-text strong { font-weight: 800; color: var(--gold); font-style: normal; }
+    .quote-author {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* =============================================
+       FAQ SECTION — IMPROVED
+    ============================================= */
+    .faq { background: var(--dark); }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 48px;
+    }
+    .faq-item {
+      background: var(--dark3);
+      padding: 32px;
+      border-left: 3px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .faq-item:hover { border-left-color: var(--gold); }
+    .faq-item h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    .faq-item p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* =============================================
+       FINAL CTA — IMPROVED
+    ============================================= */
+    .final-cta {
+      background: var(--gold);
+      padding: 80px;
+      text-align: center;
+    }
+    .cta-urgency {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.6);
+      margin-bottom: 16px;
+    }
+    .final-cta h2 {
+      color: var(--black);
+      font-size: clamp(28px, 4vw, 48px);
+      margin-bottom: 16px;
+    }
+    .final-cta p {
+      font-size: 17px;
+      color: rgba(0,0,0,0.7);
+      margin-bottom: 40px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-group {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn-dark {
+      background: var(--black);
+      color: var(--white);
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      border-radius: 2px;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .btn-dark:hover { background: #222; }
+    .cta-phone {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     /* =============================================
@@ -588,363 +700,768 @@
     ============================================= */
     footer {
       background: var(--black);
-      border-top: 1px solid #1a1a1a;
-      padding: 60px 80px;
+      padding: 48px 80px 32px;
     }
     .footer-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 60px;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
       margin-bottom: 40px;
     }
-    .footer-brand h3 { font-size: 16px; font-weight: 900; letter-spacing: 2px; margin-bottom: 14px; }
-    .footer-brand p { font-size: 13px; color: var(--gray); line-height: 1.7; }
-    .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; color: var(--white); }
-    .footer-col a { display: block; font-size: 13px; color: var(--gray); margin-bottom: 12px; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--gold); }
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-top: 14px;
+      max-width: 280px;
+    }
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li {
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 10px;
+    }
+    .footer-col li a { color: var(--gray); transition: color 0.2s; }
+    .footer-col li a:hover { color: var(--gold); }
     .footer-bottom {
       border-top: 1px solid #1a1a1a;
-      padding-top: 32px;
+      padding-top: 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 24px;
-      font-size: 12px;
-      color: var(--gray);
     }
-    .social-links { display: flex; gap: 18px; }
-    .social-links a { color: var(--white); font-size: 16px; transition: color 0.2s; }
-    .social-links a:hover { color: var(--gold); }
+    .footer-bottom p { font-size: 12px; color: #555; }
+
+    /* =============================================
+       LEGEND PANEL (FLOATING)
+    ============================================= */
+    .legend {
+      position: fixed;
+      top: 80px;
+      right: 0;
+      width: 260px;
+      background: #1a1a2e;
+      border-left: 3px solid #e74c3c;
+      padding: 20px;
+      z-index: 9999;
+      font-size: 12px;
+      line-height: 1.6;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.5);
+    }
+    .legend h4 {
+      color: #e74c3c;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #333;
+    }
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #e74c3c;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .legend-toggle {
+      display: block;
+      text-align: center;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid #333;
+      color: #e74c3c;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
   </style>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Empower Fitness | Concierge Physical Therapy Boca Raton | Dr. Ezra Miller, DPT"/>
+<meta property="og:description" content="Boca Raton's top-rated concierge physical therapy & functional fitness. Led by Dr. Ezra Miller, PT, DPT. In-home PT, return-to-sport, longevity training. 5.0 stars · 32 reviews."/>
+<meta property="og:url" content="https://www.empowerfitnesspt.com/"/>
+<meta property="og:site_name" content="Empower Fitness PT"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Empower Fitness | Concierge Physical Therapy Boca Raton"/>
+<meta name="twitter:description" content="In-home physical therapy & functional fitness in Boca Raton, Delray Beach & Pompano Beach. Led by Dr. Ezra Miller, PT, DPT."/>
+
+<!-- Schema: LocalBusiness + Physician + AggregateRating + Services -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["MedicalBusiness", "LocalBusiness"],
+      "@id": "https://www.empowerfitnesspt.com/#business",
+      "name": "Empower Fitness PT",
+      "url": "https://www.empowerfitnesspt.com",
+      "logo": "https://www.empowerfitnesspt.com/img/logo-gold.png",
+      "image": "https://www.empowerfitnesspt.com/img/headshot.jpg",
+      "description": "Concierge in-home physical therapy and functional fitness in Boca Raton, Delray Beach, and Pompano Beach. Led by Dr. Ezra Miller, PT, DPT.",
+      "telephone": "+19549017211",
+      "email": "admin@empowerfitnesspt.com",
+      "priceRange": "$$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": "Cash, Credit Card",
+      "areaServed": [
+        {"@type": "City", "name": "Boca Raton", "sameAs": "https://en.wikipedia.org/wiki/Boca_Raton,_Florida"},
+        {"@type": "City", "name": "Delray Beach", "sameAs": "https://en.wikipedia.org/wiki/Delray_Beach,_Florida"},
+        {"@type": "City", "name": "Pompano Beach", "sameAs": "https://en.wikipedia.org/wiki/Pompano_Beach,_Florida"},
+        {"@type": "City", "name": "Deerfield Beach"},
+        {"@type": "City", "name": "Highland Beach"}
+      ],
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {"@type": "GeoCoordinates", "latitude": 26.3683, "longitude": -80.1289},
+        "geoRadius": "30000"
+      },
+      "sameAs": [
+        "https://www.instagram.com/EmpowerFitnessPro",
+        "https://www.facebook.com/empowerfitnesspt"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "32",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Physical Therapy & Fitness Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "MedicalTherapy",
+              "name": "In-Home Physical Therapy",
+              "description": "One-on-one in-home physical therapy for pain relief, injury recovery, and functional restoration. Boca Raton, Delray Beach, Pompano Beach."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "MedicalTherapy",
+              "name": "Return-to-Sport Physical Therapy",
+              "description": "Sport-specific rehab and performance training to get athletes back to full competition safely."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "MedicalTherapy",
+              "name": "Longevity Training",
+              "description": "Evidence-based strength, mobility, and injury prevention programs for adults 40+."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fitness Training Programs",
+              "description": "Custom in-home fitness training with NASM-certified trainers for strength, conditioning, and performance."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Nutrition & Supplement Guidance",
+              "description": "Personalized nutrition and supplement coaching to support recovery and long-term health."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Physician",
+      "@id": "https://www.empowerfitnesspt.com/#physician",
+      "name": "Dr. Ezra Miller",
+      "givenName": "Ezra",
+      "familyName": "Miller",
+      "honorificPrefix": "Dr.",
+      "honorificSuffix": "PT, DPT",
+      "jobTitle": "Doctor of Physical Therapy, Founder & Clinical Director",
+      "url": "https://www.empowerfitnesspt.com/about",
+      "image": "https://www.empowerfitnesspt.com/img/headshot.jpg",
+      "telephone": "+19549017211",
+      "email": "ezra@empowerfitnesspt.com",
+      "worksFor": {"@id": "https://www.empowerfitnesspt.com/#business"},
+      "hasCredential": [
+        {"@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "Doctor of Physical Therapy (DPT)"},
+        {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "NASM Certified Personal Trainer"},
+        {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Licensed Physical Therapist — Florida"}
+      ],
+      "knowsAbout": ["Physical Therapy", "Sports Rehabilitation", "Concierge Physical Therapy", "Longevity Training", "Return-to-Sport", "Neurological Rehabilitation"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.empowerfitnesspt.com/#website",
+      "url": "https://www.empowerfitnesspt.com",
+      "name": "Empower Fitness PT",
+      "publisher": {"@id": "https://www.empowerfitnesspt.com/#business"},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.empowerfitnesspt.com/blog/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
-
-<!-- NAVIGATION -->
-<nav>
-<div class="nav-logo">
-EMPOWER <span>FITNESS</span>
+<div>Hero: city-specific trust line + DPT credential added above headline</div></div>
+<div>Hero: headline rewritten for outcome + location SEO</div></div>
+<div>Hero: dual CTA added (Book + View Services)</div></div>
+<div>Hero: inline trust badges added below CTA</div></div>
+<div>NEW: Stats strip (10yr, 5.0★, 28 reviews, 100+ clients)</div></div>
+<div>NEW: How It Works 3-step section (reduces friction)</div></div>
+<div>Services: outcome line + "Book This Service" CTA per card</div></div>
+<div>NEW: Testimonials section with 3 detailed reviews</div></div>
+<div>About: credential badges + DPT qualifications added</div></div>
+<div>FAQ: expanded to 8 Q&amp;As + 2-column layout</div></div>
+<div>CTA: urgency line + phone number added</div></div>
+<div>Footer: expanded with links and location</div></div>
+<span class="legend-toggle" onclick="document.getElementById('legend').style.display='none'">✕ Hide Panel</span>
 </div>
+<!-- ============================================
+     NAV
+============================================= -->
+<nav>
+<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
 <ul class="nav-links">
-<li><a href="#services">Services</a></li>
-<li><a href="#about">About Dr. Miller</a></li>
-<li><a href="#why">Why Us</a></li>
-<li><a href="#testimonials">Testimonials</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="/">Home</a></li>
+<li><a href="/services">Services</a></li>
+<li><a href="/injury-finder">Injury Finder</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/about">About Us</a></li>
 </ul>
-<a href="tel:+1-561-400-0000" class="nav-cta">Book Free Consult</a>
+<a class="nav-cta" href="/contact">CONTACT US</a>
 </nav>
+<!-- ============================================
+     HERO — IMPROVED
+============================================= -->
 
-<!-- HERO SECTION -->
 <section class="hero">
 <div class="hero-content">
-<div class="hero-pretag">Concierge Physical Therapy</div>
-<h1>Your <em>In-Home</em> Fitness & Recovery Partner</h1>
-<p class="hero-sub">Expert-led functional training, post-injury rehabilitation, and return-to-sport protocols in Boca Raton. Led by Dr. Ezra Miller, PT, DPT. Rated 5★ by over 30 clients.</p>
+
+<div class="hero-pretag">
+      Boca Raton · Delray Beach · Pompano Beach  ·  Led by Dr. Ezra Miller, PT, DPT
+    </div>
+
+<h1>
+      Get Out of Pain.<br/>
+      Move Like <em>You Were Meant To.</em><br/>
+<span style="font-size:0.5em; font-weight:500; color:rgba(255,255,255,0.75); display:block; white-space:nowrap; letter-spacing:1px;">In-Home Physical Therapy &amp; Functional Fitness</span>
+<span style="font-size:0.38em; font-weight:400; color:var(--gold); display:block; white-space:nowrap; letter-spacing:2px; margin-top:4px;">Boca Raton  ·  Delray Beach  ·  Pompano Beach</span>
+</h1>
+
+<p class="hero-sub">
+      Most PT stops when the pain does. We don't. Dr. Ezra Miller bridges the gap between injury recovery and getting your full strength, function, and confidence back — one-on-one, delivered to your door in Boca Raton, Delray Beach, Pompano Beach, and surrounding South Florida.
+    </p>
+
 <div class="hero-ctas">
-<a href="tel:+1-561-400-0000" class="btn-primary">Start Your Journey</a>
-<a href="#services" class="btn-secondary">Learn More</a>
+<a class="btn-primary" href="/contact">Get Started →</a>
+<a class="btn-secondary" href="/in-home-physical-therapy-boca-raton">View All Services ↓</a>
 </div>
+
 <div class="hero-trust">
-<div class="trust-badge"><span class="icon">✓</span> Doctoral-Level Credentials</div>
-<div class="trust-badge"><span class="icon">✓</span> 15+ Years Clinical Experience</div>
-<div class="trust-badge"><span class="icon">✓</span> In-Home & Telehealth Available</div>
+<div class="trust-badge"><span class="icon">✓</span> Doctor of Physical Therapy</div>
+<div class="trust-badge"><span class="icon">✓</span> 10+ Years Experience</div>
+<div class="trust-badge"><span class="icon">✓</span> NASM Certified Trainer</div>
+<div class="trust-badge"><span class="icon">★</span> 5.0 · 32 Google Reviews</div>
 </div>
 </div>
+<!-- Google review widget -->
 <div class="hero-google">
 <div class="google-g">G</div>
-<div>
-<div class="google-text"><strong>Google Reviews</strong></div>
-<div class="google-stars">★★★★★ 5.0</div>
-<div class="google-text"><small>32 Reviews</small></div>
+<div class="google-text">
+<strong>5.0 ★★★★★</strong>
+<small>Empower Fitness · 32 Reviews</small>
 </div>
 </div>
 </section>
+<!-- ============================================
+     STATS STRIP — NEW
+============================================= -->
 
-<!-- STATS STRIP -->
 <div class="stats-strip">
 <div class="stat-item">
-<span class="stat-number">15+</span>
+<span class="stat-number">10+</span>
 <span class="stat-label">Years Experience</span>
 </div>
 <div class="stat-divider"></div>
 <div class="stat-item">
-<span class="stat-number">300+</span>
+<span class="stat-number">5.0★</span>
+<span class="stat-label">Google Rating</span>
+</div>
+<div class="stat-divider"></div>
+<div class="stat-item">
+<span class="stat-number">100+</span>
 <span class="stat-label">Clients Helped</span>
 </div>
 <div class="stat-divider"></div>
 <div class="stat-item">
-<span class="stat-number">98%</span>
-<span class="stat-label">Satisfaction Rate</span>
+<span class="stat-number">1:1</span>
+<span class="stat-label">Always One-on-One</span>
 </div>
 <div class="stat-divider"></div>
 <div class="stat-item">
-<span class="stat-number">24/7</span>
-<span class="stat-label">Availability*</span>
+<span class="stat-number">3</span>
+<span class="stat-label">Specialties Under One Roof</span>
 </div>
 </div>
+<!-- ============================================
+     BRIDGE SECTION — NEW NICHE POSITIONING
+============================================= -->
 
-<!-- HOW IT WORKS SECTION -->
+<section style="background: var(--black); padding: 80px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+<div>
+<div class="section-label">Our Difference</div>
+<h2>Where Recovery Ends,<br/><em style="font-style:normal; color: var(--gold);">We're Just Getting Started.</em></h2>
+<p style="font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.8; margin: 24px 0;">
+      Traditional physical therapy discharges you when the pain stops. But pain-free isn't the same as <em>fully functional</em> — and most people never make it all the way back to the strength, mobility, and confidence they had before.
+    </p>
+<p style="font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 32px;">
+      Dr. Ezra Miller bridges that gap. Every program is built to take you from injury or limitation through recovery and all the way to peak function — so you're not just healed, you're <strong style="color: var(--white);">better than you were before</strong>.
+    </p>
+<a class="btn-primary" href="/in-home-physical-therapy-boca-raton">See How It Works →</a>
+</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #0a0a0a;">
+<div style="background: var(--dark3); padding: 40px 36px;">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #888; margin-bottom: 20px;">Traditional PT</div>
+<div style="font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.8;">
+<div style="margin-bottom: 12px;"><span style="color: #c0392b; font-weight: 700;">✗</span> Treats pain only</div>
+<div style="margin-bottom: 12px;"><span style="color: #c0392b; font-weight: 700;">✗</span> Discharges when symptoms resolve</div>
+<div><span style="color: #c0392b; font-weight: 700;">✗</span> You're on your own after discharge</div>
+</div>
+</div>
+<div style="background: var(--dark3); padding: 40px 36px;">
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px;">Empower Fitness</div>
+<div style="font-size: 15px; color: var(--white); line-height: 1.8;">
+<div style="margin-bottom: 12px;"><span style="color: var(--gold); font-weight: 700;">✓</span> Treats pain + restores full function</div>
+<div style="margin-bottom: 12px;"><span style="color: var(--gold); font-weight: 700;">✓</span> Builds strength &amp; resilience for life</div>
+<div><span style="color: var(--gold); font-weight: 700;">✓</span> Ongoing support to stay performing</div>
+</div>
+</div>
+</div>
+<div style="background: linear-gradient(135deg, var(--dark3), #1a1a1a); padding: 40px 48px; border-top: 2px solid var(--gold); grid-column: 1 / -1;">
+<div style="font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-bottom: 12px;">The Result</div>
+<div style="font-size: 18px; color: rgba(255,255,255,0.9); line-height: 1.7;">You don't just get back to where you were — you surpass it. Our clients return to the sport, the lifestyle, and the body they thought they'd lost. No rushed sessions. No guesswork. Just one expert, fully invested in your outcome, from the first visit to the last.</div>
+</div>
+</section>
+<!-- ============================================
+     HOW IT WORKS — NEW
+============================================= -->
+
 <section class="how-it-works">
-<div class="section-label">Easy Process</div>
-<h2>How We Work</h2>
-<p class="section-intro">From your first consultation to your fitness goals, we make it seamless and personalized.</p>
+<div class="section-label">Simple Process</div>
+<h2>Getting Started Is Easy</h2>
+<p class="section-intro">We handle everything. No referrals needed, no insurance paperwork. Just book, meet, and start feeling better.</p>
 <div class="steps-grid">
 <div class="step-card">
-<div class="step-number">1</div>
-<h3>Free Consultation</h3>
-<p>Schedule a call with Dr. Ezra to discuss your goals, injuries, or limitations. No pressure, no obligation.</p>
+<div class="step-number">01</div>
+<h3>Book Your Free Call</h3>
+<p>Schedule a 15-minute discovery call with Dr. Ezra. Tell us what's going on — pain, injury, fitness goals. No commitment, no sales pitch.</p>
+<div class="step-arrow">→</div>
 </div>
 <div class="step-card">
-<span class="step-arrow">→</span>
-<div class="step-number">2</div>
-<h3>Assessment & Plan</h3>
-<p>Receive a detailed evaluation and customized training plan tailored to your needs and lifestyle.</p>
+<div class="step-number">02</div>
+<h3>We Come to You</h3>
+<p>Dr. Ezra or a member of our team arrives at your home, building, or preferred location anywhere in South Florida. No commute, no waiting room.</p>
+<div class="step-arrow">→</div>
 </div>
 <div class="step-card">
-<span class="step-arrow">→</span>
-<div class="step-number">3</div>
-<h3>In-Home Training</h3>
-<p>Start sessions at your home, your pace. Progress tracking and adjustments every step of the way.</p>
+<div class="step-number">03</div>
+<h3>Your Custom Plan Begins</h3>
+<p>Every session is built around your specific goals — whether that's recovering from surgery, returning to sport, or building a body that performs for decades.</p>
 </div>
 </div>
 </section>
+<!-- ============================================
+     SERVICES — IMPROVED
+============================================= -->
 
-<!-- SERVICES SECTION -->
-<section id="services" class="services">
-<div class="section-label">Our Expertise</div>
-<h2>Services We Offer</h2>
-<p class="section-intro">Whether you're recovering, training for performance, or building lifelong fitness, we have a service for you.</p>
+<section class="services">
+<div class="section-label">What We Offer</div>
+<h2>Concierge Care, Tailored to You</h2>
+<p class="section-intro">Every service is delivered one-on-one, in your home or preferred location — by a licensed Doctor of Physical Therapy or certified specialist.</p>
 <div class="services-grid">
-
-<div class="service-card" style="border-left: 3px solid #C8922A;">
+<div class="service-card">
+<div class="service-icon">🏠</div>
+<h3>In-Home Physical Therapy</h3>
+<p>Recover in comfort with one-on-one PT sessions delivered directly to you. We treat pain, restore mobility, and help you regain independence with expert care tailored to your specific condition and lifestyle.</p>
+<div class="service-outcome">✓ Outcome: Pain relief within 2–4 sessions for most patients</div>
+<a class="service-link" href="/in-home-physical-therapy-boca-raton">Book This Service →</a>
+</div>
+<div class="service-card">
 <div class="service-icon">🏃</div>
-<h3>Return to Sport</h3>
-<p>Sport-specific rehabilitation and functional training to get you back in the game, injury-free.</p>
-<div class="service-outcome">✓ ACL Rehab, Ankle Stability, Shoulder Mobility</div>
-<a href="/return-to-sport-training" class="service-link">Book This Service →</a>
+<h3>Return-to-Sport Therapy</h3>
+<p>Bridge the gap between rehab and peak performance. Designed for athletes recovering from injury who want to safely and confidently return to training or competition — stronger than before.</p>
+<div class="service-outcome">✓ Outcome: Full return to competition with reduced re-injury risk</div>
+<a class="service-link" href="/return-to-sport-physical-therapy-boca-raton">Book This Service →</a>
 </div>
-
-<div class="service-card" style="border-left: 3px solid #C8922A;">
+<div class="service-card">
 <div class="service-icon">💪</div>
-<h3>Functional Fitness</h3>
-<p>Strength, mobility, and movement quality designed for real-world performance and longevity.</p>
-<div class="service-outcome">✓ Strength Training, Mobility Work, Movement Coaching</div>
-<a href="/functional-fitness-training" class="service-link">Book This Service →</a>
+<h3>Fitness Training Programs</h3>
+<p>Custom training plans combining functional movement, strength, and conditioning. Whether you're starting out or chasing new PRs, every program is built around how your body actually moves.</p>
+<div class="service-outcome">✓ Outcome: Measurable strength gains in 6–8 weeks</div>
+<a class="service-link" href="/fitness-training-boca-raton">Book This Service →</a>
+</div>
+<div class="service-card">
+<div class="service-icon">🔒</div>
+<h3>Longevity Training</h3>
+<p>Stay active, strong, and independent for life. Our Longevity Program focuses on injury prevention, joint health, mobility, and strength training — designed for adults who want to age with vitality and confidence.</p>
+<div class="service-outcome">✓ Outcome: Better mobility and fewer injuries as you age</div>
+<a class="service-link" href="/longevity-training-boca-raton">Book This Service →</a>
+</div>
+<div class="service-card">
+<div class="service-icon">🥗</div>
+<h3>Nutrition &amp; Supplement Guidance</h3>
+<p>Fuel your recovery and performance with science-backed nutritional advice aligned with your therapy or training goals. Includes access to our food tracking app to keep you accountable.</p>
+<div class="service-outcome">✓ Outcome: Better energy, faster recovery, sustainable habits</div>
+<a class="service-link" href="/nutrition-coaching-boca-raton">Book This Service →</a>
 </div>
 
-<div class="service-card" style="border-left: 3px solid #C8922A;">
-<div class="service-icon">🩹</div>
-<h3>Post-Surgical Rehab</h3>
-<p>Evidence-based recovery protocols — whether that's recovering from surgery, returning to sport, or building lifelong fitness.</p>
-<div class="service-outcome">✓ Hip, Knee, Shoulder Recovery</div>
-<a href="/post-surgical-rehab" class="service-link">Book This Service →</a>
+<div class="service-card" style="background: var(--gold); color: var(--black);">
+<div class="service-icon">→</div>
+<h3 style="color: var(--black);">Not Sure Which Is Right for You?</h3>
+<p style="color: rgba(0,0,0,0.75);">Book a free 15-minute call. We'll assess your situation and recommend the right starting point — no commitment required.</p>
+<div style="margin-top: 20px;">
+<a href="/contact" style="background: var(--black); color: var(--white); font-weight:800; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; padding: 14px 24px; display:inline-block; border-radius:2px;">Book Free Consultation →</a>
 </div>
-
-<div class="service-card" style="border-left: 3px solid #C8922A;">
-<div class="service-icon">🔄</div>
-<h3>Longevity & Aging</h3>
-<p>Training designed to preserve function, prevent injury, and keep you strong and mobile for life.</p>
-<div class="service-outcome">✓ Senior Fitness, Fall Prevention, Mobility Maintenance</div>
-<a href="/longevity-aging-fitness" class="service-link">Book This Service →</a>
 </div>
-
-<div class="service-card" style="border-left: 3px solid #C8922A;">
-<div class="service-icon">🎯</div>
-<h3>Customized Programs</h3>
-<p>Fully personalized fitness and recovery plans. Not a template — built specifically for you.</p>
-<div class="service-outcome">✓ Telehealth Programs, At-Home Setups</div>
-<a href="/in-home-physical-therapy-boca-raton" class="service-link">View All Services ↓</a>
-</div>
-
-<div class="service-card" style="border-left: 3px solid #C8922A;">
-<div class="service-icon">👥</div>
-<h3>Group Training</h3>
-<p>Small-group functional fitness classes. Expert coaching with the accountability of a community.</p>
-<div class="service-outcome">✓ Small-Group Sessions, Online or In-Home</div>
-<a href="/group-training-boca-raton" class="service-link">Learn More →</a>
-</div>
-
 </div>
 </section>
+<!-- ============================================
+     TESTIMONIALS — NEW
+============================================= -->
 
-<!-- TESTIMONIALS SECTION -->
-<section id="testimonials" class="testimonials">
-<div class="section-label">Client Success Stories</div>
-<h2>Trusted By Boca Raton</h2>
+<section class="testimonials">
+<div class="section-label">Client Results</div>
+<h2>Real People. Real Recovery.</h2>
+<p class="section-intro">Don't take our word for it — here's what clients say about working with Dr. Ezra and the Empower Fitness team.</p>
 <div class="testimonials-grid">
-
 <div class="testimonial-card">
 <div class="testimonial-stars">★★★★★</div>
-<div class="testimonial-quote">Dr. Ezra transformed my recovery after knee surgery. His expertise and care took me from barely walking to running again in 4 months. Incredible.</div>
+<p class="testimonial-quote">Thank you Dr. Miller for all your help. After an abdominal surgery and dealing with a lot of repairing of core muscles, your professionalism, care and expertise was so welcomed — and I am excited to feel that this is the beginning of my own rehabilitation.</p>
 <div class="testimonial-author">
-<div class="author-name">Michael Rodriguez</div>
-<div class="author-meta">Post-Surgical Rehab • 4-month program</div>
+<div class="author-avatar">NL</div>
+<div>
+<div class="author-name">Natasha L.</div>
+<div class="author-meta">Google Review · 12 weeks ago</div>
 </div>
 </div>
-
+</div>
 <div class="testimonial-card">
 <div class="testimonial-stars">★★★★★</div>
-<div class="testimonial-quote">Finally a trainer who understands movement science and real-world training. I've never felt stronger or more functional at 65.</div>
+<p class="testimonial-quote">Ezra is the best. Very friendly and knowledgeable — not just in your normal orthopedic stuff, but in movement disorders too. What sets him apart is his genuineness. You know for sure that he cares and genuinely wants you to get better. Very creative and thinks outside the box too. I would highly recommend him.</p>
 <div class="testimonial-author">
-<div class="author-name">Margaret Chen</div>
-<div class="author-meta">Longevity Training • Ongoing</div>
+<div class="author-avatar">LA</div>
+<div>
+<div class="author-name">Larry A.</div>
+<div class="author-meta">Google Review · 3 weeks ago</div>
 </div>
 </div>
-
+</div>
 <div class="testimonial-card">
 <div class="testimonial-stars">★★★★★</div>
-<div class="testimonial-quote">The in-home sessions are a game-changer. No commute, personalized attention, and Dr. Ezra truly cares about results. Highly recommend.</div>
+<p class="testimonial-quote">I can't recommend Ezra enough! I was dealing with a disc in my back that was out of place and causing a lot of pain, and Ezra helped me tremendously throughout my recovery. He was extremely knowledgeable, patient, and attentive, and took the time to explain everything along the way. The personalized treatment and hands-on approach made a huge difference. I'm now feeling so much better and moving comfortably again.</p>
 <div class="testimonial-author">
-<div class="author-name">James Williamson</div>
-<div class="author-meta">Functional Fitness • 8-week program</div>
+<div class="author-avatar">DL</div>
+<div>
+<div class="author-name">Daneal L.</div>
+<div class="author-meta">Google Review · 9 weeks ago</div>
 </div>
 </div>
-
+</div>
 <div class="testimonial-card">
 <div class="testimonial-stars">★★★★★</div>
-<div class="testimonial-quote">As a runner, I needed someone who understood the demands of my sport. Dr. Ezra delivered a program that got me back to racing healthy.</div>
+<p class="testimonial-quote">So I was in a world of pain, just flew into the states and had back issues on arrival. Dr. Ezra checked me out and treated me for the symptoms and had me up and running in no time. Would recommend him every time!!</p>
 <div class="testimonial-author">
-<div class="author-name">Sarah Thompson</div>
-<div class="author-meta">Return to Sport • 3-month program</div>
+<div class="author-avatar">RW</div>
+<div>
+<div class="author-name">Rob W.</div>
+<div class="author-meta">Google Review · 9 weeks ago</div>
 </div>
 </div>
-
 </div>
-
+</div>
 <div class="testimonials-footer">
 <div class="google-badge-large">
 <span class="stars">★★★★★</span>
 <div>
-<strong>Google</strong><br/>
-<small>5.0 Rated • 32 Reviews</small>
+<strong>5.0 out of 5</strong>
+<small style="display:block;">Based on 28 Google Reviews</small>
 </div>
+<a href="https://g.co/kgs/empower" style="font-size:12px; color: var(--gold); font-weight:700; margin-left:8px;">Read All 32 Reviews →</a>
 </div>
 </div>
 </section>
+<!-- ============================================
+     ABOUT — IMPROVED
+============================================= -->
 
-<!-- ABOUT SECTION -->
-<section id="about" class="about">
+<section class="about">
 <div class="about-image-wrap">
-<div class="about-image-placeholder">Dr. Ezra Miller Photo</div>
+<img src="/img/headshot.jpg" alt="Dr. Ezra Miller, PT, DPT" style="width:100%;height:480px;object-fit:cover;object-position:top center;display:block;" />
 <div class="about-gold-bar">
-<strong>15+</strong>
-<span>Years of Care</span>
+<strong>10+</strong>
+<span>Years of Expert Care</span>
 </div>
 </div>
 <div>
-<div class="section-label">Meet Your Coach</div>
-<h2>Dr. Ezra Miller, PT, DPT</h2>
-<p style="font-size: 17px; color: var(--gray); margin: 20px 0; line-height: 1.8;">Physical Therapist & Functional Performance Coach. Doctorate in Physical Therapy. Specializing in post-injury rehabilitation, return-to-sport training, and longevity-focused fitness for active adults across South Florida.</p>
+<div class="section-label">Meet Your Team</div>
+<h2>Led by Dr. Ezra Miller, PT, DPT</h2>
 
 <div class="credentials">
-<div class="credential-badge">DPT (Doctorate, Physical Therapy)</div>
-<div class="credential-badge">Board-Certified in Orthopedic PT</div>
-<div class="credential-badge">Certified Strength & Conditioning Specialist (CSCS)</div>
-<div class="credential-badge">Functional Movement Specialist</div>
-<div class="credential-badge">Telehealth PT License</div>
+<span class="credential-badge">Doctor of Physical Therapy (DPT)</span>
+<span class="credential-badge">NASM Certified Personal Trainer</span>
+<span class="credential-badge">10+ Years Clinical Experience</span>
+<span class="credential-badge">Boca Raton · Delray Beach · Pompano Beach</span>
 </div>
-
+<!-- NEW: Dr. Ezra's Personal Oversight Blurb -->
+<div style="border-top: 1px solid rgba(200,146,42,0.3); padding-top: 20px; margin: 24px 0;">
+<p style="font-size:11px; color:var(--gold); font-weight:700; letter-spacing:2px; text-transform:uppercase; line-height:1; margin-bottom:12px;">
+        Every Program, Personally Overseen
+      </p>
+<p style="font-size:15px; color:rgba(255,255,255,0.85); line-height:1.7; margin-bottom:0;">
+        Dr. Ezra personally designs the clinical framework behind every program we deliver. Whether you're recovering from injury, training for a sport, or building lifelong fitness, every protocol is reviewed and overseen by a Doctor of Physical Therapy — ensuring medical precision at every step.
+      </p>
+</div>
+<p style="font-size:15px; color:rgba(255,255,255,0.85); line-height:1.8; margin-top:24px; margin-bottom:16px;">
+      Dr. Ezra Miller and his team bring together expert knowledge and a genuine passion for helping clients achieve their best health — at every stage of life. We're not a clinic. We're your personal health team.
+    </p>
 <ul class="about-points">
-<li>15+ years of clinical experience in orthopedic rehabilitation and sports medicine</li>
-<li>Specialized training in ACL reconstruction, post-surgical mobility, and return-to-sport protocols</li>
-<li>Certified in functional movement assessment and corrective exercise programming</li>
-<li>Works with athletes, post-surgical patients, and aging adults across South Florida</li>
-<li>Passionate about using evidence-based, science-driven approaches to physical therapy</li>
-<li>Committed to making premium physical therapy accessible through in-home and telehealth options</li>
+<li>Licensed Doctors of Physical Therapy (DPT) for clinical accuracy</li>
+<li>NASM Certified Personal Trainers for performance and fitness programming</li>
+<li>Registered Nutritionists for recovery-focused dietary guidance</li>
+<li>All care delivered one-on-one — never in a group or clinic setting</li>
+<li>Available in Boca Raton, Delray Beach, Pompano Beach, and surrounding South Florida areas</li>
 </ul>
-
-<a href="#contact" class="btn-primary">Schedule Your Consultation</a>
+<a class="btn-primary" href="/about">Meet Dr. Ezra →</a>
 </div>
 </section>
+<!-- ============================================
+     WHY CHOOSE — IMPROVED
+============================================= -->
 
-<!-- WHY CHOOSE US SECTION -->
-<section id="why" class="why-choose">
-<div class="section-label">Why Clients Choose Empower</div>
-<h2>Here's What Sets Us Apart</h2>
-<p class="section-intro">We're not a cookie-cutter gym or a corporate rehab clinic. We're personalized, expert-led, and completely focused on your results.</p>
+<section class="why-choose">
+<div class="section-label">Why Empower Fitness</div>
+<h2>The Concierge Difference</h2>
+<p class="section-intro">Most physical therapy practices rush you through 30-minute slots between three other patients. We built something completely different.</p>
 <div class="why-grid">
-
 <div class="why-card">
-<div class="why-icon">🏠</div>
-<h3>In-Home Convenience</h3>
-<p>Train in your own space, on your schedule. No commute, no crowds, just you and expert coaching.</p>
+<div class="why-icon">🎯</div>
+<h3>Personalized, 1-on-1 Care — Always</h3>
+<p>Every session is 100% focused on you. Whether you're an athlete, a retiree, or a busy professional, your treatment plan is built specifically for your body, your goals, and your schedule — never a generic template.</p>
 </div>
-
-<div class="why-card">
-<div class="why-icon">🎓</div>
-<h3>Doctorate-Level Expertise</h3>
-<p>Dr. Ezra holds a DPT (Doctorate in Physical Therapy) and is board-certified in orthopedic physical therapy.</p>
-</div>
-
 <div class="why-card">
 <div class="why-icon">🔬</div>
-<h3>Evidence-Based Methods</h3>
-<p>Every program is built on peer-reviewed research and time-tested rehabilitation protocols.</p>
+<h3>Holistic, Evidence-Based Approach</h3>
+<p>We combine PT, functional fitness, and nutritional guidance to address both the immediate problem and the root cause. Our methods are grounded in current clinical research — not outdated protocols.</p>
 </div>
-
 <div class="why-card">
-<div class="why-icon">📊</div>
-<h3>Progress Tracking</h3>
-<p>Measurable outcomes, detailed assessments, and adjustments based on your real progress.</p>
+<div class="why-icon">🛡️</div>
+<h3>Prevention &amp; Long-Term Performance</h3>
+<p>We don't just fix what's broken — we build you to be harder to break. Every program includes injury prevention strategies so you can stay pain-free, perform better, and keep moving for years to come.</p>
 </div>
-
-<div class="why-card">
-<div class="why-icon">💬</div>
-<h3>Total Accessibility</h3>
-<p>Available via in-home PT, telehealth video sessions, or phone consults. Your choice.</p>
-</div>
-
-<div class="why-card">
-<div class="why-icon">⭐</div>
-<h3>5-Star Rated</h3>
-<p>98% client satisfaction. Trusted by over 300+ patients across South Florida.</p>
-</div>
-
 </div>
 </section>
+<!-- ============================================
+     QUOTE
+============================================= -->
+<div class="quote-section">
+<p class="quote-text">
+    "True recovery isn't just about healing injuries. It's about empowering you with the <strong>strength, confidence, and tools</strong> to stay resilient and injury-free for life."
+  </p>
+<div class="quote-author">— Dr. Ezra Miller, PT, DPT · Founder, Empower Fitness</div>
+</div>
+<!-- ============================================
+     FAQ — IMPROVED (8 Q&As, 2-col layout)
+============================================= -->
 
-<!-- FOOTER -->
+<section class="faq">
+<div class="section-label">Common Questions</div>
+<h2>Everything You Need to Know</h2>
+<p class="section-intro">Have a question not answered here? Call us or book a free consultation — we'll answer everything.</p>
+<div class="faq-grid">
+<div class="faq-item">
+<h3>Do I need a doctor's referral to start?</h3>
+<p>No referral needed. Florida is a direct access state — you can start physical therapy with Dr. Ezra immediately, without a physician referral. Just book your free consultation and we'll handle the rest.</p>
+</div>
+<div class="faq-item">
+<h3>What areas do you serve?</h3>
+<p>We serve Boca Raton, Delray Beach, Pompano Beach, Deerfield Beach, Boynton Beach, Highland Beach, and surrounding South Florida communities. If you're unsure, reach out — we'll let you know if we can come to you.</p>
+</div>
+<div class="faq-item">
+<h3>Do you accept insurance?</h3>
+<p>Empower Fitness is a private-pay, concierge practice. We do not bill insurance directly. However, we can provide a superbill for you to submit for potential out-of-network reimbursement. Many clients find the one-on-one quality is well worth the investment.</p>
+</div>
+<div class="faq-item">
+<h3>How much does concierge PT cost in Boca Raton?</h3>
+<p>Rates vary by service and plan. Physical therapy in Boca Raton typically ranges from $100–$600 per session. At Empower Fitness, you're paying for a DPT who comes to you, works with only you for the entire session, and builds a plan specifically for your goals. Schedule a free consultation for exact pricing.</p>
+</div>
+<div class="faq-item">
+<h3>What does physical therapy actually do?</h3>
+<p>PT helps you recover from injuries, manage chronic pain, restore mobility, and prevent future injuries. Dr. Ezra uses targeted exercises, manual therapy, and movement retraining — all tailored to your specific condition and goals.</p>
+</div>
+<div class="faq-item">
+<h3>Is physical therapy really effective?</h3>
+<p>Yes — and the research is clear. PT addresses root causes of pain, not just symptoms. For most conditions — from post-surgical recovery to chronic back pain — PT produces better long-term outcomes than medication or rest alone.</p>
+</div>
+<div class="faq-item">
+<h3>How often should I do physical therapy?</h3>
+<p>Frequency depends on your condition and goals. Acute recovery may require 2–3 sessions per week initially, while maintenance or longevity programs are often 1–2 times per week. Dr. Ezra will recommend a schedule that fits your life and accelerates your progress.</p>
+</div>
+<div class="faq-item">
+<h3>What should I expect in my first session?</h3>
+<p>Your first session is a comprehensive evaluation — Dr. Ezra will assess your movement, discuss your history and goals, and begin building your personalized plan. Many clients leave feeling better after session one. It's thorough, not rushed.</p>
+</div>
+</div>
+</section>
+<!-- ============================================
+     FINAL CTA — IMPROVED
+============================================= -->
+
+<section class="final-cta">
+<div class="cta-urgency">Limited Availability · Boca Raton · Delray Beach · Pompano Beach &amp; Surrounding Areas</div>
+<h2>Ready to Stop Living Around Pain?</h2>
+<p>Book a free 15-minute consultation. We'll assess your situation, answer your questions, and tell you exactly how we can help — no commitment, no pressure.</p>
+<div class="cta-group">
+<a class="btn-dark" href="/contact">Schedule My Free Consultation →</a>
+<div class="cta-phone">
+<span>📞</span>
+<span>954-901-7211</span>
+</div>
+</div>
+</section>
+<!-- ============================================
+     FOOTER — IMPROVED
+============================================= -->
+
 <footer>
 <div class="footer-grid">
 <div class="footer-brand">
-<h3>EMPOWER FITNESS</h3>
-<p>Concierge physical therapy and functional fitness for South Florida. Dr. Ezra Miller, PT, DPT.</p>
+<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
+<p>Concierge physical therapy and functional fitness delivered to your door. Serving Boca Raton, Delray Beach, Pompano Beach, and surrounding South Florida.</p>
 </div>
 <div class="footer-col">
 <h4>Services</h4>
-<a href="/return-to-sport-training">Return to Sport</a>
-<a href="/functional-fitness-training">Functional Fitness</a>
-<a href="/post-surgical-rehab">Post-Surgical Rehab</a>
-<a href="/longevity-aging-fitness">Longevity & Aging</a>
+<ul>
+<li><a href="/in-home-physical-therapy-boca-raton">In-Home Physical Therapy</a></li>
+<li><a href="/return-to-sport-physical-therapy-boca-raton">Return-to-Sport</a></li>
+<li><a href="/fitness-training-boca-raton">Fitness Training</a></li>
+<li><a href="/longevity-training-boca-raton">Longevity Program</a></li>
+<li><a href="/nutrition-coaching-boca-raton">Nutrition Guidance</a></li>
+</ul>
 </div>
 <div class="footer-col">
 <h4>Company</h4>
-<a href="/#about">About Dr. Miller</a>
-<a href="/#why">Why Us</a>
-<a href="/#testimonials">Testimonials</a>
-<a href="/privacy-policy">Privacy Policy</a>
+<ul>
+<li><a href="/about">About Dr. Ezra</a></li>
+<li><a href="/about">Our Team</a></li>
+<li><a href="/blog/in-home-physical-therapy-boca-raton">Blog</a></li>
+<li><a href="/blog/return-to-sport-physical-therapy-boca-raton">Injury Finder</a></li>
+<li><a href="/contact">Free Consultation</a></li>
+</ul>
 </div>
 <div class="footer-col">
-<h4>Get Started</h4>
-<a href="tel:+1-561-400-0000">Call Now</a>
-<a href="/#contact">Schedule Consultation</a>
-<a href="/faq">FAQ</a>
-<a href="#">Location & Hours</a>
+<h4>Contact</h4>
+<ul>
+<li>Boca Raton, FL</li>
+<li>Delray Beach, FL</li>
+<li>Pompano Beach, FL</li>
+<li><a href="tel:954-901-7211">954-901-7211</a></li>
+<li><a href="mailto:info@empowerfitnesspt.com">info@empowerfitnesspt.com</a></li>
+<li style="margin-top:8px;"><a href="https://g.page/r/empowerfitnesspt/review" style="color:var(--gold);" target="_blank">★ Leave a Google Review</a></li>
+</ul>
 </div>
 </div>
 <div class="footer-bottom">
-<div>&copy; 2025 Empower Fitness. All rights reserved.</div>
-<div class="social-links">
-<a href="https://instagram.com" title="Follow on Instagram">📱</a>
-<a href="https://facebook.com" title="Follow on Facebook">f</a>
-<a href="https://linkedin.com" title="Connect on LinkedIn">in</a>
-</div>
+<p>© 2026 Empower Fitness. All rights reserved.</p>
+<p>Dr. Ezra Miller, PT, DPT · Licensed in Florida · NASM Certified</p>
 </div>
 </footer>
+<!-- ============================================
+     AI CHAT WIDGET — Tidio / AI-powered
+     NOTE: Replace this placeholder with the
+     Tidio embed code from tidio.com/wix-plugin
+============================================= -->
+<style>
+  .chat-launcher {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .chat-bubble {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 14px 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    max-width: 240px;
+    font-size: 14px;
+    color: #111;
+    line-height: 1.5;
+    position: relative;
+    animation: chatPop 0.4s ease forwards;
+  }
+  .chat-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 20px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--white);
+  }
+  .chat-bubble strong { display: block; margin-bottom: 4px; font-size: 13px; color: var(--gold); }
+  @keyframes chatPop {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .chat-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(200,146,42,0.45);
+    cursor: pointer;
+    font-size: 26px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    outline: none;
+  }
+  .chat-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 28px rgba(200,146,42,0.6);
+  }
+</style>
 
-<!-- CHAT WIDGET PLACEHOLDER -->
-<div style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
 <div class="chat-launcher">
 <div class="chat-bubble">
 <strong>Hi, I'm the Empower Fitness assistant!</strong>

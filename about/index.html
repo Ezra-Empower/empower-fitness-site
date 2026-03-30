@@ -549,57 +549,6 @@
         }
 
         /* Footer */
-        footer {
-            background-color: var(--black);
-            padding: 3rem 2rem;
-            border-top: 1px solid var(--dark3);
-            margin-top: 3rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-section h4 {
-            font-size: 0.9rem;
-            font-weight: 900;
-            color: var(--gold);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.6rem;
-        }
-
-        .footer-section ul li a {
-            color: var(--gray);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .footer-section ul li a:hover {
-            color: var(--gold);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--dark3);
-            font-size: 0.85rem;
-            color: var(--gray);
-        }
 
         
 
@@ -695,23 +644,53 @@
     .nav-cta:hover { background: #e0a93a; }
 
     /* ── Footer (shared with all pages) ── */
+    @media(max-width:768px){ }
+    @media(max-width:480px){ }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      padding: 48px 80px 32px;
+    }
     .footer-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr;
       gap: 40px;
       margin-bottom: 40px;
     }
-    .footer-brand p { font-size:14px; color:var(--gray); line-height:1.7; margin-top:14px; max-width:280px; }
-    .footer-col h4 { font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:18px; }
-    .footer-col ul { list-style:none; }
-    .footer-col li { font-size:14px; color:var(--gray); margin-bottom:10px; }
-    .footer-col li a { color:var(--gray); transition:color 0.2s; }
-    .footer-col li a:hover { color:var(--gold); }
-    .footer-bottom { border-top:1px solid #1a1a1a; padding-top:24px; display:flex; justify-content:space-between; align-items:center; }
-    .footer-bottom p { font-size:12px; color:#555; }
-    @media(max-width:768px){ .footer-grid { grid-template-columns:1fr 1fr; } }
-    @media(max-width:480px){ .footer-grid { grid-template-columns:1fr; } }
-</style>
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-top: 14px;
+      max-width: 280px;
+      text-align: center;
+    }
+    .footer-brand .nav-logo { justify-content: center; }
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li {
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 10px;
+    }
+    .footer-col li a { color: var(--gray); transition: color 0.2s; }
+    .footer-col li a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid #1a1a1a;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    </style>
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="About Us | Dr. Ezra Miller, PT, DPT | Empower Fitness"/>
@@ -1006,5 +985,16 @@
             console.log('Empower Fitness About Page Loaded');
         });
     </script>
+  <script>
+  function toggleChat() {
+    var bubble = document.getElementById('chatBubble') || document.querySelector('.chat-bubble');
+    if (!bubble) return;
+    bubble.classList.toggle('active');
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.querySelector('.chat-button, button[onclick*="toggleChat"]');
+    if (btn && !btn.getAttribute('onclick')) btn.setAttribute('onclick', 'toggleChat()');
+  });
+  </script>
 </body>
 </html>

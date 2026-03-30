@@ -1402,7 +1402,10 @@
     line-height: 1.5;
     position: relative;
     animation: chatPop 0.4s ease forwards;
+  
+    display: none;
   }
+  .chat-bubble.active { display: block; }
   .chat-bubble::after {
     content: '';
     position: absolute;
@@ -1443,7 +1446,18 @@
 <strong>Hi, I'm the Empower Fitness assistant!</strong>
     Have questions about PT, pricing, or scheduling? I can help right now.
   </div>
-<button class="chat-button" title="Chat with us">💬</button>
+<button class="chat-button"  onclick="toggleChat()"title="Chat with us">💬</button>
 </div>
+  <script>
+  function toggleChat() {
+    var bubble = document.getElementById('chatBubble') || document.querySelector('.chat-bubble');
+    if (!bubble) return;
+    bubble.classList.toggle('active');
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.querySelector('.chat-button, button[onclick*="toggleChat"]');
+    if (btn && !btn.getAttribute('onclick')) btn.setAttribute('onclick', 'toggleChat()');
+  });
+  </script>
 </body>
 </html>

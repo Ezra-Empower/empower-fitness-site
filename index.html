@@ -448,10 +448,7 @@
       color: var(--gray);
       margin-top: 4px;
     }
-    .testimonials-footer {
-      margin-top: 40px;
-      text-align: center;
-    }
+    .testimonials-
     .google-badge-large {
       display: inline-flex;
       align-items: center;
@@ -698,49 +695,17 @@
     /* =============================================
        FOOTER
     ============================================= */
-    footer {
-      background: var(--black);
-      padding: 48px 80px 32px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-    .footer-brand p {
-      font-size: 14px;
-      color: var(--gray);
-      line-height: 1.7;
-      margin-top: 14px;
-      max-width: 280px;
-    
-      text-align: center;}
-    .footer-brand .nav-logo { justify-content: center; }
-    .footer-col h4 {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 18px;
-    }
-    .footer-col ul { list-style: none; }
-    .footer-col li {
-      font-size: 14px;
-      color: var(--gray);
-      margin-bottom: 10px;
-    }
-    .footer-col li a { color: var(--gray); transition: color 0.2s; }
-    .footer-col li a:hover { color: var(--gold); }
-    .footer-bottom {
-      border-top: 1px solid #1a1a1a;
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .footer-bottom p { font-size: 12px; color: #555; }
+
+
+
+
+
+
+
+
+
+
+
 
     /* =============================================
        LEGEND PANEL (FLOATING)
@@ -776,6 +741,52 @@
       flex-shrink: 0;
       margin-top: 4px;
     }
+    
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      padding: 48px 80px 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-top: 14px;
+      max-width: 280px;
+    }
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .footer-col ul { list-style: none; padding: 0; }
+    .footer-col li { font-size: 14px; color: var(--gray); margin-bottom: 10px; }
+    .footer-col li a { color: var(--gray); transition: color 0.2s; text-decoration: none; }
+    .footer-col li a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid #1a1a1a;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom p { font-size: 12px; color: #555; }
+    .chat-widget { position: fixed; bottom: 28px; right: 28px; z-index: 9000; }
+    .chat-launcher { background: var(--gold, #C8922A); color: #fff; border: none; width: 52px; height: 52px; border-radius: 50%; font-size: 22px; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.25); display: block; }
+    .chat-launcher:hover { background: var(--gold-light, #D4A843); }
+    .chat-bubble { position: absolute; bottom: 64px; right: 0; background: var(--dark2, #111); color: var(--white, #fff); border: 2px solid var(--gold, #C8922A); border-radius: 8px; padding: 20px; width: 280px; font-size: 13px; display: none; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    .chat-bubble.active { display: block; }
+    .chat-close { position: absolute; top: 8px; right: 10px; background: none; border: none; color: var(--gray, #888); cursor: pointer; font-size: 16px; }
+    .chat-bubble p { margin: 6px 0; line-height: 1.5; }
     </style>
 
 <!-- Open Graph -->
@@ -1334,7 +1345,7 @@
 <footer>
 <div class="footer-grid">
 <div class="footer-brand">
-<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
+<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;"><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
 <p>Concierge physical therapy and functional fitness delivered to your door. Serving Boca Raton, Delray Beach, Pompano Beach, and surrounding South Florida.</p>
 </div>
 <div class="footer-col">
@@ -1351,9 +1362,9 @@
 <h4>Company</h4>
 <ul>
 <li><a href="/about">About Dr. Ezra</a></li>
-<li><a href="/about">Our Team</a></li>
-<li><a href="/blog/in-home-physical-therapy-boca-raton">Blog</a></li>
-<li><a href="/blog/return-to-sport-physical-therapy-boca-raton">Injury Finder</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/injury-finder">Injury Finder</a></li>
+<li><a href="/faq">FAQ</a></li>
 <li><a href="/contact">Free Consultation</a></li>
 </ul>
 </div>
@@ -1364,7 +1375,7 @@
 <li>Delray Beach, FL</li>
 <li>Pompano Beach, FL</li>
 <li><a href="tel:954-901-7211">954-901-7211</a></li>
-<li><a href="mailto:info@empowerfitnesspt.com">info@empowerfitnesspt.com</a></li>
+<li><a href="mailto:admin@empowerfitnesspt.com">admin@empowerfitnesspt.com</a></li>
 <li style="margin-top:8px;"><a href="https://g.page/r/empowerfitnesspt/review" style="color:var(--gold);" target="_blank">★ Leave a Google Review</a></li>
 </ul>
 </div>
@@ -1380,66 +1391,64 @@
      Tidio embed code from tidio.com/wix-plugin
 ============================================= -->
 <style>
-  .chat-launcher {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    z-index: 9000;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 12px;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-  }
-  .chat-bubble {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 14px 18px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    max-width: 240px;
-    font-size: 14px;
-    color: #111;
-    line-height: 1.5;
-    position: relative;
-    animation: chatPop 0.4s ease forwards;
-  
-    display: none;
-  }
-  .chat-bubble.active { display: block; }
-  .chat-bubble::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    right: 20px;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid var(--white);
-  }
-  .chat-bubble strong { display: block; margin-bottom: 4px; font-size: 13px; color: var(--gold); }
+
+
+
+
+
   @keyframes chatPop {
     from { opacity: 0; transform: translateY(10px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  .chat-button {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(200,146,42,0.45);
-    cursor: pointer;
-    font-size: 26px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: none;
-    outline: none;
-  }
-  .chat-button:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 28px rgba(200,146,42,0.6);
-  }
-</style>
+
+
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      padding: 48px 80px 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-top: 14px;
+      max-width: 280px;
+    }
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .footer-col ul { list-style: none; padding: 0; }
+    .footer-col li { font-size: 14px; color: var(--gray); margin-bottom: 10px; }
+    .footer-col li a { color: var(--gray); transition: color 0.2s; text-decoration: none; }
+    .footer-col li a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid #1a1a1a;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom p { font-size: 12px; color: #555; }
+    .chat-widget { position: fixed; bottom: 28px; right: 28px; z-index: 9000; }
+    .chat-launcher { background: var(--gold, #C8922A); color: #fff; border: none; width: 52px; height: 52px; border-radius: 50%; font-size: 22px; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.25); display: block; }
+    .chat-launcher:hover { background: var(--gold-light, #D4A843); }
+    .chat-bubble { position: absolute; bottom: 64px; right: 0; background: var(--dark2, #111); color: var(--white, #fff); border: 2px solid var(--gold, #C8922A); border-radius: 8px; padding: 20px; width: 280px; font-size: 13px; display: none; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    .chat-bubble.active { display: block; }
+    .chat-close { position: absolute; top: 8px; right: 10px; background: none; border: none; color: var(--gray, #888); cursor: pointer; font-size: 16px; }
+    .chat-bubble p { margin: 6px 0; line-height: 1.5; }
+    </style>
 
 <div class="chat-launcher">
 <div class="chat-bubble">

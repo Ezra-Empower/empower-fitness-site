@@ -359,55 +359,15 @@
         }
 
         /* CHAT WIDGET */
-        .chat-widget {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 998;
-        }
 
-        .chat-launcher {
-            background: var(--gold);
-            color: var(--dark);
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            font-size: 24px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(200, 146, 42, 0.3);
-            transition: all 0.3s;
-            font-weight: 900;
-        }
 
-        .chat-launcher:hover {
-            transform: scale(1.1);
-            background: var(--gold-light);
-            box-shadow: 0 6px 20px rgba(200, 146, 42, 0.4);
-        }
 
-        .chat-bubble {
-            position: absolute;
-            bottom: 80px;
-            right: 0;
-            background: var(--dark2);
-            color: var(--white);
-            border: 2px solid var(--gold);
-            border-radius: 8px;
-            padding: 20px;
-            max-width: 300px;
-            font-size: 13px;
-            display: none;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-            animation: slideIn 0.3s ease-out;
-        }
 
-        .chat-bubble.active {
-            display: block;
-        }
+
+
+
+
+
 
         @keyframes slideIn {
             from {
@@ -420,17 +380,7 @@
             }
         }
 
-        .chat-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: none;
-            border: none;
-            color: var(--gray);
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-        }
+
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
@@ -498,6 +448,18 @@
 
   
     /* FOOTER */
+
+
+
+
+
+
+
+
+
+
+    
+    /* FOOTER */
     footer {
       background: var(--black);
       padding: 48px 80px 32px;
@@ -514,9 +476,7 @@
       line-height: 1.7;
       margin-top: 14px;
       max-width: 280px;
-      text-align: center;
     }
-    .footer-brand .nav-logo { justify-content: center; }
     .footer-col h4 {
       font-size: 12px;
       font-weight: 700;
@@ -525,9 +485,9 @@
       color: var(--gold);
       margin-bottom: 18px;
     }
-    .footer-col ul { list-style: none; }
+    .footer-col ul { list-style: none; padding: 0; }
     .footer-col li { font-size: 14px; color: var(--gray); margin-bottom: 10px; }
-    .footer-col li a { color: var(--gray); transition: color 0.2s; }
+    .footer-col li a { color: var(--gray); transition: color 0.2s; text-decoration: none; }
     .footer-col li a:hover { color: var(--gold); }
     .footer-bottom {
       border-top: 1px solid #1a1a1a;
@@ -536,6 +496,14 @@
       justify-content: space-between;
       align-items: center;
     }
+    .footer-bottom p { font-size: 12px; color: #555; }
+    .chat-widget { position: fixed; bottom: 28px; right: 28px; z-index: 9000; }
+    .chat-launcher { background: var(--gold, #C8922A); color: #fff; border: none; width: 52px; height: 52px; border-radius: 50%; font-size: 22px; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.25); display: block; }
+    .chat-launcher:hover { background: var(--gold-light, #D4A843); }
+    .chat-bubble { position: absolute; bottom: 64px; right: 0; background: var(--dark2, #111); color: var(--white, #fff); border: 2px solid var(--gold, #C8922A); border-radius: 8px; padding: 20px; width: 280px; font-size: 13px; display: none; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    .chat-bubble.active { display: block; }
+    .chat-close { position: absolute; top: 8px; right: 10px; background: none; border: none; color: var(--gray, #888); cursor: pointer; font-size: 16px; }
+    .chat-bubble p { margin: 6px 0; line-height: 1.5; }
     </style>
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
@@ -689,7 +657,7 @@
 <footer>
 <div class="footer-grid">
 <div class="footer-brand">
-<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
+<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;"><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
 <p>Concierge physical therapy and functional fitness delivered to your door. Serving Boca Raton, Delray Beach, Pompano Beach, and surrounding South Florida.</p>
 </div>
 <div class="footer-col">
@@ -720,25 +688,17 @@
 <li>Pompano Beach, FL</li>
 <li><a href="tel:954-901-7211">954-901-7211</a></li>
 <li><a href="mailto:admin@empowerfitnesspt.com">admin@empowerfitnesspt.com</a></li>
-<li style="margin-top:8px;"><a href="https://g.page/r/empowerfitnesspt/review" style="color:var(--gold);" target="_blank">&#9733; Leave a Google Review</a></li>
+<li style="margin-top:8px;"><a href="https://g.page/r/empowerfitnesspt/review" style="color:var(--gold);" target="_blank">★ Leave a Google Review</a></li>
 </ul>
 </div>
 </div>
 <div class="footer-bottom">
-<p>&copy; 2026 Empower Fitness. All rights reserved.</p>
-<p>Dr. Ezra Miller, PT, DPT &middot; Licensed in Florida &middot; NASM Certified</p>
+<p>© 2026 Empower Fitness. All rights reserved.</p>
+<p>Dr. Ezra Miller, PT, DPT · Licensed in Florida · NASM Certified</p>
 </div>
 </footer>
 </div>
 <!-- CHAT WIDGET -->
-<div class="chat-widget">
-<button class="chat-launcher" onclick="toggleChat()">💬</button>
-<div class="chat-bubble" id="chatBubble">
-<button class="chat-close" onclick="toggleChat()">✕</button>
-<p><strong>Age well, stay strong!</strong></p>
-<p>Questions about longevity training for 40+? Let's build your lasting strength. Call <span style="white-space: nowrap;">954-901-7211</span> for a free consult.</p>
-</div>
-</div>
 <script>
     function toggleChat() {
         const bubble = document.getElementById('chatBubble');

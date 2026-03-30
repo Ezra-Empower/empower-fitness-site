@@ -357,7 +357,10 @@
             border-top: 1px solid var(--dark2);
         }
 
-        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
         .footer-locations {
             color: var(--gray);
@@ -395,35 +398,6 @@
         .footer-copyright {
             color: var(--gray);
             font-size: 12px;
-        }
-
-        /* FLOATING LEGEND PANEL */
-        .change-legend {
-            position: fixed;
-            bottom: 140px;
-            right: 20px;
-            background: var(--dark2);
-            border: 2px solid #ff0000;
-            border-radius: 8px;
-            padding: 20px;
-            max-width: 280px;
-            font-size: 12px;
-            z-index: 999;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        }
-
-        .legend-title {
-            font-weight: 900;
-            color: #ff6666;
-            margin-bottom: 12px;
-            font-size: 13px;
-        }
-
-        .legend-item {
-            color: var(--gray);
-            margin-bottom: 8px;
-            line-height: 1.4;
-            padding-left: 12px;
         }
 
         .legend-item::before {
@@ -543,12 +517,7 @@
                 font-size: 32px;
             }
 
-            .change-legend {
-                max-width: calc(100vw - 40px);
-                bottom: 100px;
-                left: 20px;
-                right: 20px;
-            }
+            
         }
     
     /* ===== NAVIGATION ===== */
@@ -778,14 +747,6 @@
 <p>Dr. Ezra Miller, PT, DPT &middot; Licensed in Florida &middot; NASM Certified</p>
 </div>
 </footer>
-<!-- FLOATING CHANGE LEGEND -->
-<div class="change-legend">
-<div class="legend-title">🔴 CHANGES APPLIED</div>
-<div class="legend-item">Nav button: "Get Started →" to /contact</div>
-<div class="legend-item">DPT Leadership Differentiator section added</div>
-<div class="legend-item">Early page placement: powerful messaging</div>
-<div class="legend-item">Updated therapist references</div>
-<div class="legend-item">Updated CTA button &amp; copy</div>
 </div>
 <!-- CHAT WIDGET -->
 <div class="chat-widget">

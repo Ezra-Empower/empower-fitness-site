@@ -124,7 +124,52 @@
       align-items: center;
     }
     .footer-bottom p { font-size: 12px; color: #555; }
-    </style>
+    
+/* ===== RESPONSIVE: MOBILE + TABLET ===== */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:1001;}
+.nav-hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:768px){
+  nav{padding:0 20px!important;position:relative!important;}
+  .nav-hamburger{display:flex!important;}
+  .nav-links{display:none!important;position:absolute!important;top:100%!important;left:0!important;right:0!important;background:#0a0a0a!important;flex-direction:column!important;padding:16px 24px 24px!important;gap:0!important;border-top:1px solid #1a1a1a!important;z-index:1000!important;}
+  .nav-links.open{display:flex!important;}
+  .nav-links a{padding:14px 0!important;border-bottom:1px solid #1a1a1a!important;font-size:16px!important;}
+  .nav-cta{display:none!important;}
+  .hero{padding:80px 24px 60px!important;text-align:center!important;}
+  .hero h1{font-size:clamp(26px,7vw,44px)!important;}
+  .hero p{font-size:16px!important;max-width:100%!important;}
+  section{padding-left:24px!important;padding-right:24px!important;}
+  .steps-grid,.how-it-works-grid,.step-cards,.steps{grid-template-columns:1fr!important;gap:24px!important;}
+  .services-grid,.service-cards,.services-list{grid-template-columns:1fr 1fr!important;gap:16px!important;}
+  .testimonials-grid,.testimonials-track,.testimonials-list{grid-template-columns:1fr!important;}
+  .about-grid,.about-layout,.about-inner{grid-template-columns:1fr!important;flex-direction:column!important;}
+  .about-image,.about-photo{width:100%!important;max-width:100%!important;order:-1!important;}
+  .features-grid,.why-grid,.benefits-grid,.why-items,.value-grid{grid-template-columns:1fr 1fr!important;gap:16px!important;}
+  .cta-actions,.hero-actions,.hero-buttons,.cta-buttons,.btn-group{flex-direction:column!important;align-items:center!important;gap:12px!important;}
+  .btn,.btn-primary,.btn-secondary,.btn-outline,.btn-gold{width:100%!important;max-width:320px!important;text-align:center!important;box-sizing:border-box!important;}
+  .faq-grid,.faq-list{grid-template-columns:1fr!important;}
+  footer{padding:40px 24px 24px!important;}
+  .footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;}
+  .footer-brand{grid-column:1/-1!important;}
+  .footer-bottom{flex-direction:column!important;gap:10px!important;text-align:center!important;}
+  h2{font-size:clamp(22px,6vw,36px)!important;}
+  .section-header,.section-title{text-align:center!important;}
+}
+@media(max-width:480px){
+  .hero{padding:60px 16px 44px!important;}
+  .hero h1{font-size:clamp(22px,8vw,32px)!important;}
+  .services-grid,.service-cards,.services-list{grid-template-columns:1fr!important;}
+  .features-grid,.why-grid,.benefits-grid,.why-items,.value-grid{grid-template-columns:1fr!important;}
+  footer{padding:28px 16px 16px!important;}
+  .footer-grid{grid-template-columns:1fr!important;gap:20px!important;}
+  section{padding-left:16px!important;padding-right:16px!important;}
+  h2{font-size:clamp(20px,6vw,28px)!important;}
+  h3{font-size:clamp(16px,5vw,22px)!important;}
+}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Sciatica Physical Therapy in Boca Raton: What's Causing Your Leg Pain and How to Fix It","description":"Sciatica pain shooting down your leg in Boca Raton? Dr. Ezra Miller, DPT delivers in-home PT that treats the source — not just the symptoms — and gets you moving again.","datePublished":"2026-04-23","dateModified":"2026-04-23","author":{"@type":"Person","name":"Dr. Ezra Miller, PT, DPT","url":"https://www.empowerfitnesspt.com/about"},"publisher":{"@type":"Organization","name":"Empower Fitness"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.empowerfitnesspt.com/blog/sciatica-physical-therapy-boca-raton"}}</script>
 </head>
 <body>

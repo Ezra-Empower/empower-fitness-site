@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Contact Us â Empower Fitness PT</title>
+<title>Contact Us — Empower Fitness PT</title>
 <style>
         * {
             margin: 0;
@@ -127,7 +127,7 @@
             background-color: var(--dark);
         }
 
-        /* LEFT COLUMN â FORM */
+        /* LEFT COLUMN — FORM */
         .contact-form {
             background-color: transparent;
             padding: 0;
@@ -210,7 +210,7 @@
             text-align: center;
         }
 
-        /* RIGHT COLUMN â DIRECT CONTACT */
+        /* RIGHT COLUMN — DIRECT CONTACT */
         .direct-contact {
             display: flex;
             flex-direction: column;
@@ -473,7 +473,45 @@
       align-items: center;
     }
     .footer-bottom p { font-size: 12px; color: #555; }
-    </style>
+    
+/* ===== RESPONSIVE: MOBILE + TABLET ===== */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:1001;}
+.nav-hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:768px){
+  nav{padding:0 20px!important;position:relative!important;}
+  .nav-hamburger{display:flex!important;}
+  .nav-links{display:none!important;position:absolute!important;top:100%!important;left:0!important;right:0!important;background:#0a0a0a!important;flex-direction:column!important;padding:16px 24px 24px!important;gap:0!important;border-top:1px solid #1a1a1a!important;z-index:1000!important;}
+  .nav-links.open{display:flex!important;}
+  .nav-links a{padding:14px 0!important;border-bottom:1px solid #1a1a1a!important;font-size:16px!important;}
+  .nav-cta{display:none!important;}
+  .hero{padding:80px 24px 60px!important;text-align:center!important;}
+  .hero h1{font-size:clamp(26px,7vw,44px)!important;}
+  section{padding-left:24px!important;padding-right:24px!important;}
+  .steps-grid,.how-it-works-grid,.step-cards,.steps{grid-template-columns:1fr!important;gap:24px!important;}
+  .services-grid,.service-cards,.services-list{grid-template-columns:1fr 1fr!important;gap:16px!important;}
+  .testimonials-grid,.testimonials-track,.testimonials-list{grid-template-columns:1fr!important;}
+  .about-grid,.about-layout,.about-inner{grid-template-columns:1fr!important;flex-direction:column!important;}
+  .features-grid,.why-grid,.benefits-grid,.why-items,.value-grid{grid-template-columns:1fr 1fr!important;gap:16px!important;}
+  .cta-actions,.hero-actions,.hero-buttons,.cta-buttons,.btn-group{flex-direction:column!important;align-items:center!important;gap:12px!important;}
+  .btn,.btn-primary,.btn-secondary,.btn-outline,.btn-gold{width:100%!important;max-width:320px!important;text-align:center!important;box-sizing:border-box!important;}
+  footer{padding:40px 24px 24px!important;}
+  .footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;}
+  .footer-brand{grid-column:1/-1!important;}
+  .footer-bottom{flex-direction:column!important;gap:10px!important;text-align:center!important;}
+}
+@media(max-width:480px){
+  .hero{padding:60px 16px 44px!important;}
+  .hero h1{font-size:clamp(22px,8vw,32px)!important;}
+  .services-grid,.service-cards,.services-list{grid-template-columns:1fr!important;}
+  .features-grid,.why-grid,.benefits-grid,.why-items,.value-grid{grid-template-columns:1fr!important;}
+  footer{padding:28px 16px 16px!important;}
+  .footer-grid{grid-template-columns:1fr!important;gap:20px!important;}
+  section{padding-left:16px!important;padding-right:16px!important;}
+}
+</style>
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Contact Us | Empower Fitness PT Boca Raton"/>
@@ -503,8 +541,8 @@
 <!-- SECTION 1: HERO -->
 <section class="hero">
 <h1>Let's Get You Started</h1>
-<p>Whether you're ready to book or just have questions â we're here. Reach out and we'll get back to you within 24 hours.</p>
-<div class="pretag">Boca Raton Â· Delray Beach Â· Pompano Beach Â· South Florida</div>
+<p>Whether you're ready to book or just have questions — we're here. Reach out and we'll get back to you within 24 hours.</p>
+<div class="pretag">Boca Raton · Delray Beach · Pompano Beach · South Florida</div>
 </section>
 <!-- SECTION 2: TWO COLUMN LAYOUT -->
 
@@ -574,13 +612,13 @@
 <!-- Ready to Book -->
 <div class="contact-box">
 <h3>Ready to book?</h3>
-<a class="schedule-btn" href="/schedule">Schedule Your Free Consultation â</a>
+<a class="schedule-btn" href="/schedule">Schedule Your Free Consultation →</a>
 </div>
 <!-- Hours -->
 <div class="contact-box">
 <div class="hours">
 <strong>Available:</strong>
-                        MonâSat, 7 AM â 7 PM
+                        Mon–Sat, 7 AM – 7 PM
                     </div>
 <div class="email">
 <strong>Email:</strong>
@@ -614,15 +652,15 @@
 </div>
 <div class="faq-item">
 <h4>How quickly can I get started?</h4>
-<p>Most clients begin within 3â5 days of reaching out.</p>
+<p>Most clients begin within 3–5 days of reaching out.</p>
 </div>
 </div>
 </section>
 <!-- SECTION 4: BOTTOM CTA BAR -->
 
 <section class="cta-bar">
-<p>Still not sure which service is right for you? Book a free 15-minute call â no commitment, no pressure.</p>
-<a class="cta-dark-btn" href="/schedule">Book Free Consultation â</a>
+<p>Still not sure which service is right for you? Book a free 15-minute call — no commitment, no pressure.</p>
+<a class="cta-dark-btn" href="/schedule">Book Free Consultation →</a>
 </section>
 </main>
 <!-- FOOTER -->
@@ -660,13 +698,13 @@
 <li>Pompano Beach, FL</li>
 <li><a href="tel:954-901-7211">954-901-7211</a></li>
 <li><a href="mailto:admin@empowerfitnesspt.com">admin@empowerfitnesspt.com</a></li>
-<li style="margin-top:8px;"><a href="https://www.google.com/search?client=safari&hs=V7bp&sca_esv=e3264d59eb4288d9&rls=en&sxsrf=ANbL-n6KPYJncQljrKQnB9qcJ6THKpL16g:1774841099843&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOYUs24-wzykROQ4GUeLgrrFYT62DqtcOjJFJnTcvVF4ftObZl0DsPKpBQvCiEh6OLDtSP9W27VMzWzWwt_5CEKt6uT956zQWHG7RCqMh9r0qHIQhueGZuHXk-lPKsdhI3Nw_-WHY7EeeHwXQyYp8K4k1W9Gr&q=Empower+Fitness+Physical+Therapy+by+Dr.+Ezra+Miller+Reviews&sa=X&ved=2ahUKEwiFzaeq1saTAxW1RjABHZ3TDIwQ0bkNegQIORAH&biw=1427&bih=794&dpr=2" style="color:var(--gold);" target="_blank">â Leave a Google Review</a></li>
+<li style="margin-top:8px;"><a href="https://www.google.com/search?client=safari&hs=V7bp&sca_esv=e3264d59eb4288d9&rls=en&sxsrf=ANbL-n6KPYJncQljrKQnB9qcJ6THKpL16g:1774841099843&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOYUs24-wzykROQ4GUeLgrrFYT62DqtcOjJFJnTcvVF4ftObZl0DsPKpBQvCiEh6OLDtSP9W27VMzWzWwt_5CEKt6uT956zQWHG7RCqMh9r0qHIQhueGZuHXk-lPKsdhI3Nw_-WHY7EeeHwXQyYp8K4k1W9Gr&q=Empower+Fitness+Physical+Therapy+by+Dr.+Ezra+Miller+Reviews&sa=X&ved=2ahUKEwiFzaeq1saTAxW1RjABHZ3TDIwQ0bkNegQIORAH&biw=1427&bih=794&dpr=2" style="color:var(--gold);" target="_blank">★ Leave a Google Review</a></li>
 </ul>
 </div>
 </div>
 <div class="footer-bottom">
-<p>Â© 2026 Empower Fitness. All rights reserved.</p>
-<p>Dr. Ezra Miller, PT, DPT Â· Licensed in Florida Â· NASM Certified</p>
+<p>© 2026 Empower Fitness. All rights reserved.</p>
+<p>Dr. Ezra Miller, PT, DPT · Licensed in Florida · NASM Certified</p>
 </div>
 </footer><!-- CHAT WIDGET -->
 </body>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Join Our Team | Empower Fitness PT â Careers in Boca Raton</title>
+  <title>Join Our Team | Empower Fitness PT — Careers in Boca Raton</title>
   <meta name="description" content="Join the Empower Fitness PT team. We're hiring Doctors of Physical Therapy and certified trainers in Boca Raton, Delray Beach, and Pompano Beach."/>
   <style>
     :root {
@@ -135,7 +135,45 @@
       align-items: center;
     }
     .footer-bottom p { font-size: 12px; color: #555; }
-    </style>
+    
+/* ===== RESPONSIVE: MOBILE + TABLET ===== */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:1001;}
+.nav-hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:768px){
+  nav{padding:0 20px!important;position:relative!important;}
+  .nav-hamburger{display:flex!important;}
+  .nav-links{display:none!important;position:absolute!important;top:100%!important;left:0!important;right:0!important;background:#0a0a0a!important;flex-direction:column!important;padding:16px 24px 24px!important;gap:0!important;border-top:1px solid #1a1a1a!important;z-index:1000!important;}
+  .nav-links.open{display:flex!important;}
+  .nav-links a{padding:14px 0!important;border-bottom:1px solid #1a1a1a!important;font-size:16px!important;}
+  .nav-cta{display:none!important;}
+  .hero{padding:80px 24px 60px!important;text-align:center!important;}
+  .hero h1{font-size:clamp(26px,7vw,44px)!important;}
+  section{padding-left:24px!important;padding-right:24px!important;}
+  .steps-grid,.how-it-works-grid,.step-cards,.steps{grid-template-columns:1fr!important;gap:24px!important;}
+  .services-grid,.service-cards,.services-list{grid-template-columns:1fr 1fr!important;gap:16px!important;}
+  .testimonials-grid,.testimonials-track,.testimonials-list{grid-template-columns:1fr!important;}
+  .about-grid,.about-layout,.about-inner{grid-template-columns:1fr!important;flex-direction:column!important;}
+  .features-grid,.why-grid,.benefits-grid,.why-items,.value-grid{grid-template-columns:1fr 1fr!important;gap:16px!important;}
+  .cta-actions,.hero-actions,.hero-buttons,.cta-buttons,.btn-group{flex-direction:column!important;align-items:center!important;gap:12px!important;}
+  .btn,.btn-primary,.btn-secondary,.btn-outline,.btn-gold{width:100%!important;max-width:320px!important;text-align:center!important;box-sizing:border-box!important;}
+  footer{padding:40px 24px 24px!important;}
+  .footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;}
+  .footer-brand{grid-column:1/-1!important;}
+  .footer-bottom{flex-direction:column!important;gap:10px!important;text-align:center!important;}
+}
+@media(max-width:480px){
+  .hero{padding:60px 16px 44px!important;}
+  .hero h1{font-size:clamp(22px,8vw,32px)!important;}
+  .services-grid,.service-cards,.services-list{grid-template-columns:1fr!important;}
+  .features-grid,.why-grid,.benefits-grid,.why-items,.value-grid{grid-template-columns:1fr!important;}
+  footer{padding:28px 16px 16px!important;}
+  .footer-grid{grid-template-columns:1fr!important;gap:20px!important;}
+  section{padding-left:16px!important;padding-right:16px!important;}
+}
+</style>
 </head>
 <body>
 
@@ -155,7 +193,7 @@
 <section class="hero">
   <p class="label">Careers at Empower Fitness</p>
   <h1>Join a Team That<br/>Does PT Differently</h1>
-  <p>We're growing our team of concierge physical therapists and certified trainers serving Boca Raton, Delray Beach, and Pompano Beach. If you believe in one-on-one, results-driven care â we want to hear from you.</p>
+  <p>We're growing our team of concierge physical therapists and certified trainers serving Boca Raton, Delray Beach, and Pompano Beach. If you believe in one-on-one, results-driven care — we want to hear from you.</p>
 </section>
 
 <!-- OPEN ROLES -->
@@ -163,10 +201,10 @@
   <h2>Open Positions</h2>
   <p>We're actively looking for licensed professionals who share our commitment to personalized, in-home care.</p>
   <ul class="role-list">
-    <li><strong>Doctor of Physical Therapy (DPT)</strong> â Licensed in Florida Â· In-home practice Â· Full-time &amp; part-time</li>
-    <li><strong>Physical Therapist Assistant (PTA)</strong> â Licensed in Florida Â· Supervised by DPT Â· Flexible hours</li>
-    <li><strong>NASM/NSCA Certified Personal Trainer</strong> â 2+ years experience Â· In-home &amp; virtual sessions</li>
-    <li><strong>Registered Dietitian / Nutrition Coach</strong> â Remote-friendly Â· Collaborative with PT team</li>
+    <li><strong>Doctor of Physical Therapy (DPT)</strong> — Licensed in Florida · In-home practice · Full-time &amp; part-time</li>
+    <li><strong>Physical Therapist Assistant (PTA)</strong> — Licensed in Florida · Supervised by DPT · Flexible hours</li>
+    <li><strong>NASM/NSCA Certified Personal Trainer</strong> — 2+ years experience · In-home &amp; virtual sessions</li>
+    <li><strong>Registered Dietitian / Nutrition Coach</strong> — Remote-friendly · Collaborative with PT team</li>
   </ul>
 </div>
 
@@ -174,7 +212,7 @@
 <div style="padding: 0 40px 80px;">
   <div class="form-section">
     <h2>Apply to Join the Team</h2>
-    <p>Fill out the form below and attach your resume. We'll review every application and reach out within 5â7 business days.</p>
+    <p>Fill out the form below and attach your resume. We'll review every application and reach out within 5–7 business days.</p>
 
     <div data-fs-success style="display:none;background:#1a3a1a;border:1px solid #4caf50;color:#4caf50;padding:20px 24px;border-radius:8px;margin-bottom:24px;font-size:16px;text-align:center;">
   &#10003; Thanks! Your message was sent. Dr. Ezra will be in touch within 24 hours.
@@ -264,13 +302,13 @@
 <li>Pompano Beach, FL</li>
 <li><a href="tel:954-901-7211">954-901-7211</a></li>
 <li><a href="mailto:admin@empowerfitnesspt.com">admin@empowerfitnesspt.com</a></li>
-<li style="margin-top:8px;"><a href="https://www.google.com/search?client=safari&hs=V7bp&sca_esv=e3264d59eb4288d9&rls=en&sxsrf=ANbL-n6KPYJncQljrKQnB9qcJ6THKpL16g:1774841099843&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOYUs24-wzykROQ4GUeLgrrFYT62DqtcOjJFJnTcvVF4ftObZl0DsPKpBQvCiEh6OLDtSP9W27VMzWzWwt_5CEKt6uT956zQWHG7RCqMh9r0qHIQhueGZuHXk-lPKsdhI3Nw_-WHY7EeeHwXQyYp8K4k1W9Gr&q=Empower+Fitness+Physical+Therapy+by+Dr.+Ezra+Miller+Reviews&sa=X&ved=2ahUKEwiFzaeq1saTAxW1RjABHZ3TDIwQ0bkNegQIORAH&biw=1427&bih=794&dpr=2" style="color:var(--gold);" target="_blank">â Leave a Google Review</a></li>
+<li style="margin-top:8px;"><a href="https://www.google.com/search?client=safari&hs=V7bp&sca_esv=e3264d59eb4288d9&rls=en&sxsrf=ANbL-n6KPYJncQljrKQnB9qcJ6THKpL16g:1774841099843&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOYUs24-wzykROQ4GUeLgrrFYT62DqtcOjJFJnTcvVF4ftObZl0DsPKpBQvCiEh6OLDtSP9W27VMzWzWwt_5CEKt6uT956zQWHG7RCqMh9r0qHIQhueGZuHXk-lPKsdhI3Nw_-WHY7EeeHwXQyYp8K4k1W9Gr&q=Empower+Fitness+Physical+Therapy+by+Dr.+Ezra+Miller+Reviews&sa=X&ved=2ahUKEwiFzaeq1saTAxW1RjABHZ3TDIwQ0bkNegQIORAH&biw=1427&bih=794&dpr=2" style="color:var(--gold);" target="_blank">★ Leave a Google Review</a></li>
 </ul>
 </div>
 </div>
 <div class="footer-bottom">
-<p>Â© 2026 Empower Fitness. All rights reserved.</p>
-<p>Dr. Ezra Miller, PT, DPT Â· Licensed in Florida Â· NASM Certified</p>
+<p>© 2026 Empower Fitness. All rights reserved.</p>
+<p>Dr. Ezra Miller, PT, DPT · Licensed in Florida · NASM Certified</p>
 </div>
 </footer>
 
@@ -279,7 +317,7 @@ function updateFileName(input, labelId) {
   const label = document.getElementById(labelId);
   if (input.files && input.files.length > 0) {
     const names = Array.from(input.files).map(f => f.name).join(', ');
-    label.innerHTML = '<strong>â ' + names + '</strong>';
+    label.innerHTML = '<strong>✓ ' + names + '</strong>';
     label.style.color = '#4ade80';
   }
 }
@@ -290,7 +328,7 @@ function handleSubmit(e) {
   // For now, show success message
   const form = document.getElementById('applyForm');
   const btn = form.querySelector('.btn-submit');
-  btn.textContent = 'Submittingâ¦';
+  btn.textContent = 'Submitting…';
   btn.disabled = true;
   setTimeout(() => {
     form.style.opacity = '0.4';

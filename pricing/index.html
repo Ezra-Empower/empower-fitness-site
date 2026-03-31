@@ -10,6 +10,9 @@
 <link href="https://www.empowerfitnesspt.com/pricing" rel="canonical"/>
 <meta content="Pricing | Empower Fitness Physical Therapy Boca Raton" property="og:title"/>
 <meta content="Transparent, flat-rate pricing for concierge PT in Boca Raton. Compare what you really pay at a clinic vs. what you get with Empower Fitness." property="og:description"/>
+<meta property="og:image" content="https://empowerfitnesspt.com/img/og-default.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
 <meta content="https://www.empowerfitnesspt.com/pricing" property="og:url"/>
 <script type="application/ld+json">
   {
@@ -128,121 +131,278 @@
     .btn-cta:hover { background: var(--gold-light); color: var(--navy); }
     .btn-cta-outline { border: 1px solid var(--gold); color: var(--gold); padding: 14px 32px; border-radius: 4px; font-family: 'Arial', sans-serif; font-size: 1rem; }
 
-
+    footer { background: var(--navy-mid); border-top: 1px solid rgba(201,168,76,0.2); padding: 40px; text-align: center; font-family: 'Arial', sans-serif; font-size: 0.85rem; color: var(--text-muted); }
     footer strong { color: var(--gold); }
 
     .divider { height: 1px; background: rgba(201,168,76,0.1); max-width: 1000px; margin: 0 auto; }
   
-    /* FOOTER */
+/* ═══════════════════════════════════════════════════════
+   EMPOWER FITNESS — MOBILE RESPONSIVE  (complete overhaul)
+   Covers: homepage, service pages, location pages, blog
+   ═══════════════════════════════════════════════════════ */
 
+/* 0. Global overflow prevention ─────────────────────── */
+html,body{overflow-x:hidden;}
+*,*::before,*::after{box-sizing:border-box;}
+img{max-width:100%;height:auto;}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    /* FOOTER */
-    footer {
-      background: var(--black);
-      padding: 48px 80px 32px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-    .footer-brand p {
-      font-size: 14px;
-      color: var(--gray);
-      line-height: 1.7;
-      margin-top: 14px;
-      max-width: 280px;
-    }
-    .footer-col h4 {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 18px;
-    }
-    .footer-col ul { list-style: none; padding: 0; }
-    .footer-col li { font-size: 14px; color: var(--gray); margin-bottom: 10px; }
-    .footer-col li a { color: var(--gray); transition: color 0.2s; text-decoration: none; }
-    .footer-col li a:hover { color: var(--gold); }
-    .footer-bottom {
-      border-top: 1px solid #1a1a1a;
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .footer-bottom p { font-size: 12px; color: #555; }
-    
-/* ===== RESPONSIVE: MOBILE + TABLET ===== */
-.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:1001;}
-.nav-hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s;}
+/* 1. Hamburger button — hidden on desktop ────────────── */
+.nav-hamburger{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  background:none;border:none;cursor:pointer;padding:8px;z-index:1001;
+  margin-left:auto;flex-shrink:0;
+}
+.nav-hamburger span{
+  display:block;width:24px;height:2px;background:#fff;
+  border-radius:2px;transition:transform .3s,opacity .3s;
+}
 .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .nav-hamburger.open span:nth-child(2){opacity:0;}
 .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* ─── TABLET/PHONE ≤768px ─────────────────────────────── */
 @media(max-width:768px){
-  nav{padding:0 20px!important;position:relative!important;}
+
+  /* NAV ──────────────────── */
+  nav,.navbar{
+    padding:0 20px!important;
+    position:relative!important;
+    height:64px!important;
+  }
   .nav-hamburger{display:flex!important;}
-  .nav-links{display:none!important;position:absolute!important;top:100%!important;left:0!important;right:0!important;background:#0a0a0a!important;flex-direction:column!important;padding:16px 24px 24px!important;gap:0!important;border-top:1px solid #1a1a1a!important;z-index:1000!important;}
+  .nav-links{
+    display:none!important;
+    flex-direction:column!important;
+    position:absolute!important;
+    top:100%!important;left:0!important;right:0!important;
+    background:#0d0d0d!important;
+    padding:8px 20px 16px!important;
+    gap:0!important;
+    z-index:1000!important;
+    border-top:1px solid #333!important;
+    box-shadow:0 8px 24px rgba(0,0,0,.5)!important;
+  }
   .nav-links.open{display:flex!important;}
-  .nav-links a{padding:14px 0!important;border-bottom:1px solid #1a1a1a!important;font-size:16px!important;}
-  .nav-cta{display:none!important;}
-  .hero{padding:80px 24px 60px!important;text-align:center!important;}
-  .hero h1{font-size:clamp(26px,7vw,44px)!important;}
-  .hero p{font-size:16px!important;max-width:100%!important;}
-  section{padding-left:24px!important;padding-right:24px!important;}
-  .steps-grid,.how-it-works-grid,.step-cards,.steps{grid-template-columns:1fr!important;gap:24px!important;}
-  .services-grid,.service-cards,.services-list{grid-template-columns:1fr 1fr!important;gap:16px!important;}
-  .testimonials-grid,.testimonials-track,.testimonials-list{grid-template-columns:1fr!important;}
-  .about-grid,.about-layout,.about-inner{grid-template-columns:1fr!important;flex-direction:column!important;}
-  .about-image,.about-photo{width:100%!important;max-width:100%!important;order:-1!important;}
-  .features-grid,.why-grid,.benefits-grid,.why-items,.value-grid{grid-template-columns:1fr 1fr!important;gap:16px!important;}
-  .cta-actions,.hero-actions,.hero-buttons,.cta-buttons,.btn-group{flex-direction:column!important;align-items:center!important;gap:12px!important;}
-  .btn,.btn-primary,.btn-secondary,.btn-outline,.btn-gold{width:100%!important;max-width:320px!important;text-align:center!important;box-sizing:border-box!important;}
-  .faq-grid,.faq-list{grid-template-columns:1fr!important;}
-  footer{padding:40px 24px 24px!important;}
-  .footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;}
-  .footer-brand{grid-column:1/-1!important;}
-  .footer-bottom{flex-direction:column!important;gap:10px!important;text-align:center!important;}
-  h2{font-size:clamp(22px,6vw,36px)!important;}
-  .section-header,.section-title{text-align:center!important;}
+  .nav-links li{list-style:none!important;}
+  .nav-links a{
+    display:block!important;
+    padding:13px 0!important;
+    border-bottom:1px solid #222!important;
+    font-size:15px!important;
+  }
+  .nav-links li:last-child a{border-bottom:none!important;}
+  .nav-cta{
+    display:block!important;
+    margin:12px 0 0!important;
+    text-align:center!important;
+    padding:12px!important;
+  }
+
+  /* HERO — all templates ─────── */
+  .hero{
+    padding:88px 20px 48px!important;
+    min-height:auto!important;
+  }
+  .hero-content,.hero-text{
+    max-width:100%!important;
+    width:100%!important;
+  }
+  .hero-pretag,.location-tag,.hero-badge{
+    white-space:normal!important;
+    flex-wrap:wrap!important;
+    font-size:11px!important;
+    max-width:100%!important;
+  }
+  .hero h1,h1{
+    font-size:clamp(26px,7.5vw,40px)!important;
+    line-height:1.2!important;
+    word-break:break-word!important;
+  }
+  .hero-sub,.hero p,.hero-meta{
+    font-size:16px!important;
+    max-width:100%!important;
+  }
+  .hero-ctas,.hero-btns,.cta-buttons{
+    flex-direction:column!important;
+    gap:12px!important;
+    width:100%!important;
+  }
+  .btn-primary,.btn-secondary,.btn-dark,
+  .cta-button,.cta-btn,.phone-cta{
+    width:100%!important;
+    text-align:center!important;
+    padding:16px 20px!important;
+    justify-content:center!important;
+    display:block!important;
+    box-sizing:border-box!important;
+  }
+  .btn-secondary{
+    border:1px solid rgba(255,255,255,.35)!important;
+    border-radius:6px!important;
+  }
+  .hero-trust,.trust-bar{
+    flex-direction:column!important;
+    gap:12px!important;
+    align-items:flex-start!important;
+  }
+  .trust-item{flex-direction:row!important;}
+  .hero-google{width:auto!important;}
+
+  /* STATS STRIP ──────────────── */
+  .stats-strip{
+    padding:16px 20px!important;
+    flex-wrap:wrap!important;
+    gap:16px 32px!important;
+    justify-content:center!important;
+  }
+  .stat-divider{display:none!important;}
+
+  /* SECTIONS — all types ──────── */
+  section{
+    padding:48px 20px!important;
+  }
+  .section-header{
+    margin-bottom:28px!important;
+    max-width:100%!important;
+  }
+  .section-title{
+    font-size:clamp(22px,6vw,34px)!important;
+  }
+  .section-intro,section p{
+    font-size:16px!important;
+    max-width:100%!important;
+  }
+
+  /* HOW IT WORKS ─────────────── */
+  .steps-grid,.steps{
+    grid-template-columns:1fr!important;
+    gap:16px!important;
+  }
+  .step-card,.step{padding:24px 20px!important;}
+
+  /* SERVICES GRID ────────────── */
+  .services-grid,.cards-grid,.cards{
+    grid-template-columns:1fr!important;
+    gap:16px!important;
+  }
+  .service-card,.card{padding:28px 24px!important;}
+
+  /* CONDITIONS / FEATURES ────── */
+  .conditions-grid,.condition-grid{
+    grid-template-columns:1fr 1fr!important;
+    gap:12px!important;
+  }
+
+  /* TESTIMONIALS ─────────────── */
+  .testimonials-grid{
+    grid-template-columns:1fr!important;
+    gap:16px!important;
+  }
+
+  /* ABOUT ────────────────────── */
+  .about-grid{grid-template-columns:1fr!important;}
+  .about-photo{height:260px!important;width:100%!important;}
+  .about-gold-bars{flex-wrap:wrap!important;gap:12px!important;}
+  .about-gold-bar{min-width:calc(50% - 8px)!important;}
+  .about-checklist{grid-template-columns:1fr!important;}
+
+  /* WHY CHOOSE ───────────────── */
+  .why-grid{
+    grid-template-columns:1fr!important;
+    gap:16px!important;
+  }
+  .why-card{padding:28px 24px!important;}
+
+  /* QUOTE ────────────────────── */
+  .quote-section{padding:40px 20px!important;}
+  .quote-section blockquote,.quote-text{
+    font-size:clamp(17px,4.5vw,24px)!important;
+  }
+
+  /* FAQ ──────────────────────── */
+  .faq-grid,.faq-section{grid-template-columns:1fr!important;}
+  .faq-item{padding:24px 20px!important;}
+
+  /* CTA SECTION ──────────────── */
+  .cta-section{padding:48px 20px!important;}
+  .cta-inner{max-width:100%!important;}
+
+  /* FOOTER ───────────────────── */
+  footer{padding:40px 20px 20px!important;}
+  .footer-grid{
+    grid-template-columns:1fr 1fr!important;
+    gap:28px 20px!important;
+  }
+  .footer-col:first-child{grid-column:1/-1!important;}
+  .footer-bottom{
+    flex-direction:column!important;
+    gap:8px!important;
+    text-align:center!important;
+    padding-top:16px!important;
+  }
+  .footer-desc{max-width:100%!important;}
+
+  /* BLOG posts ───────────────── */
+  .content-wrap{
+    padding:0!important;
+    max-width:100%!important;
+  }
+  .blog-grid{grid-template-columns:1fr!important;}
+  .related-section{grid-template-columns:1fr!important;}
+  .cta-block{padding:24px 20px!important;}
+  article h2{font-size:22px!important;}
+  article h3{font-size:19px!important;}
+
+  /* LOCATION pages ───────────── */
+  .two-col,.two-col-grid{grid-template-columns:1fr!important;}
+  .cta-band{padding:32px 20px!important;}
+  .hero-badge{font-size:11px!important;}
+
+  /* INJURY FINDER / PRICING ──── */
+  .card-grid,.pricing-grid{grid-template-columns:1fr!important;}
+  .tab-buttons{flex-wrap:wrap!important;gap:8px!important;}
+
+  /* FORMS ────────────────────── */
+  .form-container,.contact-form{
+    padding:24px 20px!important;
+    margin:0!important;
+  }
+  input,textarea,select{
+    width:100%!important;
+    font-size:16px!important; /* prevents iOS zoom */
+  }
+
+  /* PRICING TABLE ────────────── */
+  .pricing-table{display:block!important;}
+  .pricing-col{margin-bottom:20px!important;}
 }
+
+/* ─── SMALL PHONE ≤480px ─────────────────────────────── */
 @media(max-width:480px){
-  .hero{padding:60px 16px 44px!important;}
-  .hero h1{font-size:clamp(22px,8vw,32px)!important;}
-  .services-grid,.service-cards,.services-list{grid-template-columns:1fr!important;}
-  .features-grid,.why-grid,.benefits-grid,.why-items,.value-grid{grid-template-columns:1fr!important;}
-  footer{padding:28px 16px 16px!important;}
-  .footer-grid{grid-template-columns:1fr!important;gap:20px!important;}
-  section{padding-left:16px!important;padding-right:16px!important;}
-  h2{font-size:clamp(20px,6vw,28px)!important;}
-  h3{font-size:clamp(16px,5vw,22px)!important;}
+  nav,.navbar{height:58px!important;}
+  .hero{padding:76px 16px 36px!important;}
+  .hero h1,h1{font-size:clamp(22px,8.5vw,30px)!important;}
+  section{padding:36px 16px!important;}
+  .cta-section{padding:36px 16px!important;}
+  footer{padding:32px 16px 16px!important;}
+  .footer-grid{grid-template-columns:1fr!important;}
+  .stats-strip{padding:12px 16px!important;}
+  .step-card,.step,.service-card,.card,.why-card,.faq-item{
+    padding:20px 16px!important;
+  }
+  .conditions-grid,.condition-grid{
+    grid-template-columns:1fr!important;
+  }
+  .about-gold-bar{min-width:calc(50% - 6px)!important;}
 }
+
 </style>
 </head>
 <body>
 <nav>
 <div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
-<ul class="nav-links">
-<li><a href="https://www.google.com/search?client=safari&hs=V7bp&sca_esv=e3264d59eb4288d9&rls=en&sxsrf=ANbL-n6KPYJncQljrKQnB9qcJ6THKpL16g:1774841099843&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOYUs24-wzykROQ4GUeLgrrFYT62DqtcOjJFJnTcvVF4ftObZl0DsPKpBQvCiEh6OLDtSP9W27VMzWzWwt_5CEKt6uT956zQWHG7RCqMh9r0qHIQhueGZuHXk-lPKsdhI3Nw_-WHY7EeeHwXQyYp8K4k1W9Gr&q=Empower+Fitness+Physical+Therapy+by+Dr.+Ezra+Miller+Reviews&sa=X&ved=2ahUKEwiFzaeq1saTAxW1RjABHZ3TDIwQ0bkNegQIORAH&biw=1427&bih=794&dpr=2">Home</a></li>
+<button class="nav-hamburger" onclick="this.classList.toggle('open');var nl=document.querySelector('.nav-links');if(nl)nl.classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button><ul class="nav-links">
+<li><a href="/">Home</a></li>
 <li><a href="/services">Services</a></li>
 <li><a href="/injury-finder">Injury Finder</a></li>
 <li><a href="/blog">Blog</a></li>
@@ -437,48 +597,10 @@
 </div>
 </div>
 <footer>
-<div class="footer-grid">
-<div class="footer-brand">
-<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;"><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
-<p>Concierge physical therapy and functional fitness delivered to your door. Serving Boca Raton, Delray Beach, Pompano Beach, and surrounding South Florida.</p>
-</div>
-<div class="footer-col">
-<h4>Services</h4>
-<ul>
-<li><a href="/in-home-physical-therapy-boca-raton">In-Home Physical Therapy</a></li>
-<li><a href="/return-to-sport-physical-therapy-boca-raton">Return-to-Sport</a></li>
-<li><a href="/fitness-training-boca-raton">Fitness Training</a></li>
-<li><a href="/longevity-training-boca-raton">Longevity Program</a></li>
-<li><a href="/nutrition-coaching-boca-raton">Nutrition Guidance</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Company</h4>
-<ul>
-<li><a href="/about">About Dr. Ezra</a></li>
-<li><a href="/blog">Blog</a></li>
-<li><a href="/injury-finder">Injury Finder</a></li>
-<li><a href="/faq">FAQ</a></li>
-<li><a href="/contact">Free Consultation</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Contact</h4>
-<ul>
-<li>Boca Raton, FL</li>
-<li>Delray Beach, FL</li>
-<li>Pompano Beach, FL</li>
-<li><a href="tel:954-901-7211">954-901-7211</a></li>
-<li><a href="mailto:admin@empowerfitnesspt.com">admin@empowerfitnesspt.com</a></li>
-<li style="margin-top:8px;"><a href="https://www.google.com/search?client=safari&hs=V7bp&sca_esv=e3264d59eb4288d9&rls=en&sxsrf=ANbL-n6KPYJncQljrKQnB9qcJ6THKpL16g:1774841099843&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOYUs24-wzykROQ4GUeLgrrFYT62DqtcOjJFJnTcvVF4ftObZl0DsPKpBQvCiEh6OLDtSP9W27VMzWzWwt_5CEKt6uT956zQWHG7RCqMh9r0qHIQhueGZuHXk-lPKsdhI3Nw_-WHY7EeeHwXQyYp8K4k1W9Gr&q=Empower+Fitness+Physical+Therapy+by+Dr.+Ezra+Miller+Reviews&sa=X&ved=2ahUKEwiFzaeq1saTAxW1RjABHZ3TDIwQ0bkNegQIORAH&biw=1427&bih=794&dpr=2" style="color:var(--gold);" target="_blank">★ Leave a Google Review</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Empower Fitness. All rights reserved.</p>
-<p>Dr. Ezra Miller, PT, DPT · Licensed in Florida · NASM Certified</p>
-</div>
+<p><strong>Empower Fitness</strong> — Dr. Ezra Miller, PT, DPT</p>
+<p style="margin-top:8px;">Boca Raton · Delray Beach · Boynton Beach · Deerfield Beach · Pompano Beach · Highland Beach</p>
+<p style="margin-top:8px;">📞 <a href="tel:+15611234567" style="color:var(--gold);">(561) 123-4567</a>  |  ✉️ <a href="mailto:ezra@empowerfitnesspt.com" style="color:var(--gold);">ezra@empowerfitnesspt.com</a></p>
+<p style="margin-top:16px; font-size:0.78rem; opacity:0.5;">© 2026 Empower Fitness. All rights reserved. | <a href="/privacy">Privacy Policy</a></p>
 </footer>
-
-  </body>
+</body>
 </html>

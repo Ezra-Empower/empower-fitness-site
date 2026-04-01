@@ -1,5 +1,122 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>Terms of Service | Empower Fitness</title>
+<!DOCTYPE html><html lang="en"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"/><title>Terms of Service | Empower Fitness</title>
 <style>body{font-family:Georgia,serif;max-width:800px;margin:80px auto;padding:0 24px;color:#222;line-height:1.8;}h1{color:#C8922A;border-bottom:2px solid #C8922A;padding-bottom:10px;}a{color:#C8922A;}</style>
+<style>
+/* EMPOWER FITNESS — MOBILE RESPONSIVE OVERRIDE v2 */
+html, body { overflow-x: hidden !important; max-width: 100% !important; }
+*, *::before, *::after { box-sizing: border-box; }
+@media(max-width:768px){
+
+  /* NAV */
+  nav,.navbar{padding:0 20px !important;position:relative !important;height:64px !important;}
+  .nav-hamburger{display:flex !important;}
+  .nav-links{
+    display:none !important;flex-direction:column !important;
+    position:absolute !important;top:100% !important;left:0 !important;right:0 !important;
+    background:#0d0d0d !important;padding:8px 20px 16px !important;gap:0 !important;
+    z-index:1000 !important;border-top:1px solid #333 !important;
+    box-shadow:0 8px 24px rgba(0,0,0,.5) !important;
+  }
+  .nav-links.open{display:flex !important;}
+  .nav-links li{list-style:none !important;}
+  .nav-links a{display:block !important;padding:13px 0 !important;border-bottom:1px solid #222 !important;font-size:15px !important;}
+  .nav-links li:last-child a{border-bottom:none !important;}
+  .nav-cta{display:block !important;margin:12px 0 0 !important;text-align:center !important;padding:12px !important;}
+
+  /* HERO */
+  .hero{padding:88px 20px 48px !important;min-height:auto !important;}
+  .hero-content,.hero-text{max-width:100% !important;width:100% !important;}
+  .hero-pretag,.location-tag,.hero-badge{white-space:normal !important;flex-wrap:wrap !important;font-size:11px !important;max-width:100% !important;}
+  .hero h1,h1{font-size:clamp(26px,7.5vw,40px) !important;line-height:1.2 !important;word-break:break-word !important;}
+  .hero-sub,.hero p,.hero-meta{font-size:16px !important;max-width:100% !important;}
+  .hero-ctas,.hero-btns,.cta-buttons{flex-direction:column !important;gap:12px !important;width:100% !important;}
+  .btn-primary,.btn-secondary,.btn-dark,.cta-button,.cta-btn,.phone-cta{
+    width:100% !important;text-align:center !important;padding:16px 20px !important;
+    justify-content:center !important;display:block !important;box-sizing:border-box !important;
+  }
+  .hero-trust,.trust-bar{flex-direction:column !important;gap:12px !important;align-items:flex-start !important;}
+  .trust-item{flex-direction:row !important;}
+
+  /* STATS */
+  .stats-strip{padding:16px 20px !important;flex-wrap:wrap !important;gap:16px 32px !important;justify-content:center !important;}
+  .stat-divider{display:none !important;}
+
+  /* SECTIONS */
+  section{padding:48px 20px !important;}
+  .section-header{margin-bottom:28px !important;max-width:100% !important;}
+  .section-title{font-size:clamp(22px,6vw,34px) !important;}
+  .section-intro,section p{font-size:16px !important;max-width:100% !important;}
+
+  /* GRIDS — all variants */
+  .steps-grid,.steps,.services-grid,.cards-grid,.cards,
+  .testimonials-grid,.why-grid,.two-col,.two-col-grid,
+  .card-grid,.pricing-grid,.faq-grid,.faq-section,
+  .blog-grid,.related-section{
+    grid-template-columns:1fr !important;gap:16px !important;
+  }
+  .step-card,.step{padding:24px 20px !important;}
+  .service-card,.card{padding:28px 24px !important;}
+  .why-card{padding:28px 24px !important;}
+  .faq-item{padding:24px 20px !important;}
+
+  /* ABOUT — homepage uses .about, others use .about-grid */
+  .about,.about-grid{grid-template-columns:1fr !important;}
+  .about-photo{height:260px !important;width:100% !important;}
+  .about-gold-bars{flex-wrap:wrap !important;gap:12px !important;}
+  .about-gold-bar{min-width:calc(50% - 8px) !important;}
+  .about-checklist{grid-template-columns:1fr !important;}
+  .about-points{grid-template-columns:1fr !important;}
+
+  /* CONDITIONS */
+  .conditions-grid,.condition-grid{grid-template-columns:1fr 1fr !important;gap:12px !important;}
+
+  /* QUOTE */
+  .quote-section{padding:40px 20px !important;}
+  .quote-section blockquote,.quote-text{font-size:clamp(17px,4.5vw,24px) !important;}
+
+  /* CTA */
+  .cta-section,.final-cta{padding:48px 20px !important;}
+  .cta-inner{max-width:100% !important;}
+  .cta-group{flex-direction:column !important;gap:12px !important;width:100% !important;}
+  .cta-band{padding:32px 20px !important;}
+
+  /* FOOTER */
+  footer{padding:40px 20px 20px !important;}
+  .footer-grid{grid-template-columns:1fr 1fr !important;gap:28px 20px !important;}
+  .footer-col:first-child{grid-column:1/-1 !important;}
+  .footer-bottom{flex-direction:column !important;gap:8px !important;text-align:center !important;padding-top:16px !important;}
+  .footer-desc{max-width:100% !important;}
+
+  /* BLOG */
+  .content-wrap{padding:0 !important;max-width:100% !important;}
+  .cta-block{padding:24px 20px !important;}
+  article h2{font-size:22px !important;}
+  article h3{font-size:19px !important;}
+  article{padding:0 16px !important;}
+
+  /* FORMS */
+  .form-container,.contact-form{padding:24px 20px !important;margin:0 !important;}
+  input,textarea,select{width:100% !important;font-size:16px !important;}
+
+  /* PRICING */
+  .pricing-table{display:block !important;}
+  .pricing-col{margin-bottom:20px !important;}
+  .tab-buttons{flex-wrap:wrap !important;gap:8px !important;}
+}
+@media(max-width:480px){
+  nav,.navbar{height:58px !important;}
+  .hero{padding:76px 16px 36px !important;}
+  .hero h1,h1{font-size:clamp(22px,8.5vw,30px) !important;}
+  section{padding:36px 16px !important;}
+  .cta-section,.final-cta{padding:36px 16px !important;}
+  footer{padding:32px 16px 16px !important;}
+  .footer-grid{grid-template-columns:1fr !important;}
+  .stats-strip{padding:12px 16px !important;}
+  .step-card,.step,.service-card,.card,.why-card,.faq-item{padding:20px 16px !important;}
+  .conditions-grid,.condition-grid{grid-template-columns:1fr !important;}
+  .about-gold-bar{min-width:calc(50% - 6px) !important;}
+}
+</style>
 </head><body><h1>Terms of Service</h1><p>Last updated: March 2026</p>
 <p>By using this website and our services, you agree to receive communications from Empower Fitness PT regarding your inquiry. All content on this site is for informational purposes only and does not constitute medical advice. For a personalized evaluation, please contact us directly.</p>
 <p>For questions: <a href="mailto:ezra.empowerfitness@gmail.com">ezra.empowerfitness@gmail.com</a></p>

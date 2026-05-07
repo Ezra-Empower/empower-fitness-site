@@ -1,0 +1,75 @@
+/* Empower Fitness — Canonical Footer Styles
+   Auto-generated from index.html. Do not edit manually.
+   Include on every page: <link rel="stylesheet" href="/css/site-footer.css">
+*/
+
+/* Brand tokens required by footer */
+:root {
+      --gold: #C8922A;
+      --gold-light: #e0a93a;
+      --gold-dark: #a07520;
+      --black: #000000;
+      --dark: #0d0d0d;
+      --dark2: #141414;
+      --dark3: #1c1c1c;
+      --dark4: #242424;
+      --white: #ffffff;
+      --gray: #aaaaaa;
+      --gray-light: #dddddd;
+      --green: #27ae60;
+    }
+
+/* Nav logo used in footer brand */
+.nav-logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: var(--gold);
+    }
+.nav-logo span { color: var(--white); }
+
+/* Footer */
+/* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      background: var(--black);
+      padding: 48px 80px 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-top: 14px;
+      max-width: 280px;
+    }
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li {
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 10px;
+    }
+    .footer-col li a { color: var(--gray); transition: color 0.2s; }
+    .footer-col li a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid #1a1a1a;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom p { font-size: 12px; color: #555; }

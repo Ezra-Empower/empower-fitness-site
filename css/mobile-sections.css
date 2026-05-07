@@ -1,0 +1,7 @@
+/* ═══ EMPOWER FITNESS — MOBILE SECTIONS v1 ═══ */
+@media(max-width:768px){
+  .section{padding:48px 20px !important;}
+}
+@media(max-width:480px){
+  .section{padding:36px 16px !important;}
+}

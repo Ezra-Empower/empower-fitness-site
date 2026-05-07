@@ -1,0 +1,10 @@
+/* ═══ EMPOWER FITNESS — MOBILE TABLES v1 ═══ */
+.table-responsive{
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  width:100%;
+}
+@media(max-width:768px){
+  table{width:100%;font-size:14px;}
+  th,td{padding:10px 12px !important;}
+}

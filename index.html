@@ -213,7 +213,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .google-g {
       width: 36px;
       height: 36px;
-      background: #4285F4;
+      background: var(--gold);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -747,7 +747,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       align-items: center;
     }
     .footer-bottom p { font-size: 12px; color: #555; }
-    
+
+    /* ── Comparison section grid ── */
+    .our-diff-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .our-diff-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .our-diff-result {
+      grid-column: 1 / -1;
+    }
+    @media(max-width: 900px) {
+      .our-diff-section { grid-template-columns: 1fr; padding: 48px 20px !important; }
+      .our-diff-cards { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width: 540px) {
+      .our-diff-cards { grid-template-columns: 1fr; }
+    }
 
 </style>
 <link rel="stylesheet" href="/css/mobile-base.css">
@@ -989,7 +1009,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      BRIDGE SECTION — NEW NICHE POSITIONING
 ============================================= -->
 
-<section style="background: var(--black); padding: 80px 80px; display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr))">
+<section class="our-diff-section" style="background: var(--black); padding: 80px;">
 <div>
 <div class="section-label">Our Difference</div>
 <h2>Where Recovery Ends,<br/><em style="font-style:normal; color: var(--gold);">We're Just Getting Started.</em></h2>
@@ -1001,7 +1021,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </p>
 <a class="btn-primary" href="/in-home-physical-therapy-boca-raton">See How It Works →</a>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr))">
+<div class="our-diff-cards">
 <div style="background: var(--dark3); padding: 40px 36px;">
 <div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #888; margin-bottom: 20px;">Traditional PT</div>
 <div style="font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.8;">
@@ -1019,7 +1039,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </div>
 </div>
-<div style="background: linear-gradient(135deg, var(--dark3), #1a1a1a); padding: 40px 48px; border-top: 2px solid var(--gold); grid-column: 1 / -1;">
+<div class="our-diff-result" style="background: linear-gradient(135deg, var(--dark3), #1a1a1a); padding: 40px 48px; border-top: 2px solid var(--gold);">
 <div style="font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-bottom: 12px;">The Result</div>
 <div style="font-size: 18px; color: rgba(255,255,255,0.9); line-height: 1.7;">You don't just get back to where you were — you surpass it. Our clients return to the sport, the lifestyle, and the body they thought they'd lost. No rushed sessions. No guesswork. Just one expert, fully invested in your outcome, from the first visit to the last.</div>
 </div>
@@ -1066,35 +1086,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h3>In-Home Physical Therapy</h3>
 <p>Recover in comfort with one-on-one PT sessions delivered directly to you. We treat pain, restore mobility, and help you regain independence with expert care tailored to your specific condition and lifestyle.</p>
 <div class="service-outcome">✓ Outcome: Pain relief within 2–4 sessions for most patients</div>
-<a class="service-link" href="/in-home-physical-therapy-boca-raton">Book This Service →</a>
+<a class="service-link" href="/in-home-physical-therapy-boca-raton">Learn More →</a>
 </div>
 <div class="service-card">
 <div class="service-icon">🏃</div>
 <h3>Return-to-Sport Therapy</h3>
 <p>Bridge the gap between rehab and peak performance. Designed for athletes recovering from injury who want to safely and confidently return to training or competition — stronger than before.</p>
 <div class="service-outcome">✓ Outcome: Full return to competition with reduced re-injury risk</div>
-<a class="service-link" href="/return-to-sport-physical-therapy-boca-raton">Book This Service →</a>
+<a class="service-link" href="/return-to-sport-physical-therapy-boca-raton">Learn More →</a>
 </div>
 <div class="service-card">
 <div class="service-icon">💪</div>
 <h3>Fitness Training Programs</h3>
 <p>Custom training plans combining functional movement, strength, and conditioning. Whether you're starting out or chasing new PRs, every program is built around how your body actually moves.</p>
 <div class="service-outcome">✓ Outcome: Measurable strength gains in 6–8 weeks</div>
-<a class="service-link" href="/fitness-training-boca-raton">Book This Service →</a>
+<a class="service-link" href="/fitness-training-boca-raton">Learn More →</a>
 </div>
 <div class="service-card">
 <div class="service-icon">🔒</div>
 <h3>Longevity Training</h3>
 <p>Stay active, strong, and independent for life. Our Longevity Program focuses on injury prevention, joint health, mobility, and strength training — designed for adults who want to age with vitality and confidence.</p>
 <div class="service-outcome">✓ Outcome: Better mobility and fewer injuries as you age</div>
-<a class="service-link" href="/longevity-training-boca-raton">Book This Service →</a>
+<a class="service-link" href="/longevity-training-boca-raton">Learn More →</a>
 </div>
 <div class="service-card">
 <div class="service-icon">🥗</div>
 <h3>Nutrition &amp; Supplement Guidance</h3>
 <p>Fuel your recovery and performance with science-backed nutritional advice aligned with your therapy or training goals. Includes access to our food tracking app to keep you accountable.</p>
 <div class="service-outcome">✓ Outcome: Better energy, faster recovery, sustainable habits</div>
-<a class="service-link" href="/nutrition-coaching-boca-raton">Book This Service →</a>
+<a class="service-link" href="/nutrition-coaching-boca-raton">Learn More →</a>
 </div>
 
 <div class="service-card" style="background: var(--gold); color: var(--black);">
@@ -1102,7 +1122,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h3 style="color: var(--black);">Not Sure Which Is Right for You?</h3>
 <p style="color: rgba(0,0,0,0.75);">Book a free 15-minute call. We'll assess your situation and recommend the right starting point — no commitment required.</p>
 <div style="margin-top: 20px;">
-<a href="/contact" style="background: var(--black); color: var(--white); font-weight:800; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; padding: 14px 24px; display:inline-block; border-radius:2px;">Book Free Consultation →</a>
+<a href="/contact" style="background: var(--black); color: var(--white); font-weight:800; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; padding: 14px 24px; display:inline-block; border-radius:2px;">Contact for Availability →</a>
 </div>
 </div>
 </div>
@@ -1303,7 +1323,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2>Ready to Stop Living Around Pain?</h2>
 <p>Book a free 15-minute consultation. We'll assess your situation, answer your questions, and tell you exactly how we can help — no commitment, no pressure.</p>
 <div class="cta-group">
-<a class="btn-dark" href="/contact">Schedule My Free Consultation →</a>
+<a class="btn-dark" href="/contact">Contact for Availability →</a>
 <div class="cta-phone">
 <span>📞</span>
 <span>954-901-7211</span>

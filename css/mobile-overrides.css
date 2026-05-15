@@ -126,4 +126,5 @@
   .step-card,.step,.service-card,.card,.why-card,.faq-item{padding:20px 16px !important;}
   .conditions-grid,.condition-grid{grid-template-columns:1fr !important;}
   .about-gold-bar{min-width:calc(50% - 6px) !important;}
+  .hero-google{left:16px !important;right:16px !important;bottom:16px !important;}
 }

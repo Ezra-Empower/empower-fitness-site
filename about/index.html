@@ -672,8 +672,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .credential-badges {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            /* Max card — stack on mobile like Dr. Ezra section */
+            .max-card {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            .max-image {
+                width: 100% !important;
+                height: 360px !important;
+            }
+            .max-image img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                object-position: top center !important;
+            }
+
+            /* Allow city list to wrap on narrow screens */
+            .city-list {
+                white-space: normal !important;
+            }
         }
-    
+
     /* ===== NAVIGATION ===== */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
@@ -750,8 +771,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li><a href="/injury-finder">Injury Finder</a></li>
 <li><a href="/blog">Blog</a></li>
 <li><a href="/about">About Us</a></li>
+<li><a class="nav-cta" href="/contact">CONTACT US</a></li>
 </ul>
-<a class="nav-cta" href="/contact">CONTACT US</a>
 </nav>
 <main>
 <!-- Hero Section -->
@@ -948,7 +969,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </tbody>
 </table>
 </div>
-<a class="read-more-link" href="/blog/concierge-pt-vs-insurance-pt">See the full breakdown: Concierge PT vs. Insurance-Based Physical Therapy →</a>
+<div style="text-align:center;margin-top:32px;">
+  <a href="/blog/concierge-pt-vs-insurance-pt" style="display:inline-block;padding:14px 28px;border:2px solid var(--gold);color:var(--gold);font-weight:600;letter-spacing:.05em;text-transform:uppercase;font-size:14px;text-decoration:none;border-radius:4px;">
+    Read: Concierge PT vs. Insurance PT →
+  </a>
+</div>
 </section>
 <!-- Mission Section -->
 <section class="mission-section">
@@ -993,7 +1018,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li><a href="/about">Our Team</a></li>
 <li><a href="/blog">Blog</a></li>
 <li><a href="/injury-finder">Injury Finder</a></li>
-<li><a href="/contact">Free Consultation</a></li>
+<li><a href="/contact">Contact for Availability</a></li>
 <li><a href="/pricing">Pricing</a></li>
 </ul>
 </div>

@@ -143,7 +143,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>Apply to Join the Team</h2>
     <p>Fill out the form below and attach your resume. We'll review every application and reach out within 5–7 business days.</p>
 
-    <form id="applyForm" onsubmit="handleSubmit(event)" method="POST" action="https://formspree.io/f/mreokzky" enctype="multipart/form-data">
+    <form id="applyForm" onsubmit="handleSubmit(event)" method="POST" action="https://formspree.io/f/mreokzky">
       <input type="hidden" name="_subject" value="New Job Application — Empower Fitness">
       <div class="form-row">
         <div class="form-group">
@@ -201,22 +201,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <textarea name="message" placeholder="Tell us about yourself, your clinical philosophy, and why you want to be part of the Empower Fitness team…"></textarea>
       </div>
 
-      <!-- Resume Upload -->
+      <!-- Resume Link -->
       <div class="form-group">
-        <label>Resume / CV *</label>
-        <div class="upload-area" onclick="document.getElementById('resumeFile').click()">
-          <input type="file" id="resumeFile" name="resume" accept=".pdf,.doc,.docx" onchange="updateFileName(this, 'resumeLabel')" required/>
-          <p id="resumeLabel"><strong>Click to upload</strong> or drag &amp; drop your resume<br/><span style="font-size:12px; color:rgba(255,255,255,0.4)">PDF, DOC, DOCX · Max 10MB</span></p>
-        </div>
+        <label>Resume / CV Link *</label>
+        <input type="url" name="resumeLink" required placeholder="https://drive.google.com/... or Dropbox/LinkedIn URL" style="width:100%;"/>
+        <p style="font-size:12px;color:var(--gray);margin-top:6px;">Share a Google Drive, Dropbox, or LinkedIn link to your resume. Make sure it's set to "Anyone with the link can view."</p>
       </div>
 
-      <!-- Optional Certifications Upload -->
+      <!-- Additional Notes -->
       <div class="form-group">
-        <label>Certifications / Additional Documents <span style="font-weight:400; color:var(--gray)">(optional)</span></label>
-        <div class="upload-area" onclick="document.getElementById('certsFile').click()">
-          <input type="file" id="certsFile" name="certificates" accept=".pdf,.doc,.docx,.jpg,.png" multiple onchange="updateFileName(this, 'certsLabel')"/>
-          <p id="certsLabel"><strong>Click to upload</strong> any licenses, certifications, or letters of recommendation<br/><span style="font-size:12px; color:rgba(255,255,255,0.4)">PDF, DOC, JPG, PNG · Max 10MB each</span></p>
-        </div>
+        <label>Certifications / Additional Info <span style="font-weight:400; color:var(--gray)">(optional)</span></label>
+        <input type="text" name="certifications" placeholder="e.g. FL PT License #12345, OCS, additional notes" style="width:100%;"/>
       </div>
 
       <button type="submit" class="btn-submit">Submit Application →</button>
@@ -253,7 +248,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li><a href="/about">Our Team</a></li>
 <li><a href="/blog">Blog</a></li>
 <li><a href="/injury-finder">Injury Finder</a></li>
-<li><a href="/contact">Free Consultation</a></li>
+<li><a href="/contact">Contact for Availability</a></li>
 <li><a href="/pricing">Pricing</a></li>
 </ul>
 </div>
@@ -278,15 +273,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script>
-function updateFileName(input, labelId) {
-  const label = document.getElementById(labelId);
-  if (input.files && input.files.length > 0) {
-    const names = Array.from(input.files).map(f => f.name).join(', ');
-    label.innerHTML = '<strong>✓ ' + names + '</strong>';
-    label.style.color = '#4ade80';
-  }
-}
-
 function handleSubmit(e) {
   e.preventDefault();
   const form = document.getElementById('applyForm');
@@ -298,9 +284,7 @@ function handleSubmit(e) {
   btn.disabled = true;
   errorEl.style.display = 'none';
 
-  // Build FormData preserving all fields including file inputs
   const data = new FormData(form);
-  // Note: Formspree free tier has a 10 MB total file size limit
 
   fetch(form.action, {
     method: 'POST',

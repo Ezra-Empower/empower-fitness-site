@@ -1,3 +1,6 @@
+# Old Wix blog URL structure → new blog index
+/post/* /blog/ 301
+
 /physical-therapy-boca-raton /  302
 /fitness-program /fitness-training-boca-raton  301
 /service-page/physical-therapy /in-home-physical-therapy-boca-raton  301

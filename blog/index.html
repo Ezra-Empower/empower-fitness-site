@@ -73,6 +73,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       align-items: center;
     }
     .filter-bar span { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); margin-right: 4px; }
+    .blog-search { margin-left: auto; position: relative; }
+    .blog-search input { background: var(--dark4); border: 1px solid #333; color: var(--white); padding: 8px 16px 8px 36px; border-radius: 4px; font-size: 13px; width: 220px; outline: none; font-family: inherit; }
+    .blog-search input::placeholder { color: var(--gray); }
+    .blog-search input:focus { border-color: var(--gold); }
+    .blog-search svg { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); pointer-events: none; }
+    .no-results { display: none; text-align: center; padding: 60px 20px; color: var(--gray); font-size: 15px; grid-column: 1/-1; }
+    .no-results.visible { display: block; }
     .filter-btn {
       background: var(--dark4); border: 1px solid #333; color: var(--white);
       font-size: 13px; font-weight: 500; padding: 7px 16px; border-radius: 20px;
@@ -220,11 +227,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <button class="filter-btn" onclick="filterPosts('sport', this)">Sports</button>
   <button class="filter-btn" onclick="filterPosts('longevity', this)">Longevity &amp; Wellness</button>
   <button class="filter-btn" onclick="filterPosts('pt', this)">About PT</button>
+  <div class="blog-search">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="blog-search-input" placeholder="Search posts…" oninput="searchPosts(this.value)" autocomplete="off" />
+  </div>
 </div>
 
 <!-- BLOG GRID -->
 <section class="blog-section">
   <div class="blog-grid">
+  <div class="no-results" id="no-results">No posts found. Try a different search.</div>
 
     <div class="blog-card" data-category="injury">
       <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1650044252595-cacd425982ff?w=400&h=220&fit=crop&auto=format&q=80" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'" /></div>
@@ -2075,16 +2087,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script>
+var activeCategory = 'all';
+
 function filterPosts(category, btn) {
+  activeCategory = category;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.blog-card').forEach(card => {
-    if (category === 'all' || card.dataset.category === category) {
+  var query = (document.getElementById('blog-search-input').value || '').toLowerCase().trim();
+  applyFilters(category, query);
+}
+
+function searchPosts(query) {
+  query = query.toLowerCase().trim();
+  applyFilters(activeCategory, query);
+}
+
+function applyFilters(category, query) {
+  var cards = document.querySelectorAll('.blog-card');
+  var visible = 0;
+  cards.forEach(function(card) {
+    var titleEl = card.querySelector('h3 a');
+    var title = titleEl ? titleEl.textContent.toLowerCase() : '';
+    var catMatch = category === 'all' || card.dataset.category === category;
+    var searchMatch = !query || title.includes(query);
+    if (catMatch && searchMatch) {
       card.classList.remove('hidden');
+      visible++;
     } else {
       card.classList.add('hidden');
     }
   });
+  var noResults = document.getElementById('no-results');
+  if (noResults) noResults.classList.toggle('visible', visible === 0);
 }
 </script>
 

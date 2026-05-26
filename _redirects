@@ -1,5 +1,86 @@
 # Old Wix blog URL structure → new blog index
+
+# Migrated Wix /post/ → /blog/ (specific 301s)
+/post/6-stages-of-concussion-recovery /blog/6-stages-of-concussion-recovery 301
+/post/abdominal-muscle-strain /blog/abdominal-muscle-strain 301
+/post/activities-for-seniors-near-me /blog/activities-for-seniors-near-me 301
+/post/adjustable-beds-for-seniors /blog/adjustable-beds-for-seniors 301
+/post/ankle-mobility /blog/ankle-mobility 301
+/post/ankle-mobility-exercises /blog/ankle-mobility-exercises 301
+/post/average-calcium-score-60-year-old /blog/average-calcium-score-60-year-old 301
+/post/back-injury-red-flags /blog/back-injury-red-flags 301
+/post/back-spasm /blog/back-spasm 301
+/post/balance-ball-pilates /blog/balance-ball-pilates 301
+/post/balance-ball-pregnancy-exercises /blog/balance-ball-pregnancy-exercises 301
+/post/balance-board-exercises /blog/balance-board-exercises 301
+/post/balancing-exercises-for-seniors /blog/balancing-exercises-for-seniors 301
+/post/benefits-of-a-sauna /blog/benefits-of-a-sauna 301
+/post/best-leg-exerciser-for-elderly /blog/best-leg-exerciser-for-elderly 301
+/post/best-mattress-topper-for-back-pain /blog/best-mattress-topper-for-back-pain 301
+/post/best-physical-therapy /blog/best-physical-therapy 301
+/post/best-pillows-for-neck-pain /blog/best-pillows-for-neck-pain 301
+/post/can-constipation-cause-back-pain /blog/can-constipation-cause-back-pain 301
+/post/can-sleeping-positions-affect-chest-and-shoulder-pain /blog/can-sleeping-positions-affect-chest-and-shoulder-pain 301
+/post/cold-plunge-chiller /blog/cold-plunge-chiller 301
+/post/comprehensive-physical-therapy /blog/comprehensive-physical-therapy 301
+/post/concierge-physical-therapy /blog/concierge-physical-therapy 301
+/post/deep-tissue-injury /blog/deep-tissue-injury 301
+/post/empower-fitness /blog/empower-fitness 301
+/post/empowered-wellness /blog/empowered-wellness 301
+/post/empowering-quotes-for-women /blog/empowering-quotes-for-women 301
+/post/empowering-songs /blog/empowering-songs 301
+/post/empowerment-quotes /blog/empowerment-quotes 301
+/post/exercise-bikes-for-seniors /blog/exercise-bikes-for-seniors 301
+/post/fitness /blog/fitness 301
+/post/foldable-mobility-scooter /blog/foldable-mobility-scooter 301
+/post/hip-flexor-exercises /blog/hip-flexor-exercises 301
+/post/hip-replacement-recovery-timeline /blog/hip-replacement-recovery-timeline 301
+/post/how-long-do-back-spasms-last /blog/how-long-do-back-spasms-last 301
+/post/how-long-to-ice-an-injury /blog/how-long-to-ice-an-injury 301
+/post/how-much-does-a-30-min-pt-visit-cost /blog/how-much-does-a-30-min-pt-visit-cost 301
+/post/how-to-cure-achilles-tendonitis-fast /blog/how-to-cure-achilles-tendonitis-fast 301
+/post/how-to-get-rid-of-stiff-neck-in-10-seconds /blog/how-to-get-rid-of-stiff-neck-in-10-seconds 301
+/post/how-to-start-working-out-again-after-knee-injury /blog/how-to-start-working-out-again-after-knee-injury 301
+/post/how-to-strengthen-knee-ligaments /blog/how-to-strengthen-knee-ligaments 301
+/post/in-home-physical-therapy-services-near-me /blog/in-home-physical-therapy-services-near-me 301
+/post/injury-prevention /blog/injury-prevention 301
+/post/knee-brace-for-acl-injuries /blog/knee-brace-for-acl-injuries 301
+/post/knee-support-meniscus-injury /blog/knee-support-meniscus-injury 301
+/post/lcl-injury-recovery-time /blog/lcl-injury-recovery-time 301
+/post/leg-exercises-for-seniors /blog/leg-exercises-for-seniors 301
+/post/lower-back-and-hip-pain /blog/lower-back-and-hip-pain 301
+/post/lower-back-muscle-spasms /blog/lower-back-muscle-spasms 301
+/post/neck-pain-from-sleeping /blog/neck-pain-from-sleeping 301
+/post/pain-between-shoulder-blades /blog/pain-between-shoulder-blades 301
+/post/physical-therapy /blog/physical-therapy 301
+/post/physical-therapy-and-sports-medicine /blog/physical-therapy-and-sports-medicine 301
+/post/physical-therapy-for-sports-hernia-rehabilitation /blog/physical-therapy-for-sports-hernia-rehabilitation 301
+/post/physical-therapy-treatment-shoulder-pain /blog/physical-therapy-treatment-shoulder-pain 301
+/post/physical-therapy-vertigo /blog/physical-therapy-vertigo 301
+/post/pinched-nerve-in-lower-back /blog/pinched-nerve-in-lower-back 301
+/post/prenatal-workout-classes-near-me /blog/prenatal-workout-classes-near-me 301
+/post/seated-core-exercises /blog/seated-core-exercises 301
+/post/soccer-injury /blog/soccer-injury 301
+/post/sports-medicine-physician /blog/sports-medicine-physician 301
+/post/sports-physical-therapist-near-me /blog/sports-physical-therapist-near-me 301
+/post/sports-therapy /blog/sports-therapy 301
+/post/stinger-arm-football /blog/stinger-arm-football 301
+/post/strength-workout-classes /blog/strength-workout-classes 301
+/post/supplements-for-inflammation /blog/supplements-for-inflammation 301
+/post/tendonitis-rice /blog/tendonitis-rice 301
+/post/ucl-injury /blog/ucl-injury 301
+/post/ucl-strain /blog/ucl-strain 301
+/post/walker-for-seniors /blog/walker-for-seniors 301
+/post/ways-to-empower-yourself-and-others /blog/ways-to-empower-yourself-and-others 301
+/post/weight-gain-supplements-for-men /blog/weight-gain-supplements-for-men 301
+/post/weight-loss /blog/weight-loss 301
+/post/what-is-dry-needling /blog/what-is-dry-needling 301
+/post/what-neurological-disorders-cause-balance-problems /blog/what-neurological-disorders-cause-balance-problems 301
+/post/when-should-i-be-worried-about-back-spasms /blog/when-should-i-be-worried-about-back-spasms 301
+
+# Fallback for any remaining /post/ URLs
 /post/* /blog/ 301
+
 
 /physical-therapy-boca-raton /  302
 /fitness-program /fitness-training-boca-raton  301

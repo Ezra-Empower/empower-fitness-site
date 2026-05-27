@@ -125,12 +125,28 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.55) 60%),
-                  url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1400&q=80') center/cover no-repeat;
+      overflow: hidden;
       padding: 120px 80px 60px;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.55) 60%);
+      z-index: 1;
     }
     .hero-content {
       max-width: 680px;
+      position: relative;
+      z-index: 2;
     }
     .hero-pretag {
       display: inline-flex;
@@ -222,6 +238,7 @@
       position: absolute;
       bottom: 32px;
       left: 80px;
+      z-index: 2;
       background: var(--white);
       border-radius: 8px;
       padding: 12px 18px;
@@ -329,7 +346,7 @@
       font-size: 64px;
       font-weight: 900;
       color: var(--gold);
-      opacity: 0.45;
+      opacity: 0.8;
       line-height: 1;
       margin-bottom: 16px;
     }
@@ -678,7 +695,7 @@
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: rgba(0,0,0,0.6);
+      color: rgba(0,0,0,0.85);
       margin-bottom: 16px;
     }
     .final-cta h2 {
@@ -738,12 +755,12 @@
     }
     .footer-brand p {
       font-size: 14px;
-      color: var(--gray);
+      color: #bbbbbb;
       line-height: 1.7;
       margin-top: 14px;
       max-width: 280px;
     }
-    .footer-col h4 {
+    .footer-col-heading {
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 2px;
@@ -754,10 +771,10 @@
     .footer-col ul { list-style: none; }
     .footer-col li {
       font-size: 14px;
-      color: var(--gray);
+      color: #bbbbbb;
       margin-bottom: 10px;
     }
-    .footer-col li a { color: var(--gray); transition: color 0.2s; }
+    .footer-col li a { color: #bbbbbb; transition: color 0.2s; }
     .footer-col li a:hover { color: var(--gold); }
     .footer-bottom {
       border-top: 1px solid #1a1a1a;
@@ -766,7 +783,7 @@
       justify-content: space-between;
       align-items: center;
     }
-    .footer-bottom p { font-size: 12px; color: #555; }
+    .footer-bottom p { font-size: 12px; color: #888; }
 
     /* ── Comparison section grid ── */
     .our-diff-section {
@@ -822,12 +839,12 @@
     }
     .footer-brand p {
       font-size: 14px;
-      color: var(--gray);
+      color: #bbbbbb;
       line-height: 1.7;
       margin-top: 14px;
       max-width: 280px;
     }
-    .footer-col h4 {
+    .footer-col-heading {
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 2px;
@@ -838,10 +855,10 @@
     .footer-col ul { list-style: none; }
     .footer-col li {
       font-size: 14px;
-      color: var(--gray);
+      color: #bbbbbb;
       margin-bottom: 10px;
     }
-    .footer-col li a { color: var(--gray); transition: color 0.2s; }
+    .footer-col li a { color: #bbbbbb; transition: color 0.2s; }
     .footer-col li a:hover { color: var(--gold); }
     .footer-bottom {
       border-top: 1px solid #1a1a1a;
@@ -850,7 +867,7 @@
       justify-content: space-between;
       align-items: center;
     }
-    .footer-bottom p { font-size: 12px; color: #555; }
+    .footer-bottom p { font-size: 12px; color: #888; }
 </style>
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
@@ -1173,6 +1190,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 ============================================= -->
 
 <section class="hero">
+<img class="hero-bg" src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1400&q=80" alt="" fetchpriority="high" loading="eager" decoding="async" width="1400" height="933">
 <div class="hero-content">
 
 <div class="hero-pretag">
@@ -1322,35 +1340,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h3>In-Home Physical Therapy</h3>
 <p>Recover in comfort with one-on-one PT sessions delivered directly to you. We treat pain, restore mobility, and help you regain independence with expert care tailored to your specific condition and lifestyle.</p>
 <div class="service-outcome">✓ Outcome: Pain relief within 2–4 sessions for most patients</div>
-<a class="service-link" href="/in-home-physical-therapy-boca-raton">Learn More →</a>
+<a class="service-link" href="/in-home-physical-therapy-boca-raton" aria-label="Learn more about In-Home Physical Therapy">Learn More →</a>
 </div>
 <div class="service-card">
 <div class="service-icon">🏃</div>
 <h3>Return-to-Sport Therapy</h3>
 <p>Bridge the gap between rehab and peak performance. Designed for athletes recovering from injury who want to safely and confidently return to training or competition — stronger than before.</p>
 <div class="service-outcome">✓ Outcome: Full return to competition with reduced re-injury risk</div>
-<a class="service-link" href="/return-to-sport-physical-therapy-boca-raton">Learn More →</a>
+<a class="service-link" href="/return-to-sport-physical-therapy-boca-raton" aria-label="Learn more about Return-to-Sport Therapy">Learn More →</a>
 </div>
 <div class="service-card">
 <div class="service-icon">💪</div>
 <h3>Fitness Training Programs</h3>
 <p>Custom training plans combining functional movement, strength, and conditioning. Whether you're starting out or chasing new PRs, every program is built around how your body actually moves.</p>
 <div class="service-outcome">✓ Outcome: Measurable strength gains in 6–8 weeks</div>
-<a class="service-link" href="/fitness-training-boca-raton">Learn More →</a>
+<a class="service-link" href="/fitness-training-boca-raton" aria-label="Learn more about Fitness Training Programs">Learn More →</a>
 </div>
 <div class="service-card">
 <div class="service-icon">🔒</div>
 <h3>Longevity Training</h3>
 <p>Stay active, strong, and independent for life. Our Longevity Program focuses on injury prevention, joint health, mobility, and strength training — designed for adults who want to age with vitality and confidence.</p>
 <div class="service-outcome">✓ Outcome: Better mobility and fewer injuries as you age</div>
-<a class="service-link" href="/longevity-training-boca-raton">Learn More →</a>
+<a class="service-link" href="/longevity-training-boca-raton" aria-label="Learn more about Longevity Training">Learn More →</a>
 </div>
 <div class="service-card">
 <div class="service-icon">🥗</div>
 <h3>Nutrition &amp; Supplement Guidance</h3>
 <p>Fuel your recovery and performance with science-backed nutritional advice aligned with your therapy or training goals. Includes access to our food tracking app to keep you accountable.</p>
 <div class="service-outcome">✓ Outcome: Better energy, faster recovery, sustainable habits</div>
-<a class="service-link" href="/nutrition-coaching-boca-raton">Learn More →</a>
+<a class="service-link" href="/nutrition-coaching-boca-raton" aria-label="Learn more about Nutrition Coaching">Learn More →</a>
 </div>
 
 <div class="service-card" style="background: var(--gold); color: var(--black);">
@@ -1589,7 +1607,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>Concierge physical therapy and functional fitness delivered to your door. Serving Boca Raton, Delray Beach, Pompano Beach, and surrounding South Florida.</p>
 </div>
 <div class="footer-col">
-<h4>Services</h4>
+<p class="footer-col-heading">Services</p>
 <ul>
 <li><a href="/in-home-physical-therapy-boca-raton">In-Home Physical Therapy</a></li>
 <li><a href="/return-to-sport-physical-therapy-boca-raton">Return-to-Sport</a></li>
@@ -1599,7 +1617,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
 </div>
 <div class="footer-col">
-<h4>Company</h4>
+<p class="footer-col-heading">Company</p>
 <ul>
 <li><a href="/about">About Dr. Ezra</a></li>
 <li><a href="/about">Our Team</a></li>
@@ -1610,7 +1628,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
 </div>
 <div class="footer-col">
-<h4>Contact</h4>
+<p class="footer-col-heading">Contact</p>
 <ul>
 <li>Boca Raton, FL</li>
 <li>Delray Beach, FL</li>

@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html><head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W8K8GRZQ');</script>
+<!-- Google Tag Manager — deferred for performance -->
+<script>
+(function(){
+  var gtmLoaded=false;
+  function loadGTM(){
+    if(gtmLoaded)return;
+    gtmLoaded=true;
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+          dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W8K8GRZQ');
+  }
+  setTimeout(loadGTM,3500);
+  ['mousedown','touchstart','keydown','scroll','mousemove'].forEach(function(e){
+    document.addEventListener(e,loadGTM,{once:true,passive:true});
+  });
+})();
+</script>
 <!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="refresh" content="0;url=/blog/golf-injury-physical-therapy-boca-raton/">
@@ -43,11 +61,72 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <style>
+/* site-footer */
+/* Empower Fitness — Canonical Footer Styles
+   Auto-generated from index.html. Do not edit manually.
+   Include on every page: <link rel="stylesheet" href="/css/site-footer.css">
+*/
+
+/* Brand tokens required by footer */
 
 
+/* Nav logo used in footer brand */
+.nav-logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: var(--gold);
+    }
+.nav-logo span { color: var(--white); }
 
+/* Footer */
+/* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      background: var(--black);
+      padding: 48px 80px 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-top: 14px;
+      max-width: 280px;
+    }
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li {
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 10px;
+    }
+    .footer-col li a { color: var(--gray); transition: color 0.2s; }
+    .footer-col li a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid #1a1a1a;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom p { font-size: 12px; color: #555; }
 </style>
-<link rel="stylesheet" href="/css/site-footer.css">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 </head><body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8K8GRZQ"
@@ -75,7 +154,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer>
 <div class="footer-grid">
 <div class="footer-brand">
-<div class="nav-logo"><img src="/img/logo-gold.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" /><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
+<div class="nav-logo"><picture>
+      <source srcset="/img/logo-gold.webp" type="image/webp">
+      <img src="/img/logo-gold-small.png" alt="Empower Fitness" style="height:32px;width:auto;display:inline-block;vertical-align:middle;margin-right:10px;" / width="122" height="64">
+    </picture><span style="font-size:14px;font-weight:700;letter-spacing:2px;vertical-align:middle;">EMPOWER FITNESS</span></div>
 <p>Concierge physical therapy and functional fitness delivered to your door. Serving Boca Raton, Delray Beach, Pompano Beach, and surrounding South Florida.</p>
 </div>
 <div class="footer-col">

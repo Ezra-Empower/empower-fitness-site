@@ -13,6 +13,14 @@
   <meta property="og:image" content="https://www.empowerfitnesspt.com/img/og-default.jpg">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
+  <!-- Google Ads tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16866892168"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-16866892168');
+  </script>
   <style>
 .landing-page *, .landing-page *::before, .landing-page *::after { box-sizing: border-box; margin: 0; padding: 0; }
 .lp-nav { position: fixed; top: 0; left: 0; right: 0; background: #000; z-index: 100; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #1a1a1a; }
@@ -455,7 +463,13 @@
 <script>
 
 
-function initLandingForm(formId, successId, errorId) {
+
+    // Google Ads conversion tracking
+    function fireConversion() {
+      gtag('event', 'conversion', {'send_to': 'AW-16866892168/0t4kCLHjob0cEIiz4eo-'});
+    }
+
+    function initLandingForm(formId, successId, errorId) {
   var form = document.getElementById(formId);
   if (!form) return;
   form.addEventListener('submit', function(e) {
@@ -473,6 +487,7 @@ function initLandingForm(formId, successId, errorId) {
       if (r.ok) {
         form.style.display = 'none';
         successEl.style.display = 'block';
+        if(typeof fireConversion === 'function') fireConversion();
       } else {
         r.json().then(function(d) {
           errorEl.textContent = d.errors ? d.errors.map(function(x){return x.message;}).join(', ') : 'Something went wrong. Please call (954) 901-7211.';

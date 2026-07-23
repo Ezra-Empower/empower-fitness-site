@@ -206,33 +206,34 @@
   .benefit-right { padding: 16px 24px; font-size: 15px; color: var(--text-mid); line-height: 1.7; display: flex; align-items: center; }
 
   /* ── GOLD FORM ── */
-  .form-section { background: var(--dark); padding: 60px 0; }
+  .form-section { background: var(--warm-gray); padding: 48px 0; }
   .form-card {
-    background: var(--gold); max-width: 620px; margin: 0 auto;
-    border-radius: 8px; padding: 52px 52px 48px;
-    box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 4px 16px rgba(0,0,0,0.2);
+    background: rgba(255,255,255,0.96); max-width: 620px; margin: 0 auto;
+    border-radius: 8px; padding: 44px 48px 40px;
+    box-shadow: 0 16px 48px rgba(120,80,10,0.14), 0 4px 16px rgba(0,0,0,0.07);
+    border: 1px solid var(--border-warm);
   }
-  .form-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(0,0,0,0.45); margin-bottom: 10px; }
-  .form-card h2 { font-size: clamp(24px,3.5vw,34px); font-weight: 900; color: var(--dark); line-height: 1.15; margin-bottom: 8px; }
-  .form-sub { font-size: 16px; color: rgba(0,0,0,0.55); margin-bottom: 32px; line-height: 1.5; }
+  .form-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 10px; }
+  .form-card h2 { font-size: clamp(24px,3.5vw,34px); font-weight: 900; color: var(--text-dark); line-height: 1.15; margin-bottom: 8px; }
+  .form-sub { font-size: 16px; color: var(--text-mid); margin-bottom: 28px; line-height: 1.55; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
   .form-row.single { grid-template-columns: 1fr; }
   .form-input {
-    width: 100%; padding: 14px 16px; font-size: 16px;
-    background: rgba(255,255,255,0.88); border: 1.5px solid rgba(0,0,0,0.12);
+    width: 100%; padding: 13px 15px; font-size: 15px;
+    background: var(--off-white); border: 1.5px solid var(--border-warm);
     border-radius: 5px; color: var(--text-dark); font-family: inherit;
     outline: none; transition: border-color 0.2s, background 0.2s;
   }
-  .form-input:focus { border-color: var(--dark); background: var(--white); }
-  .form-input::placeholder { color: rgba(0,0,0,0.35); }
+  .form-input:focus { border-color: var(--gold); background: var(--white); }
+  .form-input::placeholder { color: rgba(0,0,0,0.32); }
   .form-submit {
-    width: 100%; background: var(--dark); color: var(--white);
-    font-size: 16px; font-weight: 800; padding: 17px;
+    width: 100%; background: var(--gold); color: var(--dark);
+    font-size: 15px; font-weight: 800; padding: 16px;
     border: none; border-radius: 5px; cursor: pointer;
     letter-spacing: 0.06em; text-transform: uppercase;
     margin-top: 6px; font-family: inherit; transition: background 0.2s;
   }
-  .form-submit:hover { background: #2a2a2a; }
+  .form-submit:hover { background: var(--gold-light); }
   .form-fine { font-size: 12px; color: rgba(0,0,0,0.4); text-align: center; margin-top: 14px; }
 
   /* ── REVIEWS ── */
@@ -558,7 +559,7 @@
   <div class="container">
     <div class="form-card">
       <span class="hero-form-label">&#9679; Currently accepting 5 new clients in Boca Raton</span>
-      <h2 style="font-size:clamp(24px,3.5vw,34px);font-weight:900;color:var(--dark);line-height:1.15;margin-bottom:8px;">Tell us what's going on.<br>We'll take it from here.</h2>
+      <h2>Tell us what's going on.<br>We'll take it from here.</h2>
       <p class="form-sub">Spots are limited. If you're serious about fixing this — not just managing it — fill out the form and we'll be in touch within a few hours.</p>
       <form id="hero-form" action="https://formspree.io/f/xojzwoqj" method="POST">
         <input type="hidden" name="_subject" value="New Lead — Concierge PT Page">

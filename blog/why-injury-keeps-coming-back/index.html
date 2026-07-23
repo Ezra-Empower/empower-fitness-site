@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+(function(){
+  var gtmLoaded=false;
+  function loadGTM(){
+    if(gtmLoaded)return; gtmLoaded=true;
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W8K8GRZQ');
+  }
+  setTimeout(loadGTM,3500);
+  ['mousedown','touchstart','keydown','scroll'].forEach(function(e){
+    document.addEventListener(e,loadGTM,{once:true,passive:true});
+  });
+})();
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Real Reason Your Injury Keeps Coming Back | Empower Fitness PT</title>
+<meta name="description" content="If your pain keeps returning after PT or rest, there's a reason — and it's not bad luck. Dr. Ezra Miller, DPT explains the root cause pattern behind recurring injuries.">
+<link rel="canonical" href="https://www.empowerfitnesspt.com/blog/why-injury-keeps-coming-back/">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --gold:#C8922A;--gold-light:#e0a93a;--gold-pale:#fdf4e3;
+    --gold-soft:#f5e6c0;--gold-deep:#a07520;
+    --dark:#0d0d0d;--white:#ffffff;--off-white:#fdfaf5;
+    --text-dark:#1a1a1a;--text-mid:#5a5040;--text-light:#8a7a60;
+    --border-warm:#e2cfa0;
+  }
+  body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:var(--gold-pale);color:var(--text-dark);line-height:1.7;font-size:17px}
+  a{color:var(--gold-deep);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* NAV */
+  nav{background:var(--dark);padding:0 40px;height:68px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:99;border-bottom:1px solid rgba(200,146,42,0.2)}
+  .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .nav-logo img{height:34px}
+  .nav-logo span{color:var(--white);font-size:14px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase}
+  nav a.cta{background:var(--gold);color:var(--dark);padding:9px 20px;border-radius:4px;font-weight:700;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none}
+
+  /* HERO */
+  .hero{background:var(--dark);border-bottom:2px solid var(--gold);padding:56px 40px 48px}
+  .hero-inner{max-width:800px;margin:0 auto}
+  .tag{display:inline-block;background:var(--gold);color:var(--dark);font-size:11px;font-weight:700;padding:4px 12px;border-radius:2px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:20px}
+  h1{font-size:clamp(28px,4vw,46px);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:16px;letter-spacing:-0.02em}
+  .meta{font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:24px}
+  .meta span{color:var(--gold);font-weight:600}
+  .intro-box{background:rgba(255,255,255,0.06);border-left:3px solid var(--gold);padding:18px 22px;border-radius:4px;color:rgba(255,255,255,0.8);font-size:17px;line-height:1.65}
+
+  /* BODY */
+  .body{max-width:780px;margin:0 auto;padding:52px 40px 64px;background:var(--white)}
+  .body p{margin-bottom:1.3rem;color:var(--text-mid);font-size:17px;line-height:1.75}
+  .body h2{font-size:clamp(20px,3vw,26px);font-weight:800;color:var(--text-dark);margin:2.2rem 0 0.8rem;letter-spacing:-0.01em}
+  .body ul{padding-left:1.4rem;margin-bottom:1.3rem}
+  .body li{margin-bottom:0.6rem;color:var(--text-mid);line-height:1.65}
+  .body ul li::marker{color:var(--gold)}
+  .callout{background:var(--gold-pale);border:1px solid var(--border-warm);border-left:3px solid var(--gold);border-radius:4px;padding:18px 22px;margin:1.8rem 0}
+  .callout p{margin:0;font-weight:600;color:var(--text-dark);font-size:16px}
+
+  /* CTA BOX */
+  .cta-box{background:var(--gold-pale);border:1px solid var(--border-warm);border-radius:8px;padding:36px 40px;margin:2.5rem 0 0;text-align:center}
+  .cta-box h3{font-size:22px;font-weight:900;color:var(--text-dark);margin-bottom:10px}
+  .cta-box p{font-size:16px;color:var(--text-mid);margin-bottom:24px}
+  .cta-box a{display:inline-block;background:var(--gold);color:var(--dark);font-size:15px;font-weight:800;padding:14px 36px;border-radius:4px;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none}
+  .cta-box a:hover{background:var(--gold-light)}
+
+  /* FOOTER */
+  footer{background:var(--dark);border-top:1px solid rgba(200,146,42,0.18);padding:28px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  footer div{font-size:13px;color:rgba(255,255,255,0.4);display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  footer span{color:rgba(255,255,255,0.7);font-weight:700}
+  footer a{color:rgba(255,255,255,0.4);text-decoration:none}
+  footer a:hover{color:var(--gold)}
+
+  @media(max-width:768px){
+    nav{padding:0 16px;height:60px}
+    .nav-logo span{font-size:12px}
+    nav a.cta{font-size:11px;padding:7px 12px}
+    .hero{padding:40px 18px 36px}
+    .body{padding:36px 18px 48px}
+    .cta-box{padding:28px 18px}
+    footer{flex-direction:column;padding:24px 16px;gap:10px}
+    footer div{flex-direction:column;align-items:flex-start;gap:6px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://www.empowerfitnesspt.com" class="nav-logo">
+    <img src="https://www.empowerfitnesspt.com/img/logo-gold.png" alt="Empower Fitness PT">
+    <span>Empower Fitness</span>
+  </a>
+  <a href="https://www.empowerfitnesspt.com/concierge-physical-therapy-boca-raton/" class="cta">Book Your Consult</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="tag">Injury Recovery</span>
+    <h1>The Real Reason Your Injury Keeps Coming Back</h1>
+    <p class="meta">By <span>Dr. Ezra Miller, DPT</span> &nbsp;·&nbsp; Empower Fitness PT &nbsp;·&nbsp; Boca Raton, FL</p>
+    <div class="intro-box"><p>You rest it. It gets better. You go back to playing. It comes back. If this sounds familiar, you're not alone — and you're not unlucky. There's a specific reason recurring injuries happen, and it's almost never what you think.</p></div>
+  </div>
+</div>
+
+<div class="body">
+
+        <h2>Pain Going Away Is Not the Same as Being Fixed</h2>
+        <p>This is the most important thing I tell new clients: pain is a signal, not the problem. When the signal stops, it doesn't mean the problem is gone — it means your body has adapted enough to quiet the alarm. The underlying cause is still there.</p>
+        <p>This is why most people feel fine after a few weeks of rest, go back to their sport, and have the same thing flare up within a month. Nothing was actually fixed — the pain just went away.</p>
+        <h2>The Real Culprit: Compensatory Movement Patterns</h2>
+        <p>When something hurts, your body compensates. You shift your weight, change your stride, favor one side. These compensations happen automatically — you often don't even notice them. But over time, they load structures that weren't designed to carry that load. And eventually, something else breaks.</p>
+        <div class="callout"><p>The injury you're treating is often not the original problem. It's the third or fourth thing that broke down because the first one was never properly addressed.</p></div>
+        <h2>Why Rest Alone Doesn't Work</h2>
+        <p>Rest reduces inflammation. That's useful in the acute phase. But rest doesn't retrain movement patterns. It doesn't rebuild the strength and stability that was lost. It doesn't address the mechanical issue that caused the problem in the first place.</p>
+        <p>Without structured rehabilitation that targets the actual root cause — not just the painful area — you're just waiting for the next flare-up.</p>
+        <h2>What Fixing It Actually Looks Like</h2>
+        <ul><li>A full movement assessment — how you actually move, not just where it hurts</li><li>Identifying the compensation patterns that are loading the wrong structures</li><li>Manual therapy to restore mobility and reduce protective tension</li><li>Progressive strength and stability work targeting the root cause</li><li>A return-to-sport plan that doesn't just get you back — it gets you back better</li></ul>
+        <p>This takes more than six sessions of generic exercises. It takes someone who knows your history, watches you move, and adjusts the plan every single week based on what they see. That's what we do.</p>
+        <h2>The Bottom Line</h2>
+        <p>If your injury keeps coming back, the treatment you've been doing hasn't addressed the root cause. That's not a criticism — it's how most PT is structured. But you deserve better than managing the same problem on repeat.</p>
+
+  <div class="cta-box">
+    <h3>Ready to stop managing it and actually fix it?</h3>
+    <p>We're currently accepting a limited number of new clients in Boca Raton. Book a consult call — no pressure, just an honest conversation.</p>
+    <a href="https://www.empowerfitnesspt.com/concierge-physical-therapy-boca-raton/">Book Your Consult →</a>
+  </div>
+</div>
+
+<footer>
+  <div>
+    <span>Empower Fitness PT</span>
+    <a href="tel:9549017211">(954) 901-7211</a>
+    <a href="mailto:ezra@empowerfitnesspt.com">ezra@empowerfitnesspt.com</a>
+  </div>
+  <div>
+    <a href="https://www.empowerfitnesspt.com/blog/">All Articles</a>
+    <a href="https://www.empowerfitnesspt.com">empowerfitnesspt.com</a>
+    <a style="color:rgba(255,255,255,0.18);">© 2026 Empower Fitness PT</a>
+  </div>
+</footer>
+
+</body>
+</html>

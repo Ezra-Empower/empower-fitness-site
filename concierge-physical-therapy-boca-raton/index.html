@@ -272,8 +272,8 @@
     /* NAV */
     .nav { padding: 0 16px; height: 60px; }
     .nav-phone { display: none; }
-    .nav-logo span { font-size: 12px; letter-spacing: 0.03em; }
-    .nav-cta { font-size: 11px; padding: 8px 12px; letter-spacing: 0.03em; white-space: nowrap; }
+    .nav-logo span { display: none; }
+    .nav-cta { font-size: 12px; padding: 9px 14px; letter-spacing: 0.03em; white-space: nowrap; }
 
     /* HERO */
     .hero { padding: 88px 18px 56px; }
@@ -328,13 +328,27 @@
     .qa-item:nth-child(2n) { border-right: none; }
 
     /* FOOTER */
-    .footer { flex-direction: column; padding: 24px 16px; gap: 10px; }
-    .footer-left { font-size: 12px; flex-direction: column; gap: 4px; }
-    .footer-right { flex-wrap: wrap; gap: 10px; }
-    .footer-right a { font-size: 12px; margin-left: 0; }
+    .footer { flex-direction: column; padding: 20px 16px; gap: 8px; align-items: flex-start; }
+    .footer-left { flex-direction: column; gap: 4px; font-size: 12px; }
+    .footer-right { gap: 8px; }
+    .footer-right a { font-size: 12px; }
 
     /* STICKY BAR */
-    .sticky-bar { display: block; }
+    /* STICKY BAR — hidden on desktop */
+  .sticky-bar {
+    display: none;
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+    background: var(--gold-soft);
+    border-top: 1px solid var(--border-warm);
+    padding: 10px 16px;
+  }
+  .sticky-bar a {
+    display: block; width: 100%; text-align: center;
+    background: var(--dark); color: var(--white);
+    font-size: 14px; font-weight: 800;
+    padding: 11px; border-radius: 4px;
+    text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
+  }
     body { padding-bottom: 76px; }
   }
 
@@ -424,7 +438,21 @@
     text-transform: uppercase;
   }
   @media (max-width: 768px) {
-    .sticky-bar { display: block; }
+    /* STICKY BAR — hidden on desktop */
+  .sticky-bar {
+    display: none;
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+    background: var(--gold-soft);
+    border-top: 1px solid var(--border-warm);
+    padding: 10px 16px;
+  }
+  .sticky-bar a {
+    display: block; width: 100%; text-align: center;
+    background: var(--dark); color: var(--white);
+    font-size: 14px; font-weight: 800;
+    padding: 11px; border-radius: 4px;
+    text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
+  }
     body { padding-bottom: 80px; }
     .hero-form-row { grid-template-columns: 1fr; }
   }

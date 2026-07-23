@@ -269,87 +269,140 @@
     .problem-table td { padding: 24px 16px; }
   }
   @media (max-width: 768px) {
+    html, body { overflow-x: hidden; max-width: 100vw; }
+    body { padding-bottom: 68px; }
+
     /* NAV */
-    .nav { padding: 0 16px; height: 60px; }
+    .nav { padding: 0 16px; height: 60px; max-width: 100vw; }
     .nav-phone { display: none; }
-    .nav-logo span { display: none; }
-    .nav-cta { font-size: 12px; padding: 9px 14px; letter-spacing: 0.03em; white-space: nowrap; }
+    .nav-logo span { display: none !important; }
+    .nav-cta {
+      font-size: 12px; padding: 9px 14px; letter-spacing: 0.03em;
+      white-space: nowrap; flex-shrink: 0;
+    }
 
     /* HERO */
-    .hero { padding: 88px 18px 56px; }
+    .hero { padding: 88px 18px 56px; max-width: 100%; }
     .hero-eyebrow { font-size: 10px; letter-spacing: 0.08em; padding: 5px 10px; white-space: normal; text-align: center; max-width: 280px; margin-left: auto; margin-right: auto; }
     .hero h1 { font-size: clamp(30px, 9vw, 46px); }
-    .hero-sub { font-size: 16px; }
+    .hero-sub { font-size: 16px; max-width: 100%; }
     .hero-trust { flex-wrap: wrap; gap: 4px; font-size: 12px; justify-content: center; }
 
     /* HERO MINI FORM */
-    .hero-form-wrap { padding: 18px 16px; margin-top: 20px; }
-    .hero-form-row { grid-template-columns: 1fr; gap: 8px; }
+    .hero-form-wrap { padding: 18px 16px; margin-top: 20px; width: 100%; max-width: 100%; }
+    .hero-form-row { grid-template-columns: 1fr; gap: 8px; width: 100%; }
     .hero-form-label { font-size: 10px; }
 
     /* GENERAL */
-    .container { padding: 0 16px; }
+    .container { padding: 0 16px; width: 100%; max-width: 100%; }
     .section-pad { padding: 44px 0; }
     .section-pad-sm { padding: 32px 0; }
     h2 { font-size: clamp(24px, 6vw, 34px); }
+    .proof-strip-inner { padding: 0 16px; max-width: 100%; }
+    .proof-pullquote::before { left: 0; }
+    img, svg, video, iframe { max-width: 100%; height: auto; }
 
     /* ABOUT */
-    .about-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+    .about-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; width: 100%; }
     .about-content { text-align: center; }
-    .about-photo { max-width: 200px; margin: 0 auto; }
+    .about-photo { max-width: 200px; margin: 0 auto; width: 100%; }
     .cred-list li { justify-content: center; }
 
     /* PROBLEM TABLE */
-    .problem-table, .problem-table tbody, .problem-table tr, .problem-table td { display: block; }
+    .problem-table { width: 100%; max-width: 100%; display: block; }
+    .problem-table, .problem-table tbody, .problem-table tr, .problem-table td { display: block; width: 100%; max-width: 100%; }
     .problem-table tr { border-bottom: 1px solid var(--border-warm); padding: 20px 0; }
     .problem-table td { padding: 2px 0; }
-    .problem-table .td-num { display: none; }
+    .problem-table .td-num,
+    .problem-table .td-rule { display: none; }
     .problem-table .td-head { width: 100%; padding-bottom: 8px; }
     .problem-table .td-head h3 { font-size: 16px; }
     .problem-table .td-body { font-size: 15px; line-height: 1.6; }
 
     /* BENEFITS */
-    .benefit-row { grid-template-columns: 1fr; }
+    .benefits-list { width: 100%; max-width: 100%; }
+    .benefit-row { grid-template-columns: 1fr; width: 100%; }
     .benefit-num { display: none; }
     .benefit-left { border-right: none; border-bottom: 1px solid var(--border-warm); padding: 14px 16px 10px; }
     .benefit-right { padding: 10px 16px 16px; font-size: 15px; }
 
     /* FORMS */
-    .form-card { padding: 24px 16px 20px; }
+    .form-card { padding: 24px 16px 20px; width: 100%; max-width: 100%; }
     .form-row { grid-template-columns: 1fr; }
     .form-card h2 { font-size: 22px; }
 
     /* REVIEWS */
-    .reviews-grid { grid-template-columns: 1fr; gap: 16px; }
+    .reviews-grid { grid-template-columns: 1fr; gap: 16px; width: 100%; }
 
     /* QA */
-    .qa-grid { grid-template-columns: 1fr; }
+    .qa-grid { grid-template-columns: 1fr; width: 100%; }
     .qa-item { border-right: none; padding: 18px 16px; }
     .qa-item:nth-child(2n) { border-right: none; }
 
-    /* FOOTER */
-    .footer { flex-direction: column; padding: 20px 16px; gap: 8px; align-items: flex-start; }
-    .footer-left { flex-direction: column; gap: 4px; font-size: 12px; }
-    .footer-right { gap: 8px; }
-    .footer-right a { font-size: 12px; }
+    /* FOOTER — override inline flex so it stacks cleanly */
+    footer.site-footer,
+    footer {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+      flex-wrap: nowrap !important;
+      gap: 10px !important;
+      padding: 20px 16px !important;
+      background: #0d0d0d !important;
+      font-size: 13px !important;
+      color: rgba(255,255,255,0.5) !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    footer.site-footer > div,
+    footer > div {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 10px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      font-size: 13px !important;
+      color: rgba(255,255,255,0.5) !important;
+    }
+    footer.site-footer a,
+    footer a {
+      color: rgba(255,255,255,0.5) !important;
+      font-size: 13px !important;
+    }
+    footer.site-footer .footer-brand,
+    footer .footer-brand {
+      color: rgba(255,255,255,0.7) !important;
+      font-weight: 700 !important;
+    }
+    footer.site-footer .footer-copy,
+    footer .footer-copy {
+      color: rgba(255,255,255,0.5) !important;
+      font-size: 13px !important;
+    }
 
-    /* STICKY BAR */
-    /* STICKY BAR — hidden on desktop */
-  .sticky-bar {
-    display: none;
-    position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
-    background: var(--gold-soft);
-    border-top: 1px solid var(--border-warm);
-    padding: 10px 16px;
-  }
-  .sticky-bar a {
-    display: block; width: 100%; text-align: center;
-    background: var(--dark); color: var(--white);
-    font-size: 14px; font-weight: 800;
-    padding: 11px; border-radius: 4px;
-    text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
-  }
-    body { padding-bottom: 76px; }
+    /* STICKY BAR — slim; shown via .is-visible from JS after hero scroll */
+    .sticky-bar {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: var(--gold-soft);
+      border-top: 1px solid var(--border-warm);
+      padding: 10px 16px;
+      width: 100%;
+      max-width: 100vw;
+      box-sizing: border-box;
+    }
+    .sticky-bar.is-visible { display: block; }
+    .sticky-bar a {
+      display: block; width: 100%; text-align: center;
+      background: var(--dark); color: var(--white);
+      font-size: 14px; font-weight: 800;
+      padding: 11px; border-radius: 4px;
+      text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
+      white-space: nowrap;
+    }
   }
 
   /* ── MINI HERO FORM ── */
@@ -413,49 +466,8 @@
   }
   .hero-form-submit:hover { background: var(--gold-light); }
 
-  /* ── STICKY MOBILE BAR ── */
-  .sticky-bar {
-    display: none;
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    z-index: 200;
-    background: var(--gold);
-    border-top: 2px solid var(--gold-deep);
-    padding: 14px 20px;
-  }
-  .sticky-bar a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    background: var(--dark);
-    color: var(--white);
-    font-size: 15px;
-    font-weight: 800;
-    padding: 14px;
-    border-radius: 4px;
-    text-decoration: none;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-  @media (max-width: 768px) {
-    /* STICKY BAR — hidden on desktop */
-  .sticky-bar {
-    display: none;
-    position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
-    background: var(--gold-soft);
-    border-top: 1px solid var(--border-warm);
-    padding: 10px 16px;
-  }
-  .sticky-bar a {
-    display: block; width: 100%; text-align: center;
-    background: var(--dark); color: var(--white);
-    font-size: 14px; font-weight: 800;
-    padding: 11px; border-radius: 4px;
-    text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
-  }
-    body { padding-bottom: 80px; }
-    .hero-form-row { grid-template-columns: 1fr; }
-  }
+  /* ── STICKY MOBILE BAR (hidden on desktop; mobile rules + .is-visible in 768px query) ── */
+  .sticky-bar { display: none; }
 
 </style>
 </head>
@@ -740,16 +752,16 @@
 </section>
 
 <!-- FOOTER -->
-<footer style="background:var(--dark);border-top:1px solid rgba(200,146,42,0.18);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
-  <div style="font-size:13px;color:rgba(255,255,255,0.4);display:flex;align-items:center;gap:20px;">
-    <span style="color:rgba(255,255,255,0.7);font-weight:700;">Empower Fitness PT</span>
-    <a href="tel:9549017211" style="color:rgba(255,255,255,0.4);text-decoration:none;">(954) 901-7211</a>
-    <a href="mailto:ezra@empowerfitnesspt.com" style="color:rgba(255,255,255,0.4);text-decoration:none;">ezra@empowerfitnesspt.com</a>
+<footer class="site-footer" style="background:#0d0d0d;border-top:1px solid rgba(200,146,42,0.18);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+  <div style="font-size:13px;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+    <span class="footer-brand" style="color:rgba(255,255,255,0.7);font-weight:700;">Empower Fitness PT</span>
+    <a href="tel:9549017211" style="color:rgba(255,255,255,0.5);text-decoration:none;">(954) 901-7211</a>
+    <a href="mailto:ezra@empowerfitnesspt.com" style="color:rgba(255,255,255,0.5);text-decoration:none;">ezra@empowerfitnesspt.com</a>
     <span>Boca Raton · South Florida</span>
   </div>
-  <div style="display:flex;align-items:center;gap:20px;">
-    <a href="https://www.instagram.com/empowerfitnesspro" target="_blank" style="color:rgba(255,255,255,0.4);font-size:13px;text-decoration:none;">Instagram</a>
-    <span style="color:rgba(255,255,255,0.15);font-size:12px;">© 2026 Empower Fitness PT</span>
+  <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+    <a href="https://www.instagram.com/empowerfitnesspro" target="_blank" style="color:rgba(255,255,255,0.5);font-size:13px;text-decoration:none;">Instagram</a>
+    <span class="footer-copy" style="color:rgba(255,255,255,0.5);font-size:13px;">© 2026 Empower Fitness PT</span>
   </div>
 </footer>
 
@@ -788,6 +800,28 @@
         });
     });
   });
+
+  /* Sticky mobile CTA — show after scrolling past ~60% of hero */
+  (function(){
+    var bar = document.getElementById('stickycta');
+    var hero = document.querySelector('.hero');
+    if(!bar || !hero) return;
+    function checkSticky(){
+      if(window.innerWidth > 768){
+        bar.classList.remove('is-visible');
+        return;
+      }
+      var threshold = hero.offsetHeight * 0.6;
+      if(window.scrollY > threshold){
+        bar.classList.add('is-visible');
+      } else {
+        bar.classList.remove('is-visible');
+      }
+    }
+    window.addEventListener('scroll', checkSticky, {passive:true});
+    window.addEventListener('resize', checkSticky, {passive:true});
+    checkSticky();
+  })();
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16866892168"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-16866892168');</script>

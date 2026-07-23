@@ -206,26 +206,26 @@
   .benefit-right { padding: 16px 24px; font-size: 15px; color: var(--text-mid); line-height: 1.7; display: flex; align-items: center; }
 
   /* ── GOLD FORM ── */
-  .form-section { background: var(--warm-gray); padding: 48px 0; }
+  .form-section { background: var(--warm-gray); padding: 48px 0; border-top: 2px solid var(--border-warm); }
   .form-card {
     background: rgba(255,255,255,0.96); max-width: 620px; margin: 0 auto;
     border-radius: 8px; padding: 44px 48px 40px;
     box-shadow: 0 16px 48px rgba(120,80,10,0.14), 0 4px 16px rgba(0,0,0,0.07);
     border: 1px solid var(--border-warm);
   }
-  .form-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 10px; }
-  .form-card h2 { font-size: clamp(24px,3.5vw,34px); font-weight: 900; color: var(--text-dark); line-height: 1.15; margin-bottom: 8px; }
-  .form-sub { font-size: 16px; color: var(--text-mid); margin-bottom: 28px; line-height: 1.55; }
+  .form-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 10px; text-align: center; display: block; }
+  .form-card h2 { font-size: clamp(24px,3.5vw,34px); font-weight: 900; color: var(--text-dark); line-height: 1.15; margin-bottom: 8px; text-align: center; }
+  .form-sub { font-size: 16px; color: var(--text-mid); margin-bottom: 28px; line-height: 1.55; text-align: center; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
   .form-row.single { grid-template-columns: 1fr; }
   .form-input {
     width: 100%; padding: 13px 15px; font-size: 15px;
-    background: var(--off-white); border: 1.5px solid var(--border-warm);
+    background: var(--white); border: 1.5px solid #ddd0b8;
     border-radius: 5px; color: var(--text-dark); font-family: inherit;
-    outline: none; transition: border-color 0.2s, background 0.2s;
+    outline: none; transition: border-color 0.2s;
   }
-  .form-input:focus { border-color: var(--gold); background: var(--white); }
-  .form-input::placeholder { color: rgba(0,0,0,0.32); }
+  .form-input:focus { border-color: var(--gold); }
+  .form-input::placeholder { color: rgba(0,0,0,0.3); }
   .form-submit {
     width: 100%; background: var(--gold); color: var(--dark);
     font-size: 15px; font-weight: 800; padding: 16px;
@@ -399,7 +399,7 @@
   </div>
 
   <div class="hero-form-wrap">
-    <span class="hero-form-label">&#9679; Currently accepting 5 new clients in Boca Raton</span>
+    <span class="hero-form-label" style="text-align:center;display:block;color:var(--gold-deep);">Currently accepting 5 new clients in Boca Raton</span>
     <form id="hero-mini-form" action="https://formspree.io/f/xojzwoqj" method="POST">
       <input type="hidden" name="_subject" value="New Lead — Concierge PT Page">
       <input type="hidden" name="_cc" value="admin@empowerfitnesspt.com">
@@ -558,7 +558,7 @@
 <section class="form-section" id="book">
   <div class="container">
     <div class="form-card">
-      <span class="hero-form-label">&#9679; Currently accepting 5 new clients in Boca Raton</span>
+      <span class="hero-form-label" style="text-align:center;display:block;color:var(--gold-deep);">Currently accepting 5 new clients in Boca Raton</span>
       <h2>Tell us what's going on.<br>We'll take it from here.</h2>
       <p class="form-sub">Spots are limited. If you're serious about fixing this — not just managing it — fill out the form and we'll be in touch within a few hours.</p>
       <form id="hero-form" action="https://formspree.io/f/xojzwoqj" method="POST">

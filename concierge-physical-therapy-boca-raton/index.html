@@ -689,6 +689,16 @@
       e.preventDefault();
       fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
         .then(function(res){
+          if(res.ok){ window.location.href='/thank-you/'; }
+        });
+    });
+  });['hero-form','footer-form','hero-mini-form'].forEach(function(id){
+    var form = document.getElementById(id);
+    if(!form) return;
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+        .then(function(res){
           if(res.ok){
             gtag('event','conversion',{'send_to':'AW-16866892168/0t4kCLHjob0cEIiz4eo-'});
             var bg = id==='hero-form' ? '#C8922A' : '#C8922A';

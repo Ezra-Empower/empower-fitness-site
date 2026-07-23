@@ -269,20 +269,73 @@
     .problem-table td { padding: 24px 16px; }
   }
   @media (max-width: 768px) {
-    .nav { padding: 0 20px; height: 60px; }
+    /* NAV */
+    .nav { padding: 0 16px; height: 60px; }
     .nav-phone { display: none; }
-    .hero { padding: 110px 20px 72px; }
-    .container { padding: 0 20px; }
-    .about-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-    .about-content { text-align: center; }
-    .cred-list li { justify-content: center; }
-    .form-card { padding: 36px 24px; }
-    .form-row { grid-template-columns: 1fr; }
-    .qa-grid { grid-template-columns: 1fr; }
-    .qa-item:nth-child(2n) { border-right: none; }
-    .qa-item { border-right: none; }
-    .mobile-bar { display: none; }  /* JS controls visibility */
+    .nav-logo span { font-size: 12px; letter-spacing: 0.03em; }
+    .nav-cta { font-size: 11px; padding: 8px 12px; letter-spacing: 0.03em; white-space: nowrap; }
 
+    /* HERO */
+    .hero { padding: 88px 18px 56px; }
+    .hero-eyebrow { font-size: 10px; letter-spacing: 0.08em; padding: 5px 10px; white-space: normal; text-align: center; max-width: 280px; margin-left: auto; margin-right: auto; }
+    .hero h1 { font-size: clamp(30px, 9vw, 46px); }
+    .hero-sub { font-size: 16px; }
+    .hero-trust { flex-wrap: wrap; gap: 4px; font-size: 12px; justify-content: center; }
+
+    /* HERO MINI FORM */
+    .hero-form-wrap { padding: 18px 16px; margin-top: 20px; }
+    .hero-form-row { grid-template-columns: 1fr; gap: 8px; }
+    .hero-form-label { font-size: 10px; }
+
+    /* GENERAL */
+    .container { padding: 0 16px; }
+    .section-pad { padding: 44px 0; }
+    .section-pad-sm { padding: 32px 0; }
+    h2 { font-size: clamp(24px, 6vw, 34px); }
+
+    /* ABOUT */
+    .about-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+    .about-content { text-align: center; }
+    .about-photo { max-width: 200px; margin: 0 auto; }
+    .cred-list li { justify-content: center; }
+
+    /* PROBLEM TABLE */
+    .problem-table, .problem-table tbody, .problem-table tr, .problem-table td { display: block; }
+    .problem-table tr { border-bottom: 1px solid var(--border-warm); padding: 20px 0; }
+    .problem-table td { padding: 2px 0; }
+    .problem-table .td-num { display: none; }
+    .problem-table .td-head { width: 100%; padding-bottom: 8px; }
+    .problem-table .td-head h3 { font-size: 16px; }
+    .problem-table .td-body { font-size: 15px; line-height: 1.6; }
+
+    /* BENEFITS */
+    .benefit-row { grid-template-columns: 1fr; }
+    .benefit-num { display: none; }
+    .benefit-left { border-right: none; border-bottom: 1px solid var(--border-warm); padding: 14px 16px 10px; }
+    .benefit-right { padding: 10px 16px 16px; font-size: 15px; }
+
+    /* FORMS */
+    .form-card { padding: 24px 16px 20px; }
+    .form-row { grid-template-columns: 1fr; }
+    .form-card h2 { font-size: 22px; }
+
+    /* REVIEWS */
+    .reviews-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* QA */
+    .qa-grid { grid-template-columns: 1fr; }
+    .qa-item { border-right: none; padding: 18px 16px; }
+    .qa-item:nth-child(2n) { border-right: none; }
+
+    /* FOOTER */
+    .footer { flex-direction: column; padding: 24px 16px; gap: 10px; }
+    .footer-left { font-size: 12px; flex-direction: column; gap: 4px; }
+    .footer-right { flex-wrap: wrap; gap: 10px; }
+    .footer-right a { font-size: 12px; margin-left: 0; }
+
+    /* STICKY BAR */
+    .sticky-bar { display: block; }
+    body { padding-bottom: 76px; }
   }
 
   /* ── MINI HERO FORM ── */

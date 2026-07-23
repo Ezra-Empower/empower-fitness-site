@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're All Set | Empower Fitness PT</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Google Ads Conversion Tag — fires on page load, most reliable method -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16866892168"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-16866892168');
+  gtag('event', 'conversion', { 'send_to': 'AW-16866892168/0t4kCLHjob0cEIiz4eo-' });
+</script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --gold:       #C8922A;
+    --gold-light: #e0a93a;
+    --gold-pale:  #fdf4e3;
+    --gold-soft:  #f5e6c0;
+    --gold-deep:  #a07520;
+    --dark:       #0d0d0d;
+    --white:      #ffffff;
+    --off-white:  #fdfaf5;
+    --warm-gray:  #f2ede6;
+    --text-dark:  #1a1a1a;
+    --text-mid:   #5a5040;
+    --text-light: #8a7a60;
+    --border-warm:#e2cfa0;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 17px; line-height: 1.6;
+    color: var(--text-dark); background: var(--gold-pale);
+  }
+
+  /* NAV */
+  .nav {
+    background: var(--dark); height: 68px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; border-bottom: 1px solid rgba(200,146,42,0.2);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo img { height: 36px; }
+  .nav-logo span { color: var(--white); font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  .nav-right a {
+    background: var(--gold); color: var(--dark);
+    font-size: 14px; font-weight: 700; padding: 10px 22px;
+    border-radius: 4px; text-decoration: none;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+
+  /* HERO CONFIRMATION */
+  .confirm {
+    text-align: center;
+    padding: 80px 40px 64px;
+    background: var(--gold-pale);
+    border-bottom: 1px solid var(--border-warm);
+  }
+  .confirm-check {
+    width: 64px; height: 64px;
+    background: var(--gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 28px;
+    box-shadow: 0 8px 24px rgba(160,117,32,0.25);
+  }
+  .confirm-check svg { width: 28px; height: 28px; stroke: var(--dark); fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  .confirm h1 {
+    font-size: clamp(32px, 5vw, 52px); font-weight: 900;
+    color: var(--text-dark); line-height: 1.1;
+    letter-spacing: -0.02em; margin-bottom: 16px;
+  }
+  .confirm h1 em { font-style: normal; color: var(--gold); }
+  .confirm-sub {
+    font-size: 19px; color: var(--text-mid);
+    max-width: 520px; margin: 0 auto 40px; line-height: 1.65;
+  }
+  .confirm-next {
+    display: inline-flex; flex-direction: column; gap: 12px;
+    background: var(--white); border: 1px solid var(--border-warm);
+    border-radius: 8px; padding: 28px 36px;
+    max-width: 480px; width: 100%;
+    box-shadow: 0 4px 16px rgba(120,80,10,0.08);
+    text-align: left;
+  }
+  .confirm-next-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gold-deep);
+  }
+  .confirm-next-step {
+    display: flex; align-items: flex-start; gap: 14px;
+    font-size: 15px; color: var(--text-dark); line-height: 1.5;
+  }
+  .confirm-next-step .num {
+    width: 24px; height: 24px; background: var(--gold-soft);
+    border-radius: 50%; font-size: 12px; font-weight: 800;
+    color: var(--gold-deep); display: flex; align-items: center;
+    justify-content: center; flex-shrink: 0; margin-top: 1px;
+  }
+
+  /* WHILE YOU WAIT */
+  .while-wait {
+    background: var(--white); border-top: 1px solid var(--border-warm);
+    border-bottom: 1px solid var(--border-warm);
+    padding: 64px 40px;
+    text-align: center;
+  }
+  .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--gold-deep); margin-bottom: 12px;
+  }
+  .while-wait h2 {
+    font-size: clamp(26px, 3.5vw, 38px); font-weight: 900;
+    color: var(--text-dark); letter-spacing: -0.02em;
+    margin-bottom: 12px; line-height: 1.15;
+  }
+  .while-wait p {
+    font-size: 17px; color: var(--text-mid);
+    max-width: 540px; margin: 0 auto 52px; line-height: 1.65;
+  }
+
+  /* BLOG CARDS */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px; max-width: 900px; margin: 0 auto 40px;
+  }
+  .blog-card {
+    background: var(--off-white);
+    border: 1px solid var(--border-warm);
+    border-radius: 8px; overflow: hidden;
+    text-decoration: none;
+    display: flex; flex-direction: column;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 2px 8px rgba(120,80,10,0.07);
+    text-align: left;
+  }
+  .blog-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(120,80,10,0.14); }
+  .blog-card-img {
+    width: 100%; height: 180px; object-fit: cover;
+    display: block; border-bottom: 1px solid var(--border-warm);
+  }
+  .blog-card-body { padding: 22px 22px 26px; flex: 1; display: flex; flex-direction: column; }
+  .blog-card-tag {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gold-deep);
+    margin-bottom: 10px;
+  }
+  .blog-card-title {
+    font-size: 17px; font-weight: 800; color: var(--text-dark);
+    line-height: 1.3; margin-bottom: 10px;
+  }
+  .blog-card-desc {
+    font-size: 14px; color: var(--text-mid);
+    line-height: 1.6; flex: 1; margin-bottom: 18px;
+  }
+  .blog-card-link {
+    font-size: 13px; font-weight: 700; color: var(--gold-deep);
+    letter-spacing: 0.04em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .blog-card-link::after { content: '→'; }
+
+  .blog-all {
+    display: inline-block;
+    border: 1.5px solid var(--border-warm);
+    color: var(--text-mid); font-size: 14px; font-weight: 700;
+    padding: 12px 28px; border-radius: 4px;
+    text-decoration: none; letter-spacing: 0.04em;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .blog-all:hover { border-color: var(--gold); color: var(--gold-deep); }
+
+  /* FOOTER */
+  .footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(200,146,42,0.18);
+    padding: 28px 40px;
+    display: flex; align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .footer div { font-size: 13px; color: rgba(255,255,255,0.4); display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .footer span { color: rgba(255,255,255,0.7); font-weight: 700; }
+  .footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  .footer a:hover { color: var(--gold); }
+
+  @media (max-width: 768px) {
+    .nav { padding: 0 18px; height: 60px; }
+    .nav-logo span { font-size: 13px; }
+    .nav-right a { font-size: 12px; padding: 8px 14px; }
+    .confirm { padding: 56px 20px 48px; }
+    .confirm-next { padding: 22px 20px; }
+    .while-wait { padding: 48px 20px; }
+    .blog-grid { grid-template-columns: 1fr; gap: 20px; }
+    .footer { padding: 24px 18px; flex-direction: column; gap: 12px; }
+    .footer div { flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://www.empowerfitnesspt.com" class="nav-logo">
+    <img src="https://www.empowerfitnesspt.com/img/logo-gold.png" alt="Empower Fitness PT">
+    <span>Empower Fitness</span>
+  </a>
+  <div class="nav-right">
+    <a href="https://www.empowerfitnesspt.com">Visit Our Site</a>
+  </div>
+</nav>
+
+<!-- CONFIRMATION -->
+<section class="confirm">
+  <div class="confirm-check">
+    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+  </div>
+  <h1>You're in.<br><em>We'll be in touch shortly.</em></h1>
+  <p class="confirm-sub">Dr. Ezra's team will reach out within a few hours to set up your consult call. In the meantime, here's what to expect.</p>
+
+  <div class="confirm-next">
+    <span class="confirm-next-label">What Happens Next</span>
+    <div class="confirm-next-step">
+      <span class="num">1</span>
+      <span><strong>You'll get a call or text</strong> — usually within a few hours, never more than one business day.</span>
+    </div>
+    <div class="confirm-next-step">
+      <span class="num">2</span>
+      <span><strong>We'll spend 15 minutes</strong> hearing about what's going on and whether we're a good fit.</span>
+    </div>
+    <div class="confirm-next-step">
+      <span class="num">3</span>
+      <span><strong>If it's a match</strong>, we'll schedule your first session at a time and place that works for you.</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHILE YOU WAIT — BLOG -->
+<section class="while-wait">
+  <p class="section-label">While You Wait</p>
+  <h2>Get a head start.</h2>
+  <p>These articles will give you a clearer picture of how concierge PT works, why it gets better results, and what to expect when you work with us.</p>
+
+  <div class="blog-grid">
+    <a href="https://www.empowerfitnesspt.com/blog/why-concierge-physical-therapy-is-worth-it/" class="blog-card">
+      <img class="blog-card-img" src="https://www.empowerfitnesspt.com/img/headshot.jpg" alt="Why Concierge Physical Therapy Is Worth It">
+      <div class="blog-card-body">
+        <span class="blog-card-tag">Concierge PT</span>
+        <p class="blog-card-title">Why Concierge Physical Therapy Is Worth the Premium</p>
+        <p class="blog-card-desc">A Doctor of PT breaks down why cash-pay concierge care consistently outperforms clinic-based PT — and what the real cost comparison looks like.</p>
+        <span class="blog-card-link">Read the article</span>
+      </div>
+    </a>
+
+    <a href="https://www.empowerfitnesspt.com/blog/executive-recovery-plan-fitting-pt-into-busy-schedule/" class="blog-card">
+      <img class="blog-card-img" src="https://www.empowerfitnesspt.com/img/headshot.jpg" alt="Executive Recovery Plan">
+      <div class="blog-card-body">
+        <span class="blog-card-tag">Recovery & Performance</span>
+        <p class="blog-card-title">The Executive Recovery Plan: Fitting PT Into a 60-Hour Week</p>
+        <p class="blog-card-desc">How busy professionals in Boca Raton are healing faster — without losing half a morning to a clinic waiting room.</p>
+        <span class="blog-card-link">Read the article</span>
+      </div>
+    </a>
+
+    <a href="https://www.empowerfitnesspt.com/blog/concierge-physical-therapy-vs-insurance-pt-boca-raton/" class="blog-card">
+      <img class="blog-card-img" src="https://www.empowerfitnesspt.com/img/headshot.jpg" alt="Concierge PT vs Insurance PT">
+      <div class="blog-card-body">
+        <span class="blog-card-tag">Concierge PT vs. Clinic</span>
+        <p class="blog-card-title">Concierge PT vs. Insurance-Based PT: An Honest Comparison</p>
+        <p class="blog-card-desc">What you actually get at a typical clinic vs. what you get with concierge care — broken down honestly, from someone who's worked in both.</p>
+        <span class="blog-card-link">Read the article</span>
+      </div>
+    </a>
+  </div>
+
+  <a href="https://www.empowerfitnesspt.com/blog/" class="blog-all">Browse All Articles →</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    <span>Empower Fitness PT</span>
+    <a href="tel:9549017211">(954) 901-7211</a>
+    <a href="mailto:ezra@empowerfitnesspt.com">ezra@empowerfitnesspt.com</a>
+    <span style="color:rgba(255,255,255,0.25);font-weight:400;">Boca Raton · South Florida</span>
+  </div>
+  <div>
+    <a href="https://www.instagram.com/empowerfitnesspro" target="_blank">Instagram</a>
+    <a href="https://www.empowerfitnesspt.com">empowerfitnesspt.com</a>
+    <span style="color:rgba(255,255,255,0.18);font-weight:400;">© 2026 Empower Fitness PT</span>
+  </div>
+</footer>
+
+</body>
+</html>

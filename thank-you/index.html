@@ -332,11 +332,12 @@ img{max-width:100%;height:auto;}
   gtag('event','conversion',{'send_to':'AW-16866892168/0t4kCLHjob0cEIiz4eo-'});
 </script>
 <style>
-.ty { max-width: 860px; margin: 0 auto; padding: 64px 40px 72px; text-align: center; }
+/* Thank-you page only — scoped to .ty-page, no nav/footer overrides */
+.ty-page { max-width: 860px; margin: 0 auto; padding: 64px 40px 72px; text-align: center; }
 .ty-check { width: 56px; height: 56px; background: #C8922A; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; }
 .ty-check svg { width: 26px; height: 26px; stroke: #000; fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-.ty h1 { font-size: clamp(28px,4vw,46px); font-weight: 900; color: #111; line-height: 1.1; margin-bottom: 14px; }
-.ty h1 span { color: #C8922A; }
+.ty-page h1 { font-size: clamp(28px,4vw,46px) !important; font-weight: 900 !important; color: #111 !important; line-height: 1.1 !important; margin-bottom: 14px !important; }
+.ty-page h1 span { color: #C8922A !important; }
 .ty-sub { font-size: 18px; color: #666; margin-bottom: 40px; }
 .ty-steps { background: #fff; border: 1px solid #e8e2d9; border-radius: 8px; padding: 28px 36px; max-width: 520px; margin: 0 auto 56px; text-align: left; }
 .ty-steps-lbl { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C8922A; margin-bottom: 18px; display: block; }
@@ -345,7 +346,7 @@ img{max-width:100%;height:auto;}
 .ty-step .n { width: 24px; height: 24px; background: #f5e6c0; border-radius: 50%; font-size: 12px; font-weight: 800; color: #a07520; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
 .ty-divider { border: none; border-top: 1px solid #e8e2d9; margin-bottom: 48px; }
 .ty-wait-lbl { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C8922A; margin-bottom: 10px; }
-.ty h2 { font-size: clamp(22px,3vw,32px); font-weight: 900; color: #111; margin-bottom: 10px; }
+.ty-page h2 { font-size: clamp(22px,3vw,32px) !important; font-weight: 900 !important; color: #111 !important; margin-bottom: 10px !important; }
 .ty-wait-sub { font-size: 16px; color: #666; margin-bottom: 32px; }
 .ty-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; text-align: left; margin-bottom: 28px; }
 .ty-card { background: #fff; border: 1px solid #e8e2d9; border-radius: 8px; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; transition: transform 0.15s, box-shadow 0.15s; }
@@ -353,12 +354,16 @@ img{max-width:100%;height:auto;}
 .ty-card img { width: 100%; height: 140px; object-fit: cover; display: block; }
 .ty-card-body { padding: 14px 16px 18px; flex: 1; display: flex; flex-direction: column; }
 .ty-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C8922A; margin-bottom: 6px; }
-.ty-card-title { font-size: 14px; font-weight: 700; color: #111; line-height: 1.35; flex: 1; margin-bottom: 10px; }
+.ty-card-title { font-size: 14px !important; font-weight: 700 !important; color: #111 !important; line-height: 1.35 !important; flex: 1; margin-bottom: 10px !important; }
 .ty-read { font-size: 12px; font-weight: 700; color: #a07520; letter-spacing: 0.04em; text-transform: uppercase; }
 .ty-read::after { content: " →"; }
 .ty-all a { display: inline-block; border: 1.5px solid #e8e2d9; color: #555; font-size: 13px; font-weight: 700; padding: 10px 24px; border-radius: 4px; text-decoration: none; }
 .ty-all a:hover { border-color: #C8922A; color: #a07520; }
-@media(max-width:768px){ .ty { padding: 48px 18px 56px; } .ty-cards { grid-template-columns: 1fr; } .ty-steps { padding: 22px 18px; } }
+@media(max-width:768px){
+  .ty-page { padding: 48px 18px 56px; }
+  .ty-cards { grid-template-columns: 1fr; }
+  .ty-steps { padding: 22px 18px; }
+}
 </style>
 </head>
 <body>
@@ -377,14 +382,14 @@ img{max-width:100%;height:auto;}
 </ul>
 <a class="nav-cta" href="/contact">CONTACT US</a>
 </nav>
-<div class="ty">
+<div class="ty-page">
   <div class="ty-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
   <h1>You're in.<br><span>We'll be in touch shortly.</span></h1>
   <p class="ty-sub">Dr. Ezra's team will reach out within a few hours to set up your consult call.</p>
   <div class="ty-steps">
     <span class="ty-steps-lbl">What Happens Next</span>
     <div class="ty-step"><span class="n">1</span><span><strong>You'll get a call or text</strong> — usually within a few hours, never more than one business day.</span></div>
-    <div class="ty-step"><span class="n">2</span><span><strong>We'll spend 15 minutes</strong> hearing what's going on and whether we're a good fit.</span></div>
+    <div class="ty-step"><span class="n">2</span><span><strong>We'll spend 15 minutes</strong> hearing what's going on and discuss how we can help you.</span></div>
     <div class="ty-step"><span class="n">3</span><span><strong>If it's a match</strong>, we'll schedule your first session at a time and place that works for you.</span></div>
   </div>
   <hr class="ty-divider">

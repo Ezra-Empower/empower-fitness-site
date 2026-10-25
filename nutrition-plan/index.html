@@ -47,6 +47,8 @@ h2{font-size:28px;line-height:1.1;margin:0;font-weight:900;letter-spacing:-.015e
 .meal .it{display:flex;flex-wrap:wrap;gap:2px;flex:1}.meal .it img{width:38px;height:38px}
 .meal .ph{color:#9a9a9a;font-size:16px}
 .meal.warn{border-color:#C0392B}
+.mrow{display:flex;flex-direction:column;gap:6px}
+.cpw{align-self:flex-end;background:var(--gold-s);border:1.5px solid var(--gold);color:#000;border-radius:8px;padding:8px 12px;font-size:14px;font-weight:800;min-height:40px}
 .warnt{color:#B03020;font-size:14px;font-weight:700;margin:-6px 0 0}
 .acts{display:flex;flex-wrap:wrap;gap:8px}.acts .btn{flex:1;min-width:140px;font-size:15px;padding:10px 12px;min-height:46px}
 #sheetbg{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;z-index:30}
@@ -149,12 +151,11 @@ h2{font-size:28px;line-height:1.1;margin:0;font-weight:900;letter-spacing:-.015e
     </section>
     <section class="step" id="st3">
       <div class="eyebrow">Step 3</div><h2>Build your week</h2>
-      <p class="lead">Tap a day, then tap a meal to add foods.</p>
+      <p class="lead">Tap a day, then tap a meal to add foods. Use the gold button under a meal to repeat it all week.</p>
       <div class="days" id="days"></div>
       <div id="meals" style="display:flex;flex-direction:column;gap:10px"></div>
       <div class="warnt" id="wwarn"></div>
       <div class="acts">
-        <button class="btn" id="cpm" type="button">Copy this meal to the week</button>
         <button class="btn" id="cpd" type="button">Copy this day to the week</button>
         <button class="btn" id="clr" type="button">Clear this day</button>
       </div>
@@ -939,12 +940,12 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
     $('days').innerHTML=DAYS.map(function(d,i){var has=week[d].some(function(l){return l.length});return '<button class="day'+(sel.d===i?' on':'')+(has?' has':'')+'" type="button" data-i="'+i+'">'+d+'</button>'}).join('');
     [].forEach.call($('days').children,function(b){b.addEventListener('click',function(){sel.d=+b.dataset.i;renderWeek()})});
     var dd=week[DAYS[sel.d]],warn=false;
-    $('meals').innerHTML=MEALS.map(function(m,mi){var l=dd[mi];if(mixed(l))warn=true;return '<button class="meal'+(mixed(l)?' warn':'')+'" type="button" data-m="'+mi+'"><b>'+m+'</b><div class="it">'+(l.length?l.map(function(id){return img(id)}).join(''):'<span class="ph">Tap to add foods</span>')+'</div></button>'}).join('');
+    $('meals').innerHTML=MEALS.map(function(m,mi){var l=dd[mi];if(mixed(l))warn=true;return '<div class="mrow"><button class="meal'+(mixed(l)?' warn':'')+'" type="button" data-m="'+mi+'"><b>'+m+'</b><div class="it">'+(l.length?l.map(function(id){return img(id)}).join(''):'<span class="ph">Tap to add foods</span>')+'</div></button>'+(l.length?'<button class="cpw" type="button" data-m="'+mi+'">Copy '+m.toLowerCase()+' to every day</button>':'')+'</div>'}).join('');
+    [].forEach.call($('meals').querySelectorAll('.cpw'),function(b){b.addEventListener('click',function(){var mi=+b.dataset.m,src=week[DAYS[sel.d]][mi];DAYS.forEach(function(d){if(d!==DAYS[sel.d])week[d][mi]=src.slice()});touchWeek();$('toast').textContent='Copied '+MEALS[mi].toLowerCase()+' to every day.'})});
     [].forEach.call($('meals').querySelectorAll('.meal'),function(b){b.addEventListener('click',function(){sel.m=+b.dataset.m;openSheet()})});
     $('wwarn').textContent=warn?'Meat and dairy are both in one meal. Swap one.':'';
   }
   function touchWeek(){S.inc.week=DAYS.some(function(d){return week[d].some(function(l){return l.length})});save();renderWeek()}
-  $('cpm').addEventListener('click',function(){var src=week[DAYS[sel.d]][sel.m];DAYS.forEach(function(d){if(d!==DAYS[sel.d])week[d][sel.m]=src.slice()});touchWeek();$('toast').textContent='Copied '+MEALS[sel.m].toLowerCase()+' to every day.'});
   $('cpd').addEventListener('click',function(){var src=week[DAYS[sel.d]];DAYS.forEach(function(d){if(d!==DAYS[sel.d])week[d]=src.map(function(a){return a.slice()})});touchWeek();$('toast').textContent='Copied '+FULLD[sel.d]+' to every day.'});
   $('clr').addEventListener('click',function(){week[DAYS[sel.d]]=[[],[],[]];touchWeek();$('toast').textContent=''});
   /* sheet */

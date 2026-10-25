@@ -990,12 +990,23 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
     return saveFile(blob,filename);
   }
   function saveFile(blob,filename){
-    var file=null;try{file=new File([blob],filename,{type:'application/pdf'})}catch(_){}
-    if(file&&navigator.canShare&&navigator.canShare({files:[file]})&&/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)){
-      return navigator.share({files:[file],title:'My nutrition plan'}).catch(function(e){if(e&&e.name==='AbortError')return;throw e});
+    var url=URL.createObjectURL(blob);
+    if(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)){
+      /* phones need a fresh tap to share or save, so show a button */
+      setTimeout(function(){
+        var t=$('toast2');
+        t.innerHTML='<button class="btn dark" id="dlbtn" type="button" style="width:100%;margin-top:10px">Tap to save or share PDF</button><a id="dlopen" href="'+url+'" target="_blank" style="display:block;text-align:center;margin-top:10px;font-weight:800;color:#A07520">Or open the PDF</a>';
+        $('dlbtn').addEventListener('click',function(){
+          var file=null;try{file=new File([blob],filename,{type:'application/pdf'})}catch(_){}
+          if(file&&navigator.canShare&&navigator.canShare({files:[file]})){
+            navigator.share({files:[file],title:'My nutrition plan'}).catch(function(e){if(!e||e.name!=='AbortError')window.open(url,'_blank')});
+          }else{window.open(url,'_blank')}
+        });
+      },60);
+      return Promise.resolve();
     }
-    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;document.body.appendChild(a);a.click();
-    setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},2000);return Promise.resolve();
+    var a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();
+    setTimeout(function(){URL.revokeObjectURL(url);a.remove()},2000);return Promise.resolve();
   }
   $('pdf').addEventListener('click',function(){sync();save();makePdf($('toast2'))});
   $('reset').addEventListener('click',function(){if(confirm('Start over and clear everything?')){try{localStorage.removeItem(KEY)}catch(_){}location.reload()}});
